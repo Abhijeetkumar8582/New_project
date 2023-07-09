@@ -1,0 +1,168 @@
+.flipkartBox{
+    width: 100vw;
+    margin: 60px;
+    display: flex;
+    background: #fff;
+    border: 5px solid rgba(0,0,0,.07);
+    transition: all .5s ease 0;
+    transition: all .5s ease 0s; 
+    box-shadow: 0 10px 10px 0 #5147dd;
+}
+
+.flipkartBox_one{
+    width: 50%;
+    padding: 30px;
+    background-color:white
+}
+.flipkartBox_two{
+    width: 50%;
+    background-color:#0a0aff;
+ }
+.flipkarText{
+    margin: 30px 0px;
+}
+.ImageLogo_div{
+    border-radius: 50%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 4rem;
+    width: 4rem; 
+}
+.intro_images{
+    height: 50%;
+    width: 50%;
+}
+.givenName{
+    margin-bottom: 50px;
+}
+.custombtn {
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+  }
+  
+
+  /* 2 */
+  .btn2 {
+    background: rgb(240, 140, 9);
+    background: linear-gradient(0deg, rgb(250, 161, 28) 0%, rgb(247, 140, 52) 100%);
+    border: none;
+    margin-bottom: 30px;
+    
+  }
+  .btn2:before {
+    height: 0%;
+    width: 2px;
+  }
+  .btn2:hover {
+    box-shadow:  2px 2px 3px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(155, 163, 173, 0.5), 
+      inset -4px -4px 6px 0 rgba(255,255,255,.2),
+      inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+  }
+  
+  .userConcern{
+    margin: 0px 5px 0px 0px;
+  } 
+
+  .flipkartBox_two_image{
+    width: 100%;
+    max-width:400px;
+  }
+  .flipkartBox_two_Div_image{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom: 50px;
+  }
+  .textInputDIv{
+    margin:0px 0px 15px;
+    max-width:400px
+  }
+  .forgetNameBTn{
+    background-color:white;
+    border:none
+  }
+  .forgetNameBTn:focus{
+    outline: none;
+  }
+  @media only screen and (max-width: 750px) {
+    .flipkartBox {
+     flex-direction: column;
+     margin: 10px;
+    }
+    .flipkartBox_one{
+        width: 100%;
+        order: 1;
+    }
+    .flipkartBox_two{
+        width: 100%;
+        order: 0;
+    }
+  }
+
+
+
+  /* Modal? */
+  .avatar {
+    /* Rounded border */
+    border-radius: 50%;
+
+    /* Center the content */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    /* Size */
+    height: 5rem;
+    width: 5rem;
+}
+
+.avatar__image {
+    /* Size */
+    border-radius: 50%;
+    height: 50%;
+    width: 50%;
+}
+.generateAnotherOne{
+    
+        width: 140px;
+        height: 45px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 2.5px;
+        font-weight: 500;
+        color: #000;
+        background-color: #96b4ff;
+        border: none;
+        border-radius: 45px;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+        outline: none;
+        
+}
+.generateAnotherOne:hover{
+    background-color: #82b8fe;
+    box-shadow: 0px 15px 20px rgba(46, 153, 229, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+.generateAnotherOne:focus{
+    outline: none;
+}

@@ -1,7 +1,7 @@
 
 import Head from 'next/head'
 import Home from './Portfolio/Home'
-
+import Mainmenu from './Flipkart/Home'
 
 
  function IndexFile() {
@@ -11,7 +11,8 @@ import Home from './Portfolio/Home'
      <Head>
         <title>Welcome to My PortFolio</title>
       </Head>
-     <Home/> 
+     {/* <Home/>  */}
+     <Mainmenu/>
     </>
   )
 }

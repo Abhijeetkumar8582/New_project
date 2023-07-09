@@ -6,9 +6,9 @@ export default function App({ Component, pageProps }) {
   const shouldRenderNavbarAndFooter = Component.requireNavbarAndFooter;
   return (
     <>
-      {shouldRenderNavbarAndFooter && <NavBar />}
+      {/* {shouldRenderNavbarAndFooter && <NavBar />} */}
       <Component {...pageProps} />
-      {shouldRenderNavbarAndFooter && <Footer />}
+      {/* {shouldRenderNavbarAndFooter && <Footer />} */}
     </>
   );
 }
