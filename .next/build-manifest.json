@@ -1,34 +1,152 @@
 {
   "polyfillFiles": [
-    "static/chunks/polyfills.js"
+    "static/chunks/polyfills-c67a75d1b6f99dc8.js"
   ],
-  "devFiles": [
-    "static/chunks/react-refresh.js"
-  ],
-  "ampDevFiles": [
-    "static/chunks/webpack.js",
-    "static/chunks/amp.js"
-  ],
+  "devFiles": [],
+  "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/development/_buildManifest.js",
-    "static/development/_ssgManifest.js"
+    "static/x5d7JasIr2nYmDowvle-X/_buildManifest.js",
+    "static/x5d7JasIr2nYmDowvle-X/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
     "/": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/index.js"
+      "static/chunks/webpack-c4acd79e87956a0e.js",
+      "static/chunks/framework-2c79e2a64abdb08b.js",
+      "static/chunks/main-0ecb9ccfcb6c9b24.js",
+      "static/chunks/335-594be137209a36cd.js",
+      "static/chunks/675-776579f876d79137.js",
+      "static/chunks/389-a8fea1a6007ee67f.js",
+      "static/chunks/749-d8bf7a8431d11593.js",
+      "static/chunks/52-62bd13bbc22e646b.js",
+      "static/chunks/321-19c4108ba128afef.js",
+      "static/chunks/755-e079eff7b724c237.js",
+      "static/chunks/232-72b21b627df13fb0.js",
+      "static/chunks/203-42b5ff89fa2008bd.js",
+      "static/chunks/468-146428a47828d409.js",
+      "static/chunks/168-54ce81336dd4e343.js",
+      "static/chunks/680-517a3db06016deaf.js",
+      "static/chunks/115-2dc9365ea4d392c4.js",
+      "static/chunks/689-661421524f8c56fe.js",
+      "static/css/c20d03edad39a928.css",
+      "static/chunks/pages/index-e68e16b1a9f140cc.js"
+    ],
+    "/404": [
+      "static/chunks/webpack-c4acd79e87956a0e.js",
+      "static/chunks/framework-2c79e2a64abdb08b.js",
+      "static/chunks/main-0ecb9ccfcb6c9b24.js",
+      "static/chunks/755-e079eff7b724c237.js",
+      "static/chunks/pages/404-80494018e25adf8b.js"
+    ],
+    "/Flipkart/Home": [
+      "static/chunks/webpack-c4acd79e87956a0e.js",
+      "static/chunks/framework-2c79e2a64abdb08b.js",
+      "static/chunks/main-0ecb9ccfcb6c9b24.js",
+      "static/chunks/335-594be137209a36cd.js",
+      "static/chunks/675-776579f876d79137.js",
+      "static/chunks/389-a8fea1a6007ee67f.js",
+      "static/chunks/52-62bd13bbc22e646b.js",
+      "static/chunks/168-54ce81336dd4e343.js",
+      "static/css/c05b859860c9dacd.css",
+      "static/chunks/pages/Flipkart/Home-f0b7740486e1259b.js"
+    ],
+    "/Introduction": [
+      "static/chunks/webpack-c4acd79e87956a0e.js",
+      "static/chunks/framework-2c79e2a64abdb08b.js",
+      "static/chunks/main-0ecb9ccfcb6c9b24.js",
+      "static/chunks/675-776579f876d79137.js",
+      "static/chunks/pages/Introduction-3e83095d26203f5f.js"
+    ],
+    "/Portfolio/About": [
+      "static/chunks/webpack-c4acd79e87956a0e.js",
+      "static/chunks/framework-2c79e2a64abdb08b.js",
+      "static/chunks/main-0ecb9ccfcb6c9b24.js",
+      "static/chunks/335-594be137209a36cd.js",
+      "static/chunks/389-a8fea1a6007ee67f.js",
+      "static/chunks/749-d8bf7a8431d11593.js",
+      "static/chunks/52-62bd13bbc22e646b.js",
+      "static/chunks/321-19c4108ba128afef.js",
+      "static/chunks/755-e079eff7b724c237.js",
+      "static/chunks/203-42b5ff89fa2008bd.js",
+      "static/chunks/680-517a3db06016deaf.js",
+      "static/chunks/pages/Portfolio/About-974eadb69a0c7377.js"
+    ],
+    "/Portfolio/Experience": [
+      "static/chunks/webpack-c4acd79e87956a0e.js",
+      "static/chunks/framework-2c79e2a64abdb08b.js",
+      "static/chunks/main-0ecb9ccfcb6c9b24.js",
+      "static/chunks/335-594be137209a36cd.js",
+      "static/chunks/675-776579f876d79137.js",
+      "static/chunks/749-d8bf7a8431d11593.js",
+      "static/chunks/468-146428a47828d409.js",
+      "static/css/834d190ecfcbdf53.css",
+      "static/chunks/pages/Portfolio/Experience-06b339f5350bb00c.js"
+    ],
+    "/Portfolio/Footer": [
+      "static/chunks/webpack-c4acd79e87956a0e.js",
+      "static/chunks/framework-2c79e2a64abdb08b.js",
+      "static/chunks/main-0ecb9ccfcb6c9b24.js",
+      "static/chunks/pages/Portfolio/Footer-d895ad1e0bc744f4.js"
+    ],
+    "/Portfolio/Home": [
+      "static/chunks/webpack-c4acd79e87956a0e.js",
+      "static/chunks/framework-2c79e2a64abdb08b.js",
+      "static/chunks/main-0ecb9ccfcb6c9b24.js",
+      "static/chunks/335-594be137209a36cd.js",
+      "static/chunks/675-776579f876d79137.js",
+      "static/chunks/389-a8fea1a6007ee67f.js",
+      "static/chunks/749-d8bf7a8431d11593.js",
+      "static/chunks/52-62bd13bbc22e646b.js",
+      "static/chunks/321-19c4108ba128afef.js",
+      "static/chunks/755-e079eff7b724c237.js",
+      "static/chunks/232-72b21b627df13fb0.js",
+      "static/chunks/203-42b5ff89fa2008bd.js",
+      "static/chunks/468-146428a47828d409.js",
+      "static/chunks/680-517a3db06016deaf.js",
+      "static/chunks/115-2dc9365ea4d392c4.js",
+      "static/chunks/689-661421524f8c56fe.js",
+      "static/css/c66757e1caad965d.css",
+      "static/chunks/pages/Portfolio/Home-8bb1610640d98eba.js"
+    ],
+    "/Portfolio/NavBar": [
+      "static/chunks/webpack-c4acd79e87956a0e.js",
+      "static/chunks/framework-2c79e2a64abdb08b.js",
+      "static/chunks/main-0ecb9ccfcb6c9b24.js",
+      "static/chunks/pages/Portfolio/NavBar-6b2de66cef5e5c28.js"
+    ],
+    "/Portfolio/Project": [
+      "static/chunks/webpack-c4acd79e87956a0e.js",
+      "static/chunks/framework-2c79e2a64abdb08b.js",
+      "static/chunks/main-0ecb9ccfcb6c9b24.js",
+      "static/chunks/335-594be137209a36cd.js",
+      "static/chunks/675-776579f876d79137.js",
+      "static/chunks/389-a8fea1a6007ee67f.js",
+      "static/chunks/749-d8bf7a8431d11593.js",
+      "static/chunks/321-19c4108ba128afef.js",
+      "static/chunks/115-2dc9365ea4d392c4.js",
+      "static/css/d6913c9d3db8f14b.css",
+      "static/chunks/pages/Portfolio/Project-36f9794decf72416.js"
+    ],
+    "/Portfolio/SideNavBar": [
+      "static/chunks/webpack-c4acd79e87956a0e.js",
+      "static/chunks/framework-2c79e2a64abdb08b.js",
+      "static/chunks/main-0ecb9ccfcb6c9b24.js",
+      "static/chunks/335-594be137209a36cd.js",
+      "static/chunks/232-72b21b627df13fb0.js",
+      "static/chunks/pages/Portfolio/SideNavBar-21d0ef72a24bd413.js"
     ],
     "/_app": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/_app.js"
+      "static/chunks/webpack-c4acd79e87956a0e.js",
+      "static/chunks/framework-2c79e2a64abdb08b.js",
+      "static/chunks/main-0ecb9ccfcb6c9b24.js",
+      "static/css/2e699f306b42fb08.css",
+      "static/chunks/pages/_app-fded8756cb4633bd.js"
     ],
     "/_error": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/_error.js"
+      "static/chunks/webpack-c4acd79e87956a0e.js",
+      "static/chunks/framework-2c79e2a64abdb08b.js",
+      "static/chunks/main-0ecb9ccfcb6c9b24.js",
+      "static/chunks/pages/_error-54de1933a164a1ff.js"
     ]
   },
   "ampFirstPages": []

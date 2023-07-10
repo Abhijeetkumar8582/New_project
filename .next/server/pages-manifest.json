@@ -1,6 +1,17 @@
 {
   "/_app": "pages/_app.js",
+  "/404": "pages/404.html",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js"
+  "/Introduction": "pages/Introduction.html",
+  "/Flipkart/Home": "pages/Flipkart/Home.html",
+  "/Portfolio/Experience": "pages/Portfolio/Experience.html",
+  "/Portfolio/About": "pages/Portfolio/About.html",
+  "/Portfolio/Footer": "pages/Portfolio/Footer.html",
+  "/Portfolio/NavBar": "pages/Portfolio/NavBar.html",
+  "/Portfolio/Project": "pages/Portfolio/Project.html",
+  "/Portfolio/Home": "pages/Portfolio/Home.html",
+  "/Portfolio/SideNavBar": "pages/Portfolio/SideNavBar.html",
+  "/api/hello": "pages/api/hello.js",
+  "/": "pages/index.html"
 }
