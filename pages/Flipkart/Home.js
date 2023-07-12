@@ -2,15 +2,13 @@ import React, { useState } from "react";
 import Style from "/styles/Flipkart.module.css";
 import Image from "next/image";
 import TextField from "@mui/material/TextField";
-// import * as React from 'react';
+import { useRouter } from 'next/router';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 
 
 function Home() {
-
+  const router = useRouter();
   const style = {
     position: 'absolute',
     top: '50%',
@@ -52,8 +50,9 @@ function Home() {
     setUserName(e.target.value)
   }
 
-  const Login=()=>{
-    
+  const handleLogin=()=>{
+    console.log('test')
+    router.push("/Flipkart/MainPage")
   }
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
@@ -72,7 +71,7 @@ function Home() {
             </div>
           </div>
           <div>
-            <h4> Get instant access to your comprehensive portfolio, </h4>
+            <h4> Explore a diverse range of my work, highlighting my skills, projects, and achievements.</h4>
           </div>
           <div className={Style.givenName}>
             <p>Login to your Account</p>
@@ -102,7 +101,7 @@ function Home() {
             </div>
           </div>
           <div>
-            <button className={`${Style.custombtn} ${Style.btn2}`} onClick={Login}>Login</button>
+            <button className={`${Style.custombtn} ${Style.btn2}`} onClick={handleLogin}>Login</button>
           </div>
           <div>
             <p>Don't know Name ? <button className={Style.forgetNameBTn} onClick={handleOpen} ><p> <span style={{ color: 'red', fontWeight: '500', fontSize: '15px' }} >Generate One</span></p></button></p>

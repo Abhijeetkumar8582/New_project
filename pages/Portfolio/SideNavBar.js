@@ -21,7 +21,7 @@ function SideNavBar() {
         <title>Home</title>
       </Head>
 
-      <div style={{ position: "fixed" }}>
+      <div style={{ position: "fixed",zIndex:'1' }}>
         <div data-aos="fade-up">
 
           <div className='d-flex flex-column' style={{ top: "15%" }} >
