@@ -18,7 +18,6 @@ function Project() {
         AOS.init({ duration: 2000 })
     })
     const handleClick = (event) => {
-        console.log(event)
         window.open(event, '_blank');
     }
     return (

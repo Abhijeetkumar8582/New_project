@@ -344,7 +344,6 @@
 }
 
 .pincodeCheckText {
-  border-bottom: 2px solid #2874f0;
   font-size: 15px;
 }
 .letsTalkBtn{
@@ -359,7 +358,7 @@
 }
 .aboutmeText{
   font-size: 24px;
-    /* padding: 32px 0 32px 24px; */
+  font-family: monospace;
     font-weight: 500;
 }
 .experienceJsonmaindiv{
@@ -388,8 +387,146 @@
   border-bottom: 2px solid gray;
   padding: 20px 0px;
 }
+.projectDiv {
+  background: rgb(255, 255, 255);
+  padding: 15px;
+  margin-top: 10px;
+margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1900px; 
+}
+
+.projectDivItem {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+  padding: 10px;
+  margin: 0px 5px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  flex-shrink: 0; /* Add this line to prevent shrinking */
+}
+.projectDivItemcontent{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.LicensesmainDivitemcontent{
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 10px;
+}
+.viewProjectBtn{
+  padding: 8px 16px;
+    font-size: 14px;
+    text-transform: capitalize;
+    box-shadow: none;
+    background: #2874f0;
+    color: rgb(255, 255, 255);
+    font-size: medium;
+    font-weight: 500;
+    border: none;
+    max-width: 200px;
+}
+.projectdivtext{
+  margin-bottom: 10px;
+}
+.AchievementsMainDiv{
+  background: rgb(255, 255, 255);
+  /* padding: 15px; */
+  margin-top: 10px;
+margin-bottom: 10px;
+}
+.AchievementsdivText{
+  margin-bottom: 10px;
+}
+.headingtext{
+  font-family: monospace;
+}
+.LicensesmainDiv{
+  background: rgb(255, 255, 255);
+  /* padding: 15px; */
+  margin-top: 10px;
+margin-bottom: 10px;
+}
+.Licensesmaindiv_map{
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+}
+.LicensesmainDivitem{
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  padding: 10px;
+  margin: 0px 5px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  flex-shrink: 0; 
+}
+.Contentjustify{
+  text-align: justify;
+}
 @media only screen and (max-width: 750px) {
   .subNavbarText {
     font-size: 12px;
   }
+  .flipkartMainBox{
+    flex-direction: column;
+  }
+  .flipkartMainBox_Image{
+    width: 100%;
+    flex-direction: column;
+  }
+  .flipkartMainBox_Content{
+    width: 100%;
+  }
+  .flipkartMainboxImage_subimage{
+    order: 1;
+    flex-direction: row;
+    display: flex;
+    width: 100%;
+  }
+  .flipkartMainboxImage_Mainimage{
+    width: 100%;
+  }
+  .Contentjustify{
+    text-align: justify;
+  }
+}
+
+.pincodebtn{
+  background: white;
+    border: none;
+    border-bottom: 2px solid #2874f0;
+}
+.fafaicongithub {
+  margin: 0px 50px;
+}
+.fafaiconisntagram{
+  margin: 0px 50px;
+}
+.fafaiconemail{
+  margin: 0px 50px;
+}
+.fafaicongithub:hover{
+color: rgb(67, 98, 255);
+transform: translateY(-5px);
+cursor: pointer;
+}
+.fafaiconisntagram:hover{
+  color: rgb(255, 158, 67);
+transform: translateY(-5px);
+cursor: pointer;
+}
+.fafaiconemail:hover{
+  color: rgb(255, 67, 67);
+transform: translateY(-5px);
+cursor: pointer;
 }

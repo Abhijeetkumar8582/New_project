@@ -129,9 +129,9 @@ function Home() {
         >
           <Box sx={style}>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <div class={Style.avatar}>
+              <div className={Style.avatar}>
                 {/* <!-- Avatar image --> */}
-                <img class={Style.avatar__image} src={getAvatar} />
+                <img className={Style.avatar__image} src={getAvatar} />
               </div>
               <div>
                 <h4>{getUserName}</h4>
