@@ -13,7 +13,7 @@ function FlipkartNavBar() {
         <>
          <nav className="navbar navbar-expand-lg bg-body-tertiary" style={{ backgroundColor: '#2874f0', color: 'white' }}>
     <div className="container-fluid">
-        <a className="navbar-brand" href="#" style={{ color: 'white' }}>Navbar</a>
+        <a className="navbar-brand" href="#" style={{ color: 'white' }}>Abhijeet Kumar</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
         </button>
@@ -43,17 +43,6 @@ function FlipkartNavBar() {
         <button className={`${Style.custombtn} ${Style.btn12}`}><span>Click!</span><span><i className="fa fa-cloud-download" aria-hidden="true"></i>Read More</span></button>
     </div>
 </nav>
-        <div className={Style.SubNavbar}>
-           <h6 className={Style.subNavbarText}>About Me</h6>
-           {/* <h6 className={Style.subNavbarText}>Eduction</h6> */}
-           <h6 className={Style.subNavbarText}>Experience</h6>
-           <h6 className={Style.subNavbarText}>Projects</h6>
-           <h6 className={Style.subNavbarText}>Achievements</h6>
-           {/* <h6 className={Style.subNavbarText}>Current Responsiblites</h6> */}
-           <h6 className={Style.subNavbarText}>Licenses/Certifications</h6>
-           
-           
-        </div>
 
         </>
     )

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useMemo, useCallback,useRef } from 'react'
 import About from '../Portfolio/About';
 import Image from 'next/legacy/image'
 import FlipkartNavBar from './FlipkartNavBar'
@@ -13,6 +13,8 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import Button from '@mui/material/Button';
+import Popover from '@mui/material/Popover';
+import Typography from '@mui/material/Typography';
 
 
 function MainPage() {
@@ -20,23 +22,23 @@ function MainPage() {
     const [validPincode, setvalidPincode] = useState(false)
     const [pincodeentered, setpincodeentered] = useState(false)
     const [valuefield, setvaluefield] = useState('')
-    const handleClick = (event) => {
-        console.log(event)
+    const [mainImageUrl, setMainImageUrl] = useState('/Image/AbhiFlipkart.png');
+    const handleClick = useCallback((event) => {
         window.open(event, '_blank');
-    }
+    }, [])
     const [open, setOpen] = useState({});
-    const handleClickOpen = (tittle) => {
+    const handleClickOpen = useCallback((tittle) => {
         setOpen({ ...open, [tittle]: true });
 
-    };
+    }, [setOpen]);
 
-    const handleClose = (tittle) => {
+    const handleClose = useCallback((tittle) => {
         setOpen({ ...open, [tittle]: false });
         var card_css_hover = document.querySelectorAll('.card')
         card_css_hover.forEach(function (card) {
             card.classList.remove('hover')
         })
-    };
+    }, [setOpen]);
     const onPincodeEntered = (e) => {
         let value = e.target.value;
         if (!isNaN(value)) {
@@ -48,35 +50,74 @@ function MainPage() {
             }
         }
     }
-    const pincodeserver =[700122,560078,560076]
-    const onPincodeEnteredFunction=()=>{
-        if(valuefield.length==6){
-            if(pincodeserver.includes(Number(valuefield))){
-               console.log(true) 
-            setvalidPincode(true)
-            setpincodeentered(true)
+    const pincodeserver = [700122, 560078, 560076]
+    const onPincodeEnteredFunction = () => {
+        if (valuefield.length == 6) {
+            if (pincodeserver.includes(Number(valuefield))) {
+                console.log(true)
+                setvalidPincode(true)
+                setpincodeentered(true)
             }
-            else{
-                console.log(false) 
+            else {
+                console.log(false)
                 setpincodeentered(true)
                 setvalidPincode(false)
             }
         }
     }
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const handleClickQuestion = useCallback((event) => {
+        setAnchorEl(event.currentTarget);
+    }, [setAnchorEl]);
+
+    const handleCloseQuestion = useCallback(() => {
+        setAnchorEl(null);
+    }, [setAnchorEl]);
+
+    const openquestion = Boolean(anchorEl);
+    const id = open ? 'simple-popover' : undefined;
+    const handleImageHover = useCallback((newImageUrl) => {
+        setMainImageUrl(newImageUrl);
+    });
+    const aboutRef = useRef(null);
+  const experienceRef = useRef(null);
+  const projectsRef = useRef(null);
+  const achievementsRef = useRef(null);
+  const licensesRef = useRef(null);
+
+  const scrollBtn = (ref) => {
+    if (ref && ref.current) {
+      ref.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  
     return (
 
         <div>
             <FlipkartNavBar />
+
+
+            <div className={Style.SubNavbar}>
+                <h6 className={Style.subNavbarText}  onClick={() => scrollBtn(aboutRef)}>About Me</h6>
+                <h6 className={Style.subNavbarText}  onClick={() => {scrollBtn(experienceRef);  setshowExpirenceDiv(true);}} >Experience</h6>
+                <h6 className={Style.subNavbarText}  onClick={() => scrollBtn(projectsRef)} >Projects</h6>
+                <h6 className={Style.subNavbarText}  onClick={() => scrollBtn(achievementsRef)} >Achievements</h6>
+                <h6 className={Style.subNavbarText}  onClick={() => scrollBtn(licensesRef)} >Licenses/Certifications</h6>
+            </div>
+
+
             <div style={{ padding: '10px' }}>
                 <div className={Style.flipkartMainBox}>
                     <div className={Style.flipkartMainBox_Image}>
                         <div className={Style.flipkartMainboxImage_subimage}>
-                            <div className={Style.flipkartMainboxImage_subimage_Box}><img style={{ width: '100%' }} src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' /></div>
-                            <div className={Style.flipkartMainboxImage_subimage_Box}><img style={{ width: '100%' }} src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' /></div>
-                            <div className={Style.flipkartMainboxImage_subimage_Box}><img style={{ width: '100%' }} src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' /></div>
-                            <div className={Style.flipkartMainboxImage_subimage_Box}><img style={{ width: '100%' }} src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' /></div>
+                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/AbhiFlipkart.png')}><img style={{ width: '100%' }} src='/Image/AbhiFlipkart.png' /></div>
+                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('https://img.freepik.com/free-vector/man-works-home-with-laptop-prevent-virus-infection_1150-34980.jpg?w=1380&t=st=1689398758~exp=1689399358~hmac=06b4a1c45813249b2dc6cb41b2c6365b575130843b6a359b18a93111e5b4a7a5')}><img style={{ width: '100%' }} src='https://img.freepik.com/free-vector/man-works-home-with-laptop-prevent-virus-infection_1150-34980.jpg?w=1380&t=st=1689398758~exp=1689399358~hmac=06b4a1c45813249b2dc6cb41b2c6365b575130843b6a359b18a93111e5b4a7a5' /></div>
+                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('https://img.freepik.com/premium-vector/creative-abstract-saas-illustration_52683-79843.jpg?w=1800')}><img style={{ width: '100%' }} src='https://img.freepik.com/premium-vector/creative-abstract-saas-illustration_52683-79843.jpg?w=1800' /></div>
+                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('https://cdn-icons-png.flaticon.com/512/1831/1831655.png')}><img style={{ width: '100%' }} src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' /></div>
                         </div>
-                        <div className={Style.flipkartMainboxImage_Mainimage}><img style={{ width: '100%' }} src="/Image/AbhiFlipkart.png" /></div>
+                        <div className={Style.flipkartMainboxImage_Mainimage}><img style={{ width: '100%' }} src={mainImageUrl} /></div>
                     </div>
                     <div className={Style.flipkartMainBox_Content}>
                         <div>
@@ -85,7 +126,7 @@ function MainPage() {
                         <div style={{ marginBottom: '15px' }}>
                             <h3>Abhijeet kumar</h3>
                         </div>
-                        <div style={{ display: 'flex', marginBottom: '10px', alignItems: 'center' }}>
+                        <div className={Style.ratingDiv}>
                             <div className={Style.ratingItem}><i className="fa fa-star" aria-hidden="true"></i><span>4.17</span></div>
                             <div>
                                 <span> 578 ratings and 614 reviews   </span>
@@ -93,25 +134,36 @@ function MainPage() {
                         </div>
                         <div>
                             <h6>Available offers</h6>
-
-                            <div style={{ margin: '2px' }}> <img src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' style={{ maxWidth: '20px', margin: '0px 5px' }} /><span>Experience my passion for creativity and innovation through an engaging portfolio.</span></div>
-                            <div style={{ margin: '2px' }}> <img src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' style={{ maxWidth: '20px', margin: '0px 5px' }} /><span>Discover my specialization through a curated selection of my best work.</span></div>
-                            <div style={{ margin: '2px' }}> <img src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' style={{ maxWidth: '20px', margin: '0px 5px' }} /><span>See how I've helped clients achieve their goals through my portfolio solutions.</span></div>
-                            {/* <div style={{margin: '2px'}}> <img src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' style={{maxWidth: '20px',margin:'0px 5px'}}/><span>Special PriceGet at flat ₹279</span></div> */}
+                            <div className={Style.Available_offers_div}> <img src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' className={Style.Available_offers_div_img} /><span>Experience my passion for creativity and innovation through an engaging portfolio.</span></div>
+                            <div className={Style.Available_offers_div}> <img src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' className={Style.Available_offers_div_img} /><span>Discover my specialization through a curated selection of my best work.</span></div>
+                            <div className={Style.Available_offers_div}> <img src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' className={Style.Available_offers_div_img} /><span>See how I've helped clients achieve their goals through my portfolio solutions.</span></div>
                         </div>
                         <div style={{ marginBottom: '50px' }}>
-                            <div style={{ margin: '20px 0px 5px' }}><i className="fa fa-map-marker" aria-hidden="true"></i><span> Please enter pincode</span></div>
+                            <div style={{ margin: '20px 0px 5px' }}><i className="fa fa-map-marker" style={{color:'red'}} aria-hidden="true"></i><span> Please enter pincode</span></div>
                             <div style={{ display: 'inline-flex' }}>
                                 <input className={Style.pincodeInput} value={valuefield} onChange={(e) => onPincodeEntered(e)} />
                                 <button className={Style.pincodebtn} onClick={onPincodeEnteredFunction}><span className={Style.pincodeCheckText}>Check</span></button>
 
                             </div>
-                            {pincodeentered ? (<div>{validPincode ? <p>Work from office is possible</p> : <p>Remote Work only</p>}</div>) : null}
+
+                            {pincodeentered ? (<div>{validPincode ? <p>Work from office is possible</p> : <p>Remote Work only <i onClick={handleClickQuestion} class="fa fa-question-circle" aria-hidden="true"></i></p>}</div>) : null}
+                            <Popover
+                                id={id}
+                                open={openquestion}
+                                anchorEl={anchorEl}
+                                onClose={handleCloseQuestion}
+                                anchorOrigin={{
+                                    vertical: 'bottom',
+                                    horizontal: 'left',
+                                }}
+                            >
+                                <Typography sx={{ p: 2 }}>The content of the Popover.</Typography>
+                            </Popover>
                         </div>
                         <div style={{ maxWidth: '250px', marginBottom: '30px' }}>
                             <button className={Style.letsTalkBtn}>let's have a chat</button>
                         </div>
-                        <div>
+                        <div ref={aboutRef}>
                             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                                 <h4 className={Style.aboutmeText}>About Me</h4>
                             </div>
@@ -122,16 +174,16 @@ function MainPage() {
                             </div>
                         </div>
 
-                        <div>
-                            <div className={Style.divboxHeading}>
+                        <div ref={experienceRef}>
+                            <div className={Style.divboxHeading} onClick={() => showExpirenceDiv ? setshowExpirenceDiv(false) : setshowExpirenceDiv(true)} >
                                 <h4 className={Style.aboutmeText}>Experience</h4>
                                 <button className={Style.showdivBtn} onClick={() => showExpirenceDiv ? setshowExpirenceDiv(false) : setshowExpirenceDiv(true)}>{showExpirenceDiv ? (<i className="fa fa-minus" aria-hidden="true"></i>) : (<i className="fa fa-plus" aria-hidden="true"></i>)}</button>
                             </div>
                             {showExpirenceDiv ? (<div>
                                 {experienceJson.map((element, i) => (
                                     <div className={Style.experienceJsonmaindiv} key={i}>
-                                        <div style={{ width: '10%', display: 'flex', alignItems: 'center' }}>
-                                            <img style={{ maxWidth: '50px' }} src={element.logo} />
+                                        <div className={Style.experienceJsonImageDiv}>
+                                            <img style={{ width: "100%" }} src={element.logo} />
                                         </div>
                                         <div className={Style.experienceJsondiv}>
                                             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -152,7 +204,7 @@ function MainPage() {
                 <div style={{ background: 'white', marginTop: '15px' }}>
                     <div style={{ display: "flex", justifyContent: "space-evenly", flexWrap: 'wrap' }}>
                         {AboutmeSkills.map((element, i) => (
-                            <div style={{ display: 'flex', flexDirection: 'row', padding: '10px' }} key={i}>
+                            <div className={Style.Skills_sub_div} key={i}>
                                 <div><img src={element.logo} style={{ maxWidth: '60px', margin: '0px 5px' }} /></div>
                                 <div style={{ display: 'flex', alignItems: 'center' }}>{element.skills}</div>
                             </div>
@@ -160,7 +212,7 @@ function MainPage() {
                     </div>
                 </div>
 
-                <div className={Style.projectDiv}>
+                <div className={Style.projectDiv} ref={projectsRef} >
                     <div className={`${Style.projectdivtext} ${Style.headingtext}`}>
                         <h4>You might be interested in my Projects</h4>
                     </div>
@@ -179,7 +231,7 @@ function MainPage() {
                     </div>
                 </div>
 
-                <div className={Style.AchievementsMainDiv}>
+                <div className={Style.AchievementsMainDiv} ref={achievementsRef}>
                     <div style={{ padding: '15px', background: 'white' }}>
                         <div className={`${Style.AchievementsdivText} ${Style.headingtext}`}>
                             <h4>Recent Achievements</h4>
@@ -190,7 +242,7 @@ function MainPage() {
                     </div>
                 </div>
 
-                <div className={Style.LicensesmainDiv}>
+                <div className={Style.LicensesmainDiv} ref={licensesRef}>
                     <div style={{ padding: '15px', background: 'white' }}>
                         <div className={`${Style.AchievementsdivText} ${Style.headingtext}`}  >
                             <h4>Frequently got Licenses/Certifications</h4>
@@ -209,7 +261,6 @@ function MainPage() {
                                         sx={{ width: "100%" }}
                                         open={open[element.tittle] || false}
                                         onClose={() => handleClose(element.tittle)}
-                                        // onExited={() => handleClose(element.tittle)}
                                         maxWidth="xl"
                                     >
                                         <DialogTitle>{element.tittle}</DialogTitle>
