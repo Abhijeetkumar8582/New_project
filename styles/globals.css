@@ -292,6 +292,9 @@ body {
     .footer-text {
         font-size: revert;
     }
+    .nav-item{
+        display: none;
+    }
 }
 
 @media (max-width: 1200px) {

@@ -35,6 +35,7 @@ function Home() {
   const handleClose = () => setOpen(false);
   const [getAvatar, setAvatar] = useState('')
   const [getUserName, setUserName] = useState('')
+  const [error, throwError] = useState(false)
 
 
   const generateName = () => {
@@ -50,9 +51,12 @@ function Home() {
     setUserName(e.target.value)
   }
 
-  const handleLogin=()=>{
-    console.log('test')
-    router.push("/Flipkart/MainPage")
+  const handleLogin = () => {
+    if (getUserName.length === 0) {
+      throwError(true)
+    } else {
+      router.push("/Flipkart/MainPage")
+    }
   }
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
@@ -74,11 +78,14 @@ function Home() {
             <h4> Explore a diverse range of my work, highlighting my skills, projects, and achievements.</h4>
           </div>
           <div className={Style.givenName}>
-            <p>Login to your Account</p>
+            <p>Let's know each other</p>
           </div>
           <div className={Style.textInputDIv} >
             <TextField id="standard-basic"
-              style={{ width: '100%' }} label="Name" value={getUserName}
+              style={{ width: '100%' }}
+              label={error ? "Please enter your Name or Generate one" : "Name"}
+              value={getUserName}
+              error={error}
               onChange={(e) => UserNameInput(e)}
               required
               variant="standard" />
@@ -110,7 +117,7 @@ function Home() {
 
         <div className={Style.flipkartBox_two}>
           <div style={{ margin: '50px', color: 'white', }}>
-            <p >Get access to your Orders, Wishlist and Recommendations Hover us and enjoy the satisfying neumorphic animation designs!</p>
+            <p >I invite you to explore my portfolio and share any feedback or suggestions you may have. Your input is valuable in helping me improve it!</p>
           </div>
           <div className={Style.flipkartBox_two_Div_image} >
             <img className={Style.flipkartBox_two_image} src="/flipkart/Flipkart_div_image.webp" style={{ width: '100%' }} />

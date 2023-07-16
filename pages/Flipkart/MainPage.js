@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback,useRef } from 'react'
+import React, { useState, useMemo, useCallback, useRef } from 'react'
 import About from '../Portfolio/About';
 import Image from 'next/legacy/image'
 import FlipkartNavBar from './FlipkartNavBar'
@@ -81,18 +81,18 @@ function MainPage() {
         setMainImageUrl(newImageUrl);
     });
     const aboutRef = useRef(null);
-  const experienceRef = useRef(null);
-  const projectsRef = useRef(null);
-  const achievementsRef = useRef(null);
-  const licensesRef = useRef(null);
+    const experienceRef = useRef(null);
+    const projectsRef = useRef(null);
+    const achievementsRef = useRef(null);
+    const licensesRef = useRef(null);
 
-  const scrollBtn = (ref) => {
-    if (ref && ref.current) {
-      ref.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+    const scrollBtn = (ref) => {
+        if (ref && ref.current) {
+            ref.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
-  
+
     return (
 
         <div>
@@ -100,11 +100,11 @@ function MainPage() {
 
 
             <div className={Style.SubNavbar}>
-                <h6 className={Style.subNavbarText}  onClick={() => scrollBtn(aboutRef)}>About Me</h6>
-                <h6 className={Style.subNavbarText}  onClick={() => {scrollBtn(experienceRef);  setshowExpirenceDiv(true);}} >Experience</h6>
-                <h6 className={Style.subNavbarText}  onClick={() => scrollBtn(projectsRef)} >Projects</h6>
-                <h6 className={Style.subNavbarText}  onClick={() => scrollBtn(achievementsRef)} >Achievements</h6>
-                <h6 className={Style.subNavbarText}  onClick={() => scrollBtn(licensesRef)} >Licenses/Certifications</h6>
+                <h6 className={Style.subNavbarText} onClick={() => scrollBtn(aboutRef)}>About Me</h6>
+                <h6 className={Style.subNavbarText} onClick={() => { scrollBtn(experienceRef); setshowExpirenceDiv(true); }} >Experience</h6>
+                <h6 className={Style.subNavbarText} onClick={() => scrollBtn(projectsRef)} >Projects</h6>
+                <h6 className={Style.subNavbarText} onClick={() => scrollBtn(achievementsRef)} >Achievements</h6>
+                <h6 className={Style.subNavbarText} onClick={() => scrollBtn(licensesRef)} >Licenses/Certifications</h6>
             </div>
 
 
@@ -134,12 +134,12 @@ function MainPage() {
                         </div>
                         <div>
                             <h6>Available offers</h6>
-                            <div className={Style.Available_offers_div}> <img src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' className={Style.Available_offers_div_img} /><span>Experience my passion for creativity and innovation through an engaging portfolio.</span></div>
-                            <div className={Style.Available_offers_div}> <img src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' className={Style.Available_offers_div_img} /><span>Discover my specialization through a curated selection of my best work.</span></div>
-                            <div className={Style.Available_offers_div}> <img src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' className={Style.Available_offers_div_img} /><span>See how I've helped clients achieve their goals through my portfolio solutions.</span></div>
+                            <div className={Style.Available_offers_div}> <img src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' className={Style.Available_offers_div_img} /><span className={Style.Contentjustify}>Experience my passion for creativity and innovation through an engaging portfolio.</span></div>
+                            <div className={Style.Available_offers_div}> <img src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' className={Style.Available_offers_div_img} /><span className={Style.Contentjustify}>Discover my specialization through a curated selection of my best work.</span></div>
+                            <div className={Style.Available_offers_div}> <img src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' className={Style.Available_offers_div_img} /><span className={Style.Contentjustify}>See how I've helped clients achieve their goals through my portfolio solutions.</span></div>
                         </div>
                         <div style={{ marginBottom: '50px' }}>
-                            <div style={{ margin: '20px 0px 5px' }}><i className="fa fa-map-marker" style={{color:'red'}} aria-hidden="true"></i><span> Please enter pincode</span></div>
+                            <div style={{ margin: '20px 0px 5px' }}><i className="fa fa-map-marker" style={{ color: 'red' }} aria-hidden="true"></i><span> Please enter pincode</span></div>
                             <div style={{ display: 'inline-flex' }}>
                                 <input className={Style.pincodeInput} value={valuefield} onChange={(e) => onPincodeEntered(e)} />
                                 <button className={Style.pincodebtn} onClick={onPincodeEnteredFunction}><span className={Style.pincodeCheckText}>Check</span></button>
@@ -157,7 +157,9 @@ function MainPage() {
                                     horizontal: 'left',
                                 }}
                             >
-                                <Typography sx={{ p: 2 }}>The content of the Popover.</Typography>
+                                <div style={{ maxWidth: '500px' }}>
+                                    <Typography sx={{ p: 2 }}>Please send me an email with the location where you want me to work. I am currently residing in Bangalore.</Typography>
+                                </div>
                             </Popover>
                         </div>
                         <div style={{ maxWidth: '250px', marginBottom: '30px' }}>
@@ -187,10 +189,10 @@ function MainPage() {
                                         </div>
                                         <div className={Style.experienceJsondiv}>
                                             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                                <p>{element.desginstion}</p>
+                                                <p >{element.desginstion}</p>
                                                 <p>{element.timeline}</p>
                                             </div>
-                                            <p>{element.jobRole}</p>
+                                            <p className={Style.Contentjustify}>{element.jobRole}</p>
 
                                         </div>
                                     </div>
@@ -223,7 +225,7 @@ function MainPage() {
                                 <div className={Style.projectDivItemcontent}>
                                     <h6>{element.title}</h6>
                                     <p className={Style.Contentjustify}>{element.description}</p>
-                                    <p><strong>{element.code}</strong></p>
+                                    <p className={Style.Contentjustify}><strong>{element.code}</strong></p>
                                     <button className={Style.viewProjectBtn} onClick={() => handleClick(element.button)}>View Project</button>
                                 </div>
                             </div>
@@ -253,7 +255,7 @@ function MainPage() {
                                     <div style={{ width: '30%', alignItems: 'center', display: 'flex' }}> <img src={element.logo} style={{ width: '100%', margin: '0px 0px' }} /></div>
                                     <div className={Style.LicensesmainDivitemcontent}>
                                         <div><h6>{element.tittle}</h6></div>
-                                        <div><p>{element.description}</p></div>
+                                        <div><p className={Style.Contentjustify}>{element.description}</p></div>
                                         <button className={Style.viewProjectBtn} onClick={() => handleClickOpen(element.tittle)} >View Project</button>
                                     </div>
                                     <Dialog
