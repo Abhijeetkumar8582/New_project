@@ -9,6 +9,8 @@ import projects from '../Json/Projects.json'
 import Head from 'next/head';
 import AOS from 'aos';
 import Image from 'next/image'
+import Footer from './Footer';
+import NavBar from './NavBar';
 
 
 
@@ -28,6 +30,7 @@ function Project() {
                     content="Skilled and innovative developer who's passionate about making life easier. Explore my portfolio of projects, including Omnipexel, Newsapp, and Chartext, and discover.... "
                 />
             </Head>
+            <NavBar />
             <div data-aos="zoom-in">
                 <h1 className={Style.heading}>Some Things I’ve Built</h1>
             </div>
@@ -71,9 +74,9 @@ function Project() {
                     </div>
                 ))}
             </div>
+            <Footer />
         </>
     )
 }
 
-Project.requireNavbarAndFooter = true;
 export default Project

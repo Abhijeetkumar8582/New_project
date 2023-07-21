@@ -12,6 +12,8 @@ import expItem from '../Json/Expirence.json'
 import Head from 'next/head';
 import AOS from 'aos';
 import Image from 'next/image'
+import NavBar from "./NavBar";
+import Footer from "./Footer";
 
 
 
@@ -27,7 +29,7 @@ function Experience() {
                     content="Discover the professional experiences of an eager learner who's always looking to grow.... "
                 />
             </Head>
-
+            <NavBar />
             <div data-aos="zoom-in">
                 <h1 className={Style.heading} >Where I’ve Worked</h1>
             </div>
@@ -93,10 +95,10 @@ function Experience() {
 
                 )}
             </Timeline>
+            <Footer />
         </>
     )
 }
 
-Experience.requireNavbarAndFooter = true;
 export default Experience;
 

@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react'
 import Image from 'next/legacy/image'
 import aboutJson from '../Json/AboutmeSkills.json'
@@ -11,6 +10,8 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import Head from 'next/head';
 import AOS from 'aos';
+import NavBar from './NavBar';
+import Footer from './Footer';
 
 
 
@@ -42,6 +43,7 @@ function About() {
                     content="Passionate frontend developer with an interest in web development and experience in creating chatbots for an AI startup.... "
                 />
             </Head>
+            <NavBar />
             <div data-aos="fade-right">
                 <div style={{ marginTop: "70px" }}></div>
 
@@ -140,7 +142,7 @@ function About() {
                 ))}
 
             </div>
-           
+
 
             <div data-aos="zoom-in">
                 <h1 className=' textfont text-center my-5' > Reward & Recognition</h1>
@@ -151,7 +153,7 @@ function About() {
                     <div className='box'>
 
                         <div style={{ padding: "10px" }}></div>
-                        <h4 className='rewards text-center my-3' style={{ Top: "10px", padding: "10px", color: "orange", fontFamily: "initial",textAlign:'center' }}>Yellow.ai Hackathon</h4>
+                        <h4 className='rewards text-center my-3' style={{ Top: "10px", padding: "10px", color: "orange", fontFamily: "initial", textAlign: 'center' }}>Yellow.ai Hackathon</h4>
                         <p className='rewards_text my-3 mx-3 '>I have secured the third position in the yellow.ai Hackathon by proposing an innovative use case for our organization. We came up with an idea to develop a chatbot that would allow restaurants to donate their excess food to nearby non-profit organizations. The bot would collect all the necessary information about the food, owners, and other relevant details to facilitate the process. With the help of my teammates, we were able to achieve this accomplishment, and I am incredibly proud of our efforts. <a href="https://www.credential.net/0a51513b-b774-4d73-90d1-75a96b80603e" target="_blank" style={{ color: "tomato !important " }}><strong>View Certificate</strong></a></p>
                         <div style={{ padding: "10px" }}></div>
                     </div>
@@ -159,11 +161,10 @@ function About() {
             </div>
 
 
-
+            <Footer />
         </>
     )
 }
 
-About.requireNavbarAndFooter = true;
 
 export default About

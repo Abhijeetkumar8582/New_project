@@ -7,6 +7,8 @@ import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import AOS from 'aos';
 import { useRouter } from 'next/router';
+import Footer from './Footer'
+import NavBar from './NavBar'
 
 
 
@@ -39,7 +41,7 @@ function Home() {
 
       <SideNavBar />
 
-
+      <NavBar />
 
       <div data-aos="fade-up">
         <h1 className=' textfont fontEndText text-center' >
@@ -113,11 +115,11 @@ function Home() {
         <meta property="og:site_name" content="ABHI" />
       </Head>
 
-      {/* ) */}
+
     </>
   )
 
 }
-Home.requireNavbarAndFooter = true;
+
 
 export default Home;
