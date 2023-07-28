@@ -7,16 +7,17 @@ function Home() {
     const [openAccordionIndex, setOpenAccordionIndex] = useState(-1);
     const accordionData = [
         {
-            title: 'Accordion 1',
-            content: 'Content for Accordion 1',
-        },
+            title: 'What educational background do you have in this field?',
+            content:'I have completed my B.Com degree and subsequently transitioned my career into this particular field. I am continuously engaging in learning opportunities and have plans for further studies to advance my knowledge in this domain.'
+           },
+           {
+            title: 'Are you familiar with Data Structures and Algorithms (DSA)?',
+            content: `Yes, I have started learning DSA recently. Currently, I am focusing on understanding arrays and strings in-depth. I find it challenging and exciting to explore the various problem-solving techniques.`
+          }
+          ,
         {
-            title: 'Accordion 2',
-            content: 'Content for Accordion 2',
-        },
-        {
-            title: 'Accordion 3',
-            content: 'Content for Accordion 3',
+            title: 'Have you won any awards or recognition for your work?',
+            content: 'Yes, I am proud to have secured the third position in the prestigious yellow.ai Hackathon. ',
         },
     ];
 
@@ -42,10 +43,10 @@ function Home() {
                     {/* ...................................................................................................................................*/}
                     <div>
                         <div className={Style.MainHeadingDiv}>
-                            <div className={Style.HeadingMainPage}> Unlimited movies, TV shows and more</div>
-                            <div className={Style.subHeadingMainPageOne}>Watch anywhere. Cancel anytime.</div>
+                            <div className={Style.HeadingMainPage}> Welcome to the Gateway of Creative Entertainment!</div>
+                            <div className={Style.subHeadingMainPageOne}>We believe that creativity knows no bounds.</div>
 
-                            <div className={Style.subHeadingMainPageTwo}>Ready to watch? Enter your email to create or restart your membership.</div>
+                            <div className={Style.subHeadingMainPageTwo}>I would love to connect with you, and if you're interested</div>
                         </div>
                     </div>
                     <div className={Style.HeadingMainPageInputDiv}>
@@ -53,7 +54,7 @@ function Home() {
                             <input className={Style.HeadingMainPageInputSubDivEmail} placeholder="Email address" />
                         </div>
                         <div style={{ display: "flex", justifyContent: 'center', margin: ' 0px 10px 10px 0px' }}>
-                            <button className={Style.emailIDEnteredbtn}> Get Started</button>
+                            <button className={Style.emailIDEnteredbtn}> Get Started <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 </div>
@@ -61,8 +62,8 @@ function Home() {
                 <div style={{ background: 'gray', height: '5px' }}></div>
                 <div className={Style.MainPageSectionTwo} >
                     <div className={Style.MainPageSectionTwo_subdivOne}  >
-                        <h1 className={Style.MainPageSectionTwo_subdivOne_headingOne} >Enjoy on your TV</h1>
-                        <h5 className={Style.MainPageSectionTwo_subdivOne_headingtwo}>  Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</h5>
+                        <h1 className={Style.MainPageSectionTwo_subdivOne_headingOne} >User-Friendly Interface</h1>
+                        <h5 className={Style.MainPageSectionTwo_subdivOne_headingtwo}> Cross-platform synchronization ensures that your creative journey remains uninterrupted.</h5>
                     </div>
                     <div className={Style.MainPageSectionTwo_subdivtwo} >
                         <div style={{ maxWidth: '300px' }}>
@@ -79,8 +80,8 @@ function Home() {
                         </div>
                     </div>
                     <div className={Style.MainPageSectionThree_subdivOne}  >
-                        <h1 className={Style.MainPageSectionThree_subdivOne_headingOne} >Download your shows to watch offline</h1>
-                        <h5 className={Style.MainPageSectionThree_subdivOne_headingtwo}>  Save your favourites easily and always have something to watch.</h5>
+                        <h1 className={Style.MainPageSectionThree_subdivOne_headingOne} > One Masterpiece at a Time</h1>
+                        <h5 className={Style.MainPageSectionThree_subdivOne_headingtwo}>  Project Insight: Showcasing my unique creations and unraveling your artistic journey!</h5>
                     </div>
 
                 </div>
@@ -94,7 +95,7 @@ function Home() {
                         {accordionData.map((element, i) => (
                             <div style={{ marginBottom: '10px' }} key={i}>
                                 <div className={Style.accordainSubDiv_title} >
-                                    <h3>{element.title}</h3>
+                                    <h5>{element.title}</h5>
                                     <div>
                                         {openAccordionIndex === i
                                             ? <i className="fa fa-times" onClick={() => setOpenAccordionIndex(-1)} aria-hidden="true"></i>

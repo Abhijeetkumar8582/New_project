@@ -2,7 +2,7 @@
 import Head from 'next/head'
 // import Home from './Portfolio/Home'
 // import Mainmenu from './Flipkart/Home'
-import Home from './Nextflix/Home'
+import Home from './Nextflix/Main'
 
 
  function IndexFile() {
