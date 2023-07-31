@@ -39,7 +39,8 @@ function MainPage() {
             card.classList.remove('hover')
         })
     }, [setOpen]);
-    const onPincodeEntered = (e) => {
+
+    const onPincodeEntered = useCallback((e) => {
         let value = e.target.value;
         if (!isNaN(value)) {
             if (e.nativeEvent.inputType === "deleteContentBackward") {
@@ -49,12 +50,12 @@ function MainPage() {
                 setvaluefield(value)
             }
         }
-    }
-    const pincodeserver = [700122, 560078, 560076]
-    const onPincodeEnteredFunction = () => {
+    },[setvaluefield]);
+
+    const pincodeserver = [700122, 560078, 560076];
+    const onPincodeEnteredFunction = useCallback(() => {
         if (valuefield.length == 6) {
             if (pincodeserver.includes(Number(valuefield))) {
-                console.log(true)
                 setvalidPincode(true)
                 setpincodeentered(true)
             }
@@ -64,7 +65,8 @@ function MainPage() {
                 setvalidPincode(false)
             }
         }
-    }
+    },[setvalidPincode,setpincodeentered]);
+
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const handleClickQuestion = useCallback((event) => {
@@ -79,7 +81,7 @@ function MainPage() {
     const id = open ? 'simple-popover' : undefined;
     const handleImageHover = useCallback((newImageUrl) => {
         setMainImageUrl(newImageUrl);
-    });
+    },[setMainImageUrl]);
     const aboutRef = useRef(null);
     const experienceRef = useRef(null);
     const projectsRef = useRef(null);

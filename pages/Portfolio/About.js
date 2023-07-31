@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useCallback, useEffect } from 'react'
 import Image from 'next/legacy/image'
 import aboutJson from '../Json/AboutmeSkills.json'
 import licenses from '../Json/AboutmeLicenses.json'
@@ -22,18 +22,18 @@ function About() {
     })
 
     const [open, setOpen] = useState({});
-    const handleClickOpen = (tittle) => {
+    const handleClickOpen = useCallback((tittle) => {
         setOpen({ ...open, [tittle]: true });
 
-    };
+    },[setOpen]);
 
-    const handleClose = (tittle) => {
+    const handleClose = useCallback((tittle) => {
         setOpen({ ...open, [tittle]: false });
         var card_css_hover = document.querySelectorAll('.card')
         card_css_hover.forEach(function (card) {
             card.classList.remove('hover')
         })
-    };
+    },[setOpen]);
 
     return (
         <>
