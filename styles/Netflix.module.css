@@ -8,7 +8,7 @@
 .MainPageSectionOne {
     position: relative;
     max-height: 900px;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.6) 100%), url('../public/Image/GridImageNetFlix.png');
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.6) 100%), url(../public/Image/GridImageNetFlix.png );
     background-size: contain;
     height: 100%;
 }
@@ -129,7 +129,7 @@
 
 .MainPageSectionTwo_subdivOne_headingOne {
     color: white;
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 800;
 }
 
@@ -166,7 +166,7 @@
 .MainPageSectionThree_subdivOne_headingOne {
     color: white;
     text-align: center;
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 800;
 }
 
@@ -192,7 +192,7 @@
     background: transparent;
     color: white;
     border: 1px solid white;
-    padding: 5px 70px 5px 10px;
+    padding: 15px 70px 15px 10px;
 }
 
 .MainPageSectionFour {
@@ -234,6 +234,41 @@
     padding: 1rem;
 }
 
+.headingTag {
+    font-size: 17px;
+    font-weight: 300;
+}
+
+.educationNetflix {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 4rem;
+    border-bottom: 2px solid white;
+    margin: 1rem 4rem;
+}
+
+.project_div_description {
+    font-size: 15px;
+    font-weight: 200;
+    font-family: ui-monospace;
+    color: #d8d8d8;
+}
+
+.RewardBox {
+    background-color: black;
+    display: flex;
+}
+
+.rewards_text_div {
+    margin: 1rem 4rem;
+    /* padding: 1rem 4rem; */
+}
+
+.hackathontext {
+    font-size: 15px;
+    font-weight: 200;
+}
+
 @media only screen and (max-width: 750px) {
     .AbhiFlexText {
         font-size: 2rem;
@@ -257,7 +292,7 @@
     .HeadingMainPage {
         display: flex;
         justify-content: center;
-        font-size: 2rem;
+        font-size: 1.2rem;
         font-weight: 600;
         text-align: center;
         color: white;
@@ -266,8 +301,20 @@
 
     .MainPageSectionTwo_subdivOne_headingOne {
         color: white;
-        font-size: 30px;
+        font-size: 20px;
         font-weight: 800;
+    }
+
+    .MainPageSectionThree_subdivOne_headingtwo {
+        color: white;
+        font-size: 10px;
+        font-weight: 200;
+        text-align: center;
+    }
+
+    .headingTag {
+        font-size: 15px;
+        font-weight: 200px;
     }
 
     .MainPageSectionTwo_subdivOne_headingtwo {
@@ -278,7 +325,7 @@
     }
 
     .subHeadingMainPageOne {
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: 300;
 
         text-align: center;
@@ -328,7 +375,7 @@
 
     .MainPageSectionThree_subdivOne_headingOne {
         color: white;
-        font-size: 30px;
+        font-size: 20px;
         font-weight: 800;
     }
 
@@ -342,7 +389,7 @@
 
         margin-left: 0.5rem;
         border: none;
-        padding: 0px 50px;
+        padding: 10px 30px;
         background-color: red;
         color: white;
         font-size: 12px;
@@ -359,4 +406,249 @@
         padding: 1rem;
     }
 
+    .HeadingMainPageInputSubDivEmail {
+
+        padding: 5px 50px 5px 10px;
+    }
+
+    .project_div_description {
+        font-size: 12px;
+        font-weight: 200;
+    }
+
+}
+
+/* --------------------------------------------------- */
+
+.NetfixVideoDiv_video {
+    width: 100%;
+    max-height: 500px;
+}
+
+.NetfixAboutMain_div {
+    display: flex;
+}
+
+.NetfixAboutMain_divOne {
+    width: 50%;
+    padding: 1rem 4rem
+}
+
+.NetfixAboutMain_divOne_innerDiv {
+    display: flex;
+    gap: 10px;
+}
+
+.NetfixAboutMain_divTwo {
+    width: 50%;
+    padding: 1rem 4rem
+}
+
+.ExperiencetitleDiv {
+    display: flex;
+    margin: 3px 2rem;
+    justify-content: flex-start;
+    border-bottom: 2px solid white
+}
+
+.netflixExpirenceDiv_Card_one {
+    width: 5%;
+    display: flex;
+    align-items: center;
+}
+
+.netflixExpirenceDiv_Card_three {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+
+.netflixExpirenceDiv_Card_four {
+    width: 15%;
+    display: flex;
+    align-items: center;
+}
+
+.NextflixMainHeading_div {
+    display: flex;
+    justify-content: flex-start;
+    margin: 3rem 2rem
+}
+
+.ProjectMain_div {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap
+}
+
+.ProjectMain_div_card {
+    max-width: 300px;
+    background: #444444;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px
+}
+
+.ProjectMain_div_card_image_div {
+    margin-bottom: 10px;
+}
+
+.ProjectMain_div_card_fafaIcon {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 1rem 10px
+}
+
+.ProjectMain_div_card_title {
+    padding: 0rem 1rem
+}
+
+.ProjectMain_div_card_desc_div {
+    padding: 0rem 1rem;
+    margin-bottom: 20px
+}
+
+.AboutmeLicensesMainDiv {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap
+}
+
+.AboutmeLicensesMainDiv_card {
+    max-width: 300px;
+    background: #444444;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px
+}
+
+.AboutmeLicensesMainDiv_card_imageIcon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 1rem 10px
+}
+
+.AboutmeLicensesMainDiv_card_title {
+    padding: 0rem 1rem
+}
+
+.AboutmeLicensesMainDiv_card_title_text {
+    font-size: 15px;
+}
+
+.AboutmeLicensesMainDiv_card_Desc {
+    padding: 0rem 1rem;
+    margin-bottom: 20px
+}
+
+.Reward_div {
+    display: flex;
+    margin: 2rem;
+}
+
+.Reward_div_title {
+    width: 15%;
+    color: gray
+}
+
+.Reward_div_para {
+    width: 85%;
+}
+
+.netflixExpirenceDiv_Card_Image {
+    max-width: 40px;
+}
+
+.skilltext {
+    margin: 0px 10px;
+    font-size: 15px;
+    font-weight: 200;
+}
+
+.netflixExpirenceDiv_Card_three_Desc {
+    font-size: 15px;
+    font-weight: 200;
+}
+
+.autoplayText {
+    font-size: 15px;
+    font-weight: 200;
+}
+
+@media only screen and (max-width: 750px) {
+    .NetfixAboutMain_div {
+        flex-direction: column;
+    }
+
+    .NetfixAboutMain_divOne {
+        width: 100%;
+        padding: 1rem 2rem;
+    }
+
+    .NetfixAboutMain_divTwo {
+        width: 100%;
+        padding: 1rem 2rem;
+    }
+
+    .educationNetflix {
+        display: flex;
+        padding: 1rem 1rem;
+        margin: 1rem 6px;
+    }
+
+    .netflixExpirenceDiv_Card_three_text {
+        font-size: 12px;
+    }
+
+    .netflixExpirenceDiv_Card_three {
+        width: 60%
+    }
+
+    .netflixExpirenceDiv_Card_three_Desc {
+        font-size: 10px;
+    }
+
+    .netflixExpirenceDiv_Card_Image {
+        max-width: 20px;
+    }
+
+    .netflixExpirenceDiv_Card_three_timelline {
+        font-size: 10px;
+    }
+
+    .ProjectMain_div {
+        gap: 20px;
+    }
+
+    .AboutmeLicensesMainDiv {
+        gap: 20px;
+    }
+
+    .Reward_div {
+        flex-direction: column;
+        margin: 2rem;
+    }
+
+    .Reward_div_title {
+        width: 100%;
+    }
+
+    .Reward_div_para {
+        width: 100%;
+        text-align: justify;
+    }
+
+    .NextflixMainHeading_div {
+        margin: 2rem 2rem
+    }
+
+    .mobileText {
+        font-size: 12px;
+        font-weight: 200;
+    }
 }

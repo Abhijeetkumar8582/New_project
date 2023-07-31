@@ -54,7 +54,7 @@ function Home() {
                             <input className={Style.HeadingMainPageInputSubDivEmail} placeholder="Email address" />
                         </div>
                         <div style={{ display: "flex", justifyContent: 'center', margin: ' 0px 10px 10px 0px' }}>
-                            <button className={Style.emailIDEnteredbtn}> Get Started <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                            <button className={Style.emailIDEnteredbtn}> Get Started <i className="fa fa-chevron-right" aria-hidden="true"></i></button>
                         </div>
                     </div>
                 </div>
