@@ -209,7 +209,7 @@ function MainPage() {
                     <div style={{ display: "flex", justifyContent: "space-evenly", flexWrap: 'wrap' }}>
                         {AboutmeSkills.map((element, i) => (
                             <div className={Style.Skills_sub_div} key={i}>
-                                <div><img src={element.logo} style={{ maxWidth: '60px', margin: '0px 5px' }} /></div>
+                                <div style={{display:'flex',alignItems:'center'}}><img src={element.logo} style={{ maxWidth: '60px', margin: '0px 5px' }} /></div>
                                 <div style={{ display: 'flex', alignItems: 'center' }}>{element.skills}</div>
                             </div>
                         ))}

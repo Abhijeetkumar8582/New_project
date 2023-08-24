@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import Style from "/styles/Flipkart.module.css";
 import Image from "next/image";
 import TextField from "@mui/material/TextField";
@@ -21,6 +21,8 @@ function Home() {
   };
 
   const [open, setOpen] = React.useState(false);
+  const [getUserName, setUserName] = useState("");
+  const [getAvatar, setAvatar] = useState("");
   const handleOpen = useCallback(() => {
     fetch(`https://randomuser.me/api/`)
       .then((res) => res.json())
@@ -34,8 +36,8 @@ function Home() {
   }, [setUserName, setAvatar]);
 
   const handleClose = () => setOpen(false);
-  const [getAvatar, setAvatar] = useState("");
-  const [getUserName, setUserName] = useState("");
+
+
   const [error, throwError] = useState(false);
 
   const generateName = useCallback(() => {
@@ -51,6 +53,7 @@ function Home() {
 
   const UserNameInput = useCallback(
     (e) => {
+      console.log(e.target.value)
       setUserName(e.target.value);
     },
     [setUserName]
@@ -58,11 +61,12 @@ function Home() {
 
   const handleLogin = useCallback(() => {
     if (getUserName.length === 0) {
+      console.log(getUserName)
       throwError(true);
     } else {
       router.push("/Flipkart/MainPage");
     }
-  }, [throwError]);
+  }, [throwError, getUserName]);
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div className={Style.flipkartBox}>

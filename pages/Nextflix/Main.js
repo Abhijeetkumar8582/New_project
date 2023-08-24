@@ -48,7 +48,7 @@ function Main() {
             setdisplayExpClose(true);
             setdisplayExp(experienceJson.length);
         }
-    }, [isdisplayExpOpen,setdisplayExpClose, setdisplayExp]);
+    }, [isdisplayExpOpen, setdisplayExpClose, setdisplayExp]);
 
     const displayFafaLicense = useCallback(() => {
         if (isdisplaylicenseOpen) {
@@ -58,7 +58,7 @@ function Main() {
             setdisplaylicenseOpen(true);
             setdisplaylicense(AboutmeLicenses.length);
         }
-    }, [isdisplaylicenseOpen,setdisplaylicenseOpen, setdisplaylicense]);
+    }, [isdisplaylicenseOpen, setdisplaylicenseOpen, setdisplaylicense]);
     const redirectLink = useCallback((event) => {
         window.open(event, "_blank");
     }, []);
@@ -71,7 +71,7 @@ function Main() {
             setisProjectDiv(true);
             setdisProjectDiv(AboutmeLicenses.length);
         }
-    }, [isProjectDiv,setisProjectDiv, setdisProjectDiv]);
+    }, [isProjectDiv, setisProjectDiv, setdisProjectDiv]);
 
     return (
         <>
@@ -80,9 +80,16 @@ function Main() {
                 <div className={Style.NetfixVideoDiv}>
                     <video
                         autoPlay
+                        loop
+                        muted
                         className={Style.NetfixVideoDiv_video}
-                        src="https://videos.ctfassets.net/w8fc6tgspyjz/3Wrtk4wjYnPVgyGo2W2jMu/649d7a46771615f217afad085d747b0f/header-graphic-v08-vp9.webm"
-                    />
+                    >
+                        <source
+                            src="https://cdn.yellowmessenger.com/xE3pHyYCuvLK1692878719722.mp4"
+                            type="video/mp4"
+                        />
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
 
                 <div className={Style.NetfixAboutMain_div}>

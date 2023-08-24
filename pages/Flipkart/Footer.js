@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import Style from "/styles/Flipkart.module.css";
 function Footer() {
     const url = useCallback((event) => {

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import Style from "/styles/Netflix.module.css";
 import TextField from "@mui/material/TextField";
+import { useRouter } from "next/router";
 
 function Home() {
+    const router = useRouter();
     const [openAccordionIndex, setOpenAccordionIndex] = useState(-1);
     const accordionData = [
         {
@@ -20,6 +22,9 @@ function Home() {
                 "Yes, I am proud to have secured the third position in the prestigious yellow.ai Hackathon. ",
         },
     ];
+    const redirect = () => {
+        router.push("/Nextflix/Main");
+    }
 
     return (
         <>
@@ -58,6 +63,7 @@ function Home() {
                         <div className={Style.HeadingMainPageInputSubDiv} style={{}}>
                             <input
                                 className={Style.HeadingMainPageInputSubDivEmail}
+
                                 placeholder="Email address"
                             />
                         </div>
@@ -68,7 +74,7 @@ function Home() {
                                 margin: " 0px 10px 10px 0px",
                             }}
                         >
-                            <button className={Style.emailIDEnteredbtn}>
+                            <button onClick={redirect} className={Style.emailIDEnteredbtn}>
                                 {" "}
                                 Get Started{" "}
                                 <i className="fa fa-chevron-right" aria-hidden="true"></i>

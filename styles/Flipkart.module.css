@@ -308,7 +308,8 @@
 .flipkartMainBox {
   display: flex;
   padding: 15px;
-  background-color: white
+  background-color: white;
+  /* position: relative; */
 }
 
 
@@ -316,7 +317,7 @@
   width: 40%;
   display: flex;
   padding: 15px;
-  /* position: sticky; */
+  
 }
 
 .flipkartMainBox_Content {

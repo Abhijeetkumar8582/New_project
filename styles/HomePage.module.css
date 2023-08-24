@@ -1,0 +1,142 @@
+.introPageMainDiv {
+  display: flex;
+  background: white;
+  min-height: 500px;
+  max-height: 500px;
+}
+
+.introPageMainDiv_one {
+  width: 50%;
+  display: flex;
+  padding: 10rem 4rem;
+  flex-direction: column;
+}
+
+.introPageMainDiv_two {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  font-size: 3.5rem;
+  font-family: monospace;
+}
+
+.text_name {
+  font-size: 3.5rem;
+  font-family: monospace;
+  color: orange;
+  font-weight: 500;
+}
+
+.Portfoliotext {
+  background-color: #f0f8ff;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.Portfolio_Div {
+  padding: 2rem 4rem;
+  background-color: #f0f8ff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+
+.Container_two_subdiv {
+  justify-content: center;
+  display: flex;
+  min-height: 400px;
+  background: oldlace;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 20px;
+  flex-direction: column;
+  max-width: 350px;
+  /* margin: 4rem; */
+}
+
+.Container_two_subdiv_imageDiv {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 82px;
+  color: black;
+}
+
+.Container_two_subdiv_imageDiv_image {
+  width: 100%;
+  max-width: 250px;
+  left: 50%;
+  top: 50%;
+  border-radius: 20px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.Container_two_subdiv_heading {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  color: black;
+}
+
+.Container_two_subdiv_paragraph {
+  padding: 0rem 1rem;
+  margin: 20px;
+  color: black;
+}
+.LinkWithoutUnderline {
+  text-decoration: none; 
+}
+.Portfoliotext_text{
+  font-size: 1.5rem;
+  font-family: monospace;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+@media only screen and (max-width: 750px) {
+.introPageMainDiv{
+  flex-direction: column;
+}
+.introPageMainDiv_one {
+  width: 100%;
+  display: flex;
+  padding: 1rem 2rem;
+  flex-direction: column;
+}
+.introPageMainDiv_two {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text {
+  font-size: 2.5rem;
+  font-family: monospace;
+}
+
+.text_name {
+  font-size: 2.5rem;
+  font-family: monospace;
+  color: orange;
+  font-weight: 500;
+}
+.Portfolio_Div {
+  padding: 1rem 2rem;
+  background-color: #f0f8ff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+}
