@@ -20,7 +20,7 @@ function Logo() {
   setTimeout(() => {
     if (time == 0) {
       sessionStorage.setItem('Introduction', 'Completed')
-      router.push("/")
+      router.push("/Portfolio/Home")
     }
     setTime(time - 1)
   }, 1000);
