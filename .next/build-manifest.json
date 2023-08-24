@@ -20,15 +20,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/index.js"
     ],
-    "/Introduction": [
+    "/Flipkart/Home": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/Introduction.js"
+      "static/chunks/pages/Flipkart/Home.js"
     ],
-    "/Portfolio/Home": [
+    "/Flipkart/MainPage": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/Portfolio/Home.js"
+      "static/chunks/pages/Flipkart/MainPage.js"
     ],
     "/_app": [
       "static/chunks/webpack.js",

@@ -55,8 +55,8 @@ function Home() {
           <div><h4 className={Style.Portfoliotext_text}>How would you like to view my portfolio website</h4></div>
         </div>
         <div className={Style.Portfolio_Div}>
-          {porfolio.map((element) => (
-            <Link href={element.link} className={Style.LinkWithoutUnderline} >
+          {porfolio.map((element,i) => (
+            <Link href={element.link} className={Style.LinkWithoutUnderline} key={i} >
               <div className={Style.Container_two_subdiv}>
                 <div className={Style.Container_two_subdiv_imageDiv}>
                   <img className={Style.Container_two_subdiv_imageDiv_image} src={element.image} />
