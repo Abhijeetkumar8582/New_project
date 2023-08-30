@@ -32,6 +32,8 @@
 
 .Available_offers_div {
   margin: 2px;
+  display: flex;
+  align-items: center;
 }
 
 .Available_offers_div_img {
@@ -153,23 +155,16 @@
 
 
 
-/* Modal? */
 .avatar {
-  /* Rounded border */
   border-radius: 50%;
-
-  /* Center the content */
   align-items: center;
   display: flex;
   justify-content: center;
-
-  /* Size */
   height: 5rem;
   width: 5rem;
 }
 
 .avatar__image {
-  /* Size */
   border-radius: 50%;
   height: 50%;
   width: 50%;
@@ -317,7 +312,7 @@
   width: 40%;
   display: flex;
   padding: 15px;
-  
+
 }
 
 .flipkartMainBox_Content {
@@ -340,7 +335,6 @@
 
 .flipkartMainboxImage_subimage_Box {
   width: 100%;
-  /* border: 2px solid; */
   padding: 10px;
   margin-bottom: 10px;
 }
@@ -375,6 +369,7 @@
 
 .letsTalkBtn {
   padding: 18px 8px;
+  font-weight: 400;
   border-radius: 2px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
   width: 98%;
@@ -572,7 +567,7 @@
     padding: 10px;
   }
 
-  
+
 }
 
 .flipkartMainboxImage_subimage_Box:hover {

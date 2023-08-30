@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useCallback, useRef } from 'react'
 import About from '../Portfolio/About';
+import Head from 'next/head';
 import Image from 'next/legacy/image'
 import FlipkartNavBar from './FlipkartNavBar'
 import Style from "/styles/Flipkart.module.css";
@@ -22,7 +23,7 @@ function MainPage() {
     const [validPincode, setvalidPincode] = useState(false)
     const [pincodeentered, setpincodeentered] = useState(false)
     const [valuefield, setvaluefield] = useState('')
-    const [mainImageUrl, setMainImageUrl] = useState('/Image/AbhiFlipkart.png');
+    const [mainImageUrl, setMainImageUrl] = useState('/Image/AbhiFlipkart.webp');
     const handleClick = useCallback((event) => {
         window.open(event, '_blank');
     }, [])
@@ -30,7 +31,7 @@ function MainPage() {
     const handleClickOpen = useCallback((tittle) => {
         setOpen({ ...open, [tittle]: true });
 
-    }, [setOpen]);
+    }, [open, setOpen]);
 
     const handleClose = useCallback((tittle) => {
         setOpen({ ...open, [tittle]: false });
@@ -38,7 +39,7 @@ function MainPage() {
         card_css_hover.forEach(function (card) {
             card.classList.remove('hover')
         })
-    }, [setOpen]);
+    }, [open, setOpen]);
 
     const onPincodeEntered = useCallback((e) => {
         let value = e.target.value;
@@ -50,7 +51,7 @@ function MainPage() {
                 setvaluefield(value)
             }
         }
-    },[setvaluefield]);
+    }, [valuefield, setvaluefield]);
 
     const pincodeserver = [700122, 560078, 560076];
     const onPincodeEnteredFunction = useCallback(() => {
@@ -60,12 +61,11 @@ function MainPage() {
                 setpincodeentered(true)
             }
             else {
-                console.log(false)
                 setpincodeentered(true)
                 setvalidPincode(false)
             }
         }
-    },[setvalidPincode,setpincodeentered]);
+    }, [valuefield, setvalidPincode, setpincodeentered]);
 
     const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -81,7 +81,7 @@ function MainPage() {
     const id = open ? 'simple-popover' : undefined;
     const handleImageHover = useCallback((newImageUrl) => {
         setMainImageUrl(newImageUrl);
-    },[setMainImageUrl]);
+    }, [setMainImageUrl]);
     const aboutRef = useRef(null);
     const experienceRef = useRef(null);
     const projectsRef = useRef(null);
@@ -98,6 +98,9 @@ function MainPage() {
     return (
 
         <div>
+            <Head>
+                <title>Abhiflex || Flipkart UI</title>
+            </Head>
             <FlipkartNavBar />
 
 
@@ -114,12 +117,12 @@ function MainPage() {
                 <div className={Style.flipkartMainBox}>
                     <div className={Style.flipkartMainBox_Image}>
                         <div className={Style.flipkartMainboxImage_subimage}>
-                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/AbhiFlipkart.png')}><img style={{ width: '100%' }} src='/Image/AbhiFlipkart.png' /></div>
-                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('https://img.freepik.com/free-vector/man-works-home-with-laptop-prevent-virus-infection_1150-34980.jpg?w=1380&t=st=1689398758~exp=1689399358~hmac=06b4a1c45813249b2dc6cb41b2c6365b575130843b6a359b18a93111e5b4a7a5')}><img style={{ width: '100%' }} src='https://img.freepik.com/free-vector/man-works-home-with-laptop-prevent-virus-infection_1150-34980.jpg?w=1380&t=st=1689398758~exp=1689399358~hmac=06b4a1c45813249b2dc6cb41b2c6365b575130843b6a359b18a93111e5b4a7a5' /></div>
-                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('https://img.freepik.com/premium-vector/creative-abstract-saas-illustration_52683-79843.jpg?w=1800')}><img style={{ width: '100%' }} src='https://img.freepik.com/premium-vector/creative-abstract-saas-illustration_52683-79843.jpg?w=1800' /></div>
-                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('https://cdn-icons-png.flaticon.com/512/1831/1831655.png')}><img style={{ width: '100%' }} src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' /></div>
+                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/AbhiFlipkart.webp')}><Image loading='lazy' layout='responsive' width={60} height={60} style={{ width: '100%' }} alt="MyImage" src='/Image/AbhiFlipkart.webp' /></div>
+                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('https://img.freepik.com/free-vector/man-works-home-with-laptop-prevent-virus-infection_1150-34980.jpg?w=1380&t=st=1689398758~exp=1689399358~hmac=06b4a1c45813249b2dc6cb41b2c6365b575130843b6a359b18a93111e5b4a7a5')}><Image loading='lazy' width={60} height={60} alt="MyImage" style={{ width: '100%' }} src='https://img.freepik.com/free-vector/man-works-home-with-laptop-prevent-virus-infection_1150-34980.jpg?w=1380&t=st=1689398758~exp=1689399358~hmac=06b4a1c45813249b2dc6cb41b2c6365b575130843b6a359b18a93111e5b4a7a5' /></div>
+                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('https://img.freepik.com/premium-vector/creative-abstract-saas-illustration_52683-79843.jpg?w=1800')}><Image alt="MyImage" loading='lazy' width={60} height={60} style={{ width: '100%' }} src='https://img.freepik.com/premium-vector/creative-abstract-saas-illustration_52683-79843.jpg?w=1800' /></div>
+                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('https://cdn-icons-png.flaticon.com/512/1831/1831655.png')}><Image loading='lazy' width={60} height={60} style={{ width: '100%' }} alt="MyImage" src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' /></div>
                         </div>
-                        <div className={Style.flipkartMainboxImage_Mainimage}><img style={{ width: '100%' }} src={mainImageUrl} /></div>
+                        <div className={Style.flipkartMainboxImage_Mainimage}><Image loading='lazy' alt="MyImage" width={500} height={500} style={{ width: '100%' }} src={mainImageUrl} /></div>
                     </div>
                     <div className={Style.flipkartMainBox_Content}>
                         <div>
@@ -136,15 +139,15 @@ function MainPage() {
                         </div>
                         <div>
                             <h6>Available offers</h6>
-                            <div className={Style.Available_offers_div}> <img src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' className={Style.Available_offers_div_img} /><span className={Style.Contentjustify}>Experience my passion for creativity and innovation through an engaging portfolio.</span></div>
-                            <div className={Style.Available_offers_div}> <img src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' className={Style.Available_offers_div_img} /><span className={Style.Contentjustify}>Discover my specialization through a curated selection of my best work.</span></div>
-                            <div className={Style.Available_offers_div}> <img src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' className={Style.Available_offers_div_img} /><span className={Style.Contentjustify}>See how I've helped clients achieve their goals through my portfolio solutions.</span></div>
+                            <div className={Style.Available_offers_div}> <Image alt="MyImage" loading='lazy' width={20} height={20} src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' className={Style.Available_offers_div_img} /><span className={Style.Contentjustify}> &nbsp;Experience my passion for creativity and innovation through an engaging portfolio.</span></div>
+                            <div className={Style.Available_offers_div}> <Image alt="MyImage" loading='lazy' width={20} height={20} src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' className={Style.Available_offers_div_img} /><span className={Style.Contentjustify}> &nbsp;Discover my specialization through a curated selection of my best work.</span></div>
+                            <div className={Style.Available_offers_div}> <Image alt="MyImage" loading='lazy' width={20} height={20} src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' className={Style.Available_offers_div_img} /><span className={Style.Contentjustify}> &nbsp;See how I've helped clients achieve their goals through my portfolio solutions.</span></div>
                         </div>
                         <div style={{ marginBottom: '50px' }}>
                             <div style={{ margin: '20px 0px 5px' }}><i className="fa fa-map-marker" style={{ color: 'red' }} aria-hidden="true"></i><span> Please enter pincode</span></div>
                             <div style={{ display: 'inline-flex' }}>
-                                <input className={Style.pincodeInput} value={valuefield} onChange={(e) => onPincodeEntered(e)} />
-                                <button className={Style.pincodebtn} onClick={onPincodeEnteredFunction}><span className={Style.pincodeCheckText}>Check</span></button>
+                                <input className={Style.pincodeInput} placeholder="Enter here..." value={valuefield} onChange={(e) => onPincodeEntered(e)} />
+                                <button aria-label="pincode" className={Style.pincodebtn} onClick={onPincodeEnteredFunction}><span className={Style.pincodeCheckText}>Check</span></button>
 
                             </div>
 
@@ -165,7 +168,7 @@ function MainPage() {
                             </Popover>
                         </div>
                         <div style={{ maxWidth: '250px', marginBottom: '30px' }}>
-                            <button className={Style.letsTalkBtn}>let's have a chat</button>
+                            <button aria-label = "letsTalkBtn"className={Style.letsTalkBtn}>let's have a chat</button>
                         </div>
                         <div ref={aboutRef}>
                             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -181,13 +184,13 @@ function MainPage() {
                         <div ref={experienceRef}>
                             <div className={Style.divboxHeading} onClick={() => showExpirenceDiv ? setshowExpirenceDiv(false) : setshowExpirenceDiv(true)} >
                                 <h4 className={Style.aboutmeText}>Experience</h4>
-                                <button className={Style.showdivBtn} onClick={() => showExpirenceDiv ? setshowExpirenceDiv(false) : setshowExpirenceDiv(true)}>{showExpirenceDiv ? (<i className="fa fa-minus" aria-hidden="true"></i>) : (<i className="fa fa-plus" aria-hidden="true"></i>)}</button>
+                                <button aria-label={showExpirenceDiv ? 'Collapse Experience' : 'Expand Experience'} className={Style.showdivBtn} onClick={() => showExpirenceDiv ? setshowExpirenceDiv(false) : setshowExpirenceDiv(true)}>{showExpirenceDiv ? (<i className="fa fa-minus" aria-hidden="true"></i>) : (<i className="fa fa-plus" aria-hidden="true"></i>)}</button>
                             </div>
                             {showExpirenceDiv ? (<div>
                                 {experienceJson.map((element, i) => (
                                     <div className={Style.experienceJsonmaindiv} key={i}>
                                         <div className={Style.experienceJsonImageDiv}>
-                                            <img style={{ width: "100%" }} src={element.logo} />
+                                            <Image alt="MyImage" loading='lazy' width={50} height={50} style={{ width: "100%" }} src={element.logo} />
                                         </div>
                                         <div className={Style.experienceJsondiv}>
                                             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -209,7 +212,7 @@ function MainPage() {
                     <div style={{ display: "flex", justifyContent: "space-evenly", flexWrap: 'wrap' }}>
                         {AboutmeSkills.map((element, i) => (
                             <div className={Style.Skills_sub_div} key={i}>
-                                <div style={{display:'flex',alignItems:'center'}}><img src={element.logo} style={{ maxWidth: '60px', margin: '0px 5px' }} /></div>
+                                <div style={{ display: 'flex', alignItems: 'center' }}><Image alt="MyImage" loading='lazy' width={60} height={60} src={element.logo} style={{ maxWidth: '60px', margin: '0px 5px' }} /></div>
                                 <div style={{ display: 'flex', alignItems: 'center' }}>{element.skills}</div>
                             </div>
                         ))}
@@ -223,12 +226,12 @@ function MainPage() {
                     <div style={{ display: 'flex', overflowX: 'scroll' }}>
                         {ProjectJson.map((element, i) => (
                             <div className={Style.projectDivItem} key={i}>
-                                <div><img src={element.image} style={{ width: '100%', margin: '0px 5px' }} /></div>
+                                <div><Image alt="MyImage" loading='lazy' width={400} height={200} src={element.image} style={{ width: '100%', margin: '0px 5px' }} /></div>
                                 <div className={Style.projectDivItemcontent}>
                                     <h6>{element.title}</h6>
                                     <p className={Style.Contentjustify}>{element.description}</p>
                                     <p className={Style.Contentjustify}><strong>{element.code}</strong></p>
-                                    <button className={Style.viewProjectBtn} onClick={() => handleClick(element.button)}>View Project</button>
+                                    <button aria-label='viewProjectBtn' className={Style.viewProjectBtn} onClick={() => handleClick(element.button)}><strong>View Project</strong></button>
                                 </div>
                             </div>
                         ))}
@@ -254,11 +257,11 @@ function MainPage() {
                         <div className={Style.Licensesmaindiv_map} >
                             {AboutmeLicenses.map((element, i) => (
                                 <div className={Style.LicensesmainDivitem} key={i}>
-                                    <div style={{ width: '30%', alignItems: 'center', display: 'flex' }}> <img src={element.logo} style={{ width: '100%', margin: '0px 0px' }} /></div>
+                                    <div style={{ width: '30%', alignItems: 'center', display: 'flex' }}> <Image alt="MyImage" loading='lazy' width={500} height={500} src={element.logo} style={{ width: '100%', margin: '0px 0px' }} /></div>
                                     <div className={Style.LicensesmainDivitemcontent}>
                                         <div><h6>{element.tittle}</h6></div>
                                         <div><p className={Style.Contentjustify}>{element.description}</p></div>
-                                        <button className={Style.viewProjectBtn} onClick={() => handleClickOpen(element.tittle)} >View Project</button>
+                                        <button  aria-label="viewProjectBtn" className={Style.viewProjectBtn} onClick={() => handleClickOpen(element.tittle)} >View Project</button>
                                     </div>
                                     <Dialog
                                         disablePortal
@@ -269,10 +272,10 @@ function MainPage() {
                                     >
                                         <DialogTitle>{element.tittle}</DialogTitle>
                                         <DialogContent>
-                                            <Image src={element.certificate} onError={() => { element.certificate = "/Image/aboutPageImage.jpg" }} priority alt={element.tittle} width={950} height={550}></Image>
+                                            <Image loading='lazy' src={element.certificate} onError={() => { element.certificate = "/Image/aboutPageImage.jpg" }} alt={element.tittle} width={950} height={550}></Image>
                                         </DialogContent>
                                         <DialogActions>
-                                            <Button onClick={() => handleClose(element.tittle)}>Perfect!!!</Button>
+                                            <Button aria-label="expirenceBTn" onClick={() => handleClose(element.tittle)}>Perfect!!!</Button>
                                         </DialogActions>
                                     </Dialog>
                                 </div>

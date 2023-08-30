@@ -13,7 +13,10 @@ const nextConfig = {
       "logosandtypes.com",
       "www.langoly.com",
       "media.licdn.com",
-      "www.thesparksfoundationsingapore.org"
+      "www.thesparksfoundationsingapore.org",
+      "img.freepik.com",
+      "cdn-icons-png.flaticon.com",
+      "randomuser.me"
       
     ]
   },

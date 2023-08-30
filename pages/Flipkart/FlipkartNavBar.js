@@ -5,6 +5,7 @@ import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 import Link from "next/link";
+import Head from 'next/head';
 
 function FlipkartNavBar() {
     const handleDownload = useCallback(() => {
@@ -16,6 +17,9 @@ function FlipkartNavBar() {
 
     return (
         <>
+        <Head>
+                <title>Abhiflex || Flipkart UI</title>
+            </Head>
             <nav
                 className="navbar navbar-expand-lg bg-body-tertiary"
                 style={{ backgroundColor: "#2874f0", color: "white" }}
@@ -24,7 +28,7 @@ function FlipkartNavBar() {
                     <Link
                         className="navbar-brand"
                         href="/Flipkart/MainPage"
-                        style={{ color: "white" }}
+                        style={{ color: "white" ,fontWeight:'500'}}
                     >
                         Abhijeet Kumar
                     </Link>

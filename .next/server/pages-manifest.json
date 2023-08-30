@@ -2,7 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/Flipkart/Home": "pages/Flipkart/Home.js",
-  "/Flipkart/MainPage": "pages/Flipkart/MainPage.js",
-  "/": "pages/index.js"
+  "/Flipkart/MainPage": "pages/Flipkart/MainPage.js"
 }

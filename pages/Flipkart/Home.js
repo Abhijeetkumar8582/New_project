@@ -5,6 +5,7 @@ import TextField from "@mui/material/TextField";
 import { useRouter } from "next/router";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
+import Head from 'next/head';
 
 function Home() {
   const router = useRouter();
@@ -69,14 +70,18 @@ function Home() {
   }, [throwError, getUserName]);
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
+      <Head>
+        <title>Abhiflex || Flipkart UI</title>
+      </Head>
       <div className={Style.flipkartBox}>
         <div className={Style.flipkartBox_one}>
           <div style={{ display: "flex", alignItems: "center" }}>
             <h3 className={Style.flipkarText}>Abhijeet Kumar</h3>
             <div className={Style.ImageLogo_div}>
               <Image
+                loading="lazy"
                 className={Style.intro_images}
-                src="/Image/AbhiFlipkart.png"
+                src="/Image/AbhiFlipkart.webp"
                 width={500}
                 height={500}
                 alt="portfolio_image"
@@ -103,6 +108,7 @@ function Home() {
               onChange={(e) => UserNameInput(e)}
               required
               variant="standard"
+              aria-label="Enter name"
             />
           </div>
           <div className={Style.textInputDIv}>
@@ -111,6 +117,7 @@ function Home() {
               style={{ width: "100%" }}
               label="Email Address optional"
               variant="standard"
+              aria-label="Email Address optional"
             />
           </div>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -121,13 +128,13 @@ function Home() {
                 marginBottom: "30px",
               }}
             >
-              <input className={Style.userConcern} type="checkbox" />
+              <input className={Style.userConcern} lable="checkbox" type="checkbox" />
               <p style={{ display: "contents", fontSize: "12px" }}>
                 Keep Name for all the portfolio
               </p>
             </div>
             <div>
-              <button className={Style.forgetNameBTn} onClick={handleOpen}>
+              <button aria-label="forgotName" className={Style.forgetNameBTn} onClick={handleOpen}>
                 <p>
                   {" "}
                   <span
@@ -145,6 +152,7 @@ function Home() {
           </div>
           <div>
             <button
+              aria-label="handlelogin"
               className={`${Style.custombtn} ${Style.btn2}`}
               onClick={handleLogin}
             >
@@ -154,7 +162,7 @@ function Home() {
           <div>
             <p>
               Don't know Name ?{" "}
-              <button className={Style.forgetNameBTn} onClick={handleOpen}>
+              <button aria-label="don\'t know name" className={Style.forgetNameBTn} onClick={handleOpen}>
                 <p>
                   {" "}
                   <span
@@ -181,10 +189,13 @@ function Home() {
             </p>
           </div>
           <div className={Style.flipkartBox_two_Div_image}>
-            <img
-              className={Style.flipkartBox_two_image}
+            <Image
+              loading="lazy" className={Style.flipkartBox_two_image}
+              width={400}
+              height={400}
               src="/flipkart/Flipkart_div_image.webp"
               style={{ width: "100%" }}
+              alt="Flipkart_div_image"
             />
           </div>
         </div>
@@ -207,7 +218,7 @@ function Home() {
             >
               <div className={Style.avatar}>
                 {/* <!-- Avatar image --> */}
-                <img className={Style.avatar__image} src={getAvatar} />
+                <Image loading="lazy" alt={getAvatar} width={50} height={50} className={Style.avatar__image} src={getAvatar} />
               </div>
               <div>
                 <h4>{getUserName}</h4>
@@ -215,6 +226,7 @@ function Home() {
             </div>
             <div style={{ display: "flex", justifyContent: "end" }}>
               <button
+                aria-label="generateName"
                 className={Style.generateAnotherOne}
                 onClick={generateName}
               >

@@ -5,19 +5,19 @@ import Link from "next/link";
 function Home() {
   const porfolio = [
     {
-      image: '/Image/netflixUi.png',
+      image: '/Image/netflixUi.webp',
       title: 'AbhiFlix',
       link: '/Nextflix/Home',
       description: 'I attempted to replicate the Netflix UI for my portfolio, and I\'ve included a video detailing my journey within this field.'
     },
     {
-      image: '/Image/flipkartUi.png',
+      image: '/Image/flipkartUi.webp',
       title: 'AbhiKart',
       link: '/Flipkart/Home',
       description: 'I\'m designing my portfolio as a Flipkart-inspired UI, also developing a search algorithm for easy inquiries about me. Exciting things coming soon!'
     },
     {
-      image: '/Image/simpleUi.png',
+      image: '/Image/simpleUi.webp',
       title: 'My Design',
       link: '/Introduction',
       description: 'This marks the debut of my portfolio website, with exciting plans for the future, including the development of an AI chatbot for interactive engagement. Stay tuned!'

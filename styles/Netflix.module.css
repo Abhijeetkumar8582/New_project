@@ -8,7 +8,7 @@
 .MainPageSectionOne {
     position: relative;
     max-height: 900px;
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.6) 100%), url(../public/Image/GridImageNetFlix.png );
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.6) 100%), url(../public/Image/GridImageNetFlix.webp );
     background-size: contain;
     height: 100%;
 }

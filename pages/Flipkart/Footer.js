@@ -1,11 +1,14 @@
 import React, { useCallback } from "react";
 import Style from "/styles/Flipkart.module.css";
+import Head from 'next/head';
 function Footer() {
     const url = useCallback((event) => {
         window.open(event, "_blank");
     });
     return (
-        <>
+        <><Head>
+        <title>Abhiflex || Flipkart UI</title>
+    </Head>
             <nav
                 className="navbar navbar-expand-lg bg-body-tertiary"
                 style={{
