@@ -1,17 +1,24 @@
 [
    {
-      "title":"Brownmen",
+      "title":"Shopify",
       "description":"I have developed an application using Node.js and MongoDB as the backend. I have built an admin panel from scratch to manage the application's data.",
-      "image":"/Image/brownmen-min.webp",
-      "code":" MERN || React, Material UI, MongoDB ",
-      "button":"https://brownmen.netlify.app/"
+      "image":"/Image/shopifyImage.webp",
+      "code":"React, Javascript",
+      "button":"https://shopify45.netlify.app/"
+   },
+   {
+      "title":"OMNIPEXEL",
+      "description":"I built an image search web page from scratch using pixel APIs, incorporating an infinite scroll feature for a more seamless user experience.",
+      "image":"/Image/OmniPexelIm.webp",
+      "code":"React, Material UI, API ",
+      "button":"https://omnipexelproject.netlify.app/"
    }, 
    {
-       "title":"OMNIPEXEL",
+       "title":"Shopping Website",
        "description":"I built an image search web page from scratch using pixel APIs, incorporating an infinite scroll feature for a more seamless user experience.",
-       "image":"/Image/OmniPexelIm.webp",
+       "image":"/Image/RTO_image.webp",
        "code":"React, Material UI, API ",
-       "button":"https://omnipexelproject.netlify.app/"
+       "button":"https://rto-dev.netlify.app/"
     },
     {
         "title":"NOWCAST",

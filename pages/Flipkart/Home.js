@@ -100,7 +100,7 @@ function Home() {
           </div>
           <div className={Style.textInputDIv}>
             <TextField
-              id="standard-basic"
+              id="standard-basic-1"
               style={{ width: "100%" }}
               label={error ? "Please enter your Name or Generate one" : "Name"}
               value={getUserName}
@@ -108,12 +108,12 @@ function Home() {
               onChange={(e) => UserNameInput(e)}
               required
               variant="standard"
-              aria-label="Enter name"
+              aria-label="Enter_name"
             />
           </div>
           <div className={Style.textInputDIv}>
             <TextField
-              id="standard-basic"
+              id="standard-basic-2"
               style={{ width: "100%" }}
               label="Email Address optional"
               variant="standard"
@@ -128,10 +128,13 @@ function Home() {
                 marginBottom: "30px",
               }}
             >
+            <label>
               <input className={Style.userConcern} lable="checkbox" type="checkbox" />
+             
               <p style={{ display: "contents", fontSize: "12px" }}>
                 Keep Name for all the portfolio
               </p>
+              </label>
             </div>
             <div>
               <button aria-label="forgotName" className={Style.forgetNameBTn} onClick={handleOpen}>
@@ -139,7 +142,7 @@ function Home() {
                   {" "}
                   <span
                     style={{
-                      color: "red",
+                      color: "#FF0000",
                       fontWeight: "500",
                       fontSize: "12px",
                     }}
@@ -167,7 +170,7 @@ function Home() {
                   {" "}
                   <span
                     style={{
-                      color: "red",
+                      color: "#FF0000",
                       fontWeight: "500",
                       fontSize: "15px",
                     }}
@@ -189,9 +192,16 @@ function Home() {
             </p>
           </div>
           <div className={Style.flipkartBox_two_Div_image}>
+            <link
+              rel="preload"
+              as="image"
+              href="/flipkart/Flipkart_div_image.webp"
+              imagesrcset="/flipkart/Flipkart_div_image.webp 1x"
+            />
             <Image
-              loading="lazy" className={Style.flipkartBox_two_image}
-              width={400}
+              loading="lazy"
+              className={Style.flipkartBox_two_image}
+              width={382}
               height={400}
               src="/flipkart/Flipkart_div_image.webp"
               style={{ width: "100%" }}

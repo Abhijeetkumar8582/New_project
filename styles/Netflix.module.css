@@ -23,6 +23,8 @@
 .AbhiFlexText {
     font-size: 3rem;
     font-weight: 500;
+    color: rgb(255, 5, 5);
+    text-decoration: none;
     font-family: monospace;
 }
 
@@ -269,6 +271,11 @@
     font-weight: 200;
 }
 
+.FAQ_text {
+    font-size: 3rem;
+    font-weight: 900;
+}
+
 @media only screen and (max-width: 750px) {
     .AbhiFlexText {
         font-size: 2rem;
@@ -307,7 +314,7 @@
 
     .MainPageSectionThree_subdivOne_headingtwo {
         color: white;
-        font-size: 10px;
+        font-size: 14px;
         font-weight: 200;
         text-align: center;
     }
@@ -319,7 +326,7 @@
 
     .MainPageSectionTwo_subdivOne_headingtwo {
         color: white;
-        font-size: 10px;
+        font-size: 14px;
         font-weight: 200;
         text-align: center;
     }
@@ -327,7 +334,6 @@
     .subHeadingMainPageOne {
         font-size: 1rem;
         font-weight: 300;
-
         text-align: center;
         color: white;
         margin-bottom: 10px;
@@ -416,6 +422,21 @@
         font-weight: 200;
     }
 
+    .FAQ_text {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .accordainSubDiv_title_text {
+        font-size: 16px;
+
+    }
+
+    .accordainSubDiv_content_text {
+        font-size: 14px;
+        font-weight: 200;
+    }
+
 }
 
 /* --------------------------------------------------- */
@@ -474,6 +495,7 @@
 .NextflixMainHeading_div {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     margin: 3rem 2rem
 }
 
@@ -515,7 +537,9 @@
     display: flex;
     justify-content: center;
     gap: 40px;
-    flex-wrap: wrap
+    flex-wrap: wrap;
+    flex-direction: row;
+    overflow-x: scroll;
 }
 
 .AboutmeLicensesMainDiv_card {
@@ -553,7 +577,10 @@
 
 .Reward_div_title {
     width: 15%;
-    color: gray
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    font-size: 16px;
 }
 
 .Reward_div_para {
@@ -580,6 +607,12 @@
     font-weight: 200;
 }
 
+.skills_div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
 @media only screen and (max-width: 750px) {
     .NetfixAboutMain_div {
         flex-direction: column;
@@ -602,7 +635,7 @@
     }
 
     .netflixExpirenceDiv_Card_three_text {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .netflixExpirenceDiv_Card_three {
@@ -610,7 +643,7 @@
     }
 
     .netflixExpirenceDiv_Card_three_Desc {
-        font-size: 10px;
+        font-size: 13px;
     }
 
     .netflixExpirenceDiv_Card_Image {
@@ -648,7 +681,12 @@
     }
 
     .mobileText {
-        font-size: 12px;
+        font-size: 14px;
         font-weight: 200;
+    }
+
+    .heading_netflix_tag {
+        font-size: 20px;
+        font-weight: 400;
     }
 }

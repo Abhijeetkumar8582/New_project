@@ -121,8 +121,8 @@ function Main() {
                         </div>
                     </div>
                     <div className={Style.NetfixAboutMain_divTwo}>
-                        <div style={{ display: "flex", marginBottom: "5px" }}>
-                            <h4 className={Style.headingTag}>Skils:</h4>
+                        <div className={Style.skills_div}>
+                            <h4 className={Style.headingTag}>Skills:</h4>
                             <div style={{ display: "flex", flexWrap: "wrap" }}>
                                 {AboutmeSkills &&
                                     AboutmeSkills.map((element, i) => (
@@ -142,7 +142,7 @@ function Main() {
                 </div>
                 <div className={Style.ExperiencetitleDiv}>
                     <div>
-                        <h2>Experience Episode</h2>
+                        <h2 className={Style.heading_netflix_tag}>Experience Episode</h2>
                     </div>
                 </div>
                 <div className={Style.netflixExpirenceDiv}>
@@ -191,7 +191,7 @@ function Main() {
 
                 <div>
                     <div className={Style.NextflixMainHeading_div}>
-                        <h2>More like this</h2>
+                        <h2  className={Style.heading_netflix_tag}>More like this</h2>
                     </div>
                 </div>
                 <div className={Style.ProjectMain_div}>
@@ -242,7 +242,7 @@ function Main() {
 
                 <div>
                     <div className={Style.NextflixMainHeading_div}>
-                        <h2>Licenses Trailer</h2>
+                        <h2  className={Style.heading_netflix_tag}>Licenses Trailer</h2>
                     </div>
                 </div>
                 <div className={Style.AboutmeLicensesMainDiv}>
@@ -281,10 +281,9 @@ function Main() {
                                 </div>
                                 <Dialog
                                     disablePortal
-                                    sx={{ width: "100%" }}
+                                    sx={{ width: "100%"}}
                                     open={open[element.tittle] || false}
                                     onClose={() => handleClose(element.tittle)}
-                                    // onExited={() => handleClose(element.tittle)}
                                     maxWidth="xl"
                                 >
                                     <DialogTitle>{element.tittle}</DialogTitle>
@@ -295,6 +294,7 @@ function Main() {
                                                 element.certificate = "/Image/aboutPageImage.jpg";
                                             }}
                                             priority
+                                            style={{width:'100%',height:'100%',overflow:'auto'}}
                                             alt={element.tittle}
                                             width={950}
                                             height={550}

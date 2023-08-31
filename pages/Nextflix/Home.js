@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Style from "/styles/Netflix.module.css";
 import TextField from "@mui/material/TextField";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 function Home() {
     const router = useRouter();
@@ -33,7 +34,7 @@ function Home() {
                     {/* ...................................................................................................................................*/}
                     <div className={Style.NavbarHeadMain}>
                         <div style={{ display: "flex", alignItems: "center" }}>
-                            <h5 className={Style.AbhiFlexText}>Abhi</h5>
+                            <Link style={{ textDecoration: 'none' }} href='/'><h5 className={Style.AbhiFlexText}>Abhi</h5></Link>
                         </div>
                         <div style={{ display: "flex" }}>
                             <select className={Style.selectLanguage}>
@@ -138,7 +139,7 @@ function Home() {
                             color: "white",
                         }}
                     >
-                        <h2 style={{ fontSize: "3rem", fontWeight: "900" }}>
+                        <h2 className={Style.FAQ_text}>
                             Frequently Asked Questions
                         </h2>
                     </div>
@@ -146,7 +147,7 @@ function Home() {
                         {accordionData.map((element, i) => (
                             <div style={{ marginBottom: "10px" }} key={i}>
                                 <div className={Style.accordainSubDiv_title}>
-                                    <h5>{element.title}</h5>
+                                    <h5 className={Style.accordainSubDiv_title_text}>{element.title}</h5>
                                     <div>
                                         {openAccordionIndex === i ? (
                                             <i
@@ -165,7 +166,7 @@ function Home() {
                                 </div>
                                 {openAccordionIndex === i ? (
                                     <div className={Style.accordainSubDiv}>
-                                        <h6>{element.content}</h6>
+                                        <h6 className={Style.accordainSubDiv_content_text}>{element.content}</h6>
                                     </div>
                                 ) : null}
                             </div>
@@ -176,10 +177,10 @@ function Home() {
                 <div style={{ background: "gray", height: "5px" }}></div>
                 <div className={Style.MainPageSectionFive}>
                     <div>
-                        <h6>Handcrafted by Abhijeet kumar</h6>
+                        <h6 className={Style.mobileText}>Handcrafted by Abhijeet kumar</h6>
                     </div>
                     <div>
-                        <h6>Handcrafted by Abhijeet kumar</h6>
+                        <h6 className={Style.mobileText}>Handcrafted by Abhijeet kumar</h6>
                     </div>
                 </div>
             </div>

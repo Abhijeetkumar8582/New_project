@@ -1,21 +1,21 @@
 .introPageMainDiv {
   display: flex;
-  background: white;
-  min-height: 500px;
+  background: whitesmoke;
   max-height: 500px;
+  /* background: linear-gradient(90deg, #d3bdff, #ffd9c1); */
 }
 
 .introPageMainDiv_one {
   width: 50%;
   display: flex;
-  padding: 10rem 4rem;
+  padding: 8rem 4rem;
   flex-direction: column;
 }
 
 .introPageMainDiv_two {
   width: 50%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -27,7 +27,7 @@
 .text_name {
   font-size: 3.5rem;
   font-family: monospace;
-  color: orange;
+  color: #ff8900;
   font-weight: 500;
 }
 
@@ -52,7 +52,7 @@
 .Container_two_subdiv {
   justify-content: center;
   display: flex;
-  min-height: 400px;
+  min-height: 350px;
   background: oldlace;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 20px;
@@ -73,14 +73,14 @@
   width: 100%;
   max-width: 250px;
   left: 50%;
-  top: 50%;
+  top: 35%;
   border-radius: 20px;
   position: absolute;
   transform: translate(-50%, -50%);
 }
 
 .Container_two_subdiv_heading {
-  margin-top: 60px;
+  margin-top: 35px;
   display: flex;
   justify-content: center;
   color: black;
@@ -101,19 +101,27 @@
   justify-content: center;
   text-align: center;
 }
+.alertCss{
+  background: black;
+  color: white;
+  
+}
 
 @media only screen and (max-width: 750px) {
 .introPageMainDiv{
   flex-direction: column;
+  margin-bottom: 150px;
 }
 .introPageMainDiv_one {
   width: 100%;
   display: flex;
   padding: 1rem 2rem;
+  order:1;
   flex-direction: column;
 }
 .introPageMainDiv_two {
   width: 100%;
+  order: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -126,7 +134,7 @@
 .text_name {
   font-size: 2.5rem;
   font-family: monospace;
-  color: orange;
+  color: #ff8900;
   font-weight: 500;
 }
 .Portfolio_Div {
@@ -136,7 +144,7 @@
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  gap: 50px;
+  gap: 80px;
 }
 
 }

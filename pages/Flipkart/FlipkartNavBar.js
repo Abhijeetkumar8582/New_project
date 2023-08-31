@@ -27,7 +27,7 @@ function FlipkartNavBar() {
                 <div className="container-fluid">
                     <Link
                         className="navbar-brand"
-                        href="/Flipkart/MainPage"
+                        href="/"
                         style={{ color: "white" ,fontWeight:'500'}}
                     >
                         Abhijeet Kumar
@@ -58,7 +58,7 @@ function FlipkartNavBar() {
                                     >
                                         <InputBase
                                             sx={{ ml: 1, flex: 1 }}
-                                            placeholder="Welcome to My portfolio"
+                                            placeholder="Soon will add search Algorithum"
                                             inputProps={{ "aria-label": "search google maps" }}
                                         />
                                         <IconButton

@@ -9,7 +9,7 @@ function NavBar() {
 
             <nav className="navbar navbar-expand-lg fixed-top navbar-light" style={{ backgroundColor: "#FDA260", width: '100%', padding: '0px 0px' }}>
                 <div className="container" style={{ padding: '0px 0px', justifyContent: 'space-between' }}>
-                    <Link className="navbar-brand-text " href="/Portfolio/Home">Home</Link>
+                    <Link className="navbar-brand-text " href="/">Home</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

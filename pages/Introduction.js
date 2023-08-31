@@ -33,8 +33,8 @@ function Logo() {
       <div className='' style={{ backgroundColor: "black", height: '100vh' }}>
 
         <Image className='intro_logo' src="/Image/Abhi_Logo.webp" width={70} height={70} alt='Abhijeet_logo'></Image>
-        <h1 className='IntroTitle' style={{color: 'white'}} >Hey, I'm Abhijeet</h1>
-        <h2 className='Introdesc' style={{color: 'white'}}  >a React frontend developer</h2>
+        <h1 className='IntroTitle' style={{ color: 'white' }} >Hey, I'm Abhijeet</h1>
+        <h2 className='Introdesc' style={{ color: 'white' }}  >a React frontend developer</h2>
         <div className='container'>
           <Image className='intro_image' src="/Image/home_img.webp" width={500} height={500} alt='portfolio_image'></Image>
         </div>

@@ -1,4 +1,18 @@
 const path = require('path');
+const withCss = require('@zeit/next-css');
+const withPurgeCss = require('next-purgecss');
+
+module.exports = withCss(withPurgeCss({
+  purgeCssEnabled: ({ dev, isServer }) => !dev && !isServer,
+  purgeCss: {
+    content: [
+      './pages/**/*.{js,jsx,ts,tsx}',
+      './components/**/*.{js,jsx,ts,tsx}',
+    ],
+    defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
+    safelist: ["html", "body"],
+  },
+}));
 
 const nextConfig = {
   reactStrictMode: true,
@@ -16,8 +30,8 @@ const nextConfig = {
       "www.thesparksfoundationsingapore.org",
       "img.freepik.com",
       "cdn-icons-png.flaticon.com",
-      "randomuser.me"
-      
+      "randomuser.me",
+      "i0.wp.com"
     ]
   },
   distDir: '.next',
@@ -30,4 +44,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = { ...nextConfig };
