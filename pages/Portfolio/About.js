@@ -11,7 +11,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Head from 'next/head';
 import AOS from 'aos';
 import NavBar from './NavBar';
-import Footer from './Footer';
+
 
 
 
@@ -126,7 +126,6 @@ function About() {
                             sx={{ width: "100%" }}
                             open={open[element.tittle] || false}
                             onClose={() => handleClose(element.tittle)}
-                            // onExited={() => handleClose(element.tittle)}
                             maxWidth="xl"
                         >
                             <DialogTitle>{element.tittle}</DialogTitle>
@@ -161,7 +160,7 @@ function About() {
             </div>
 
 
-            <Footer />
+          
         </>
     )
 }

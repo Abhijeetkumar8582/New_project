@@ -13,7 +13,7 @@ import Head from 'next/head';
 import AOS from 'aos';
 import Image from 'next/image'
 import NavBar from "./NavBar";
-import Footer from "./Footer";
+
 
 
 
@@ -95,7 +95,7 @@ function Experience() {
 
                 )}
             </Timeline>
-            <Footer />
+          
         </>
     )
 }

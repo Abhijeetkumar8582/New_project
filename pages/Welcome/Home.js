@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
 import Alert from '@mui/material/Alert';
-import Button from '@mui/material/Button';
+
 function Home() {
 
   const porfolio = [
@@ -103,12 +103,32 @@ function Home() {
               position: 'relative'
             }}
           >
-            <img
+            <link
+              rel="preload"
+              as="image"
+              href="/Image/Abhijeet_kumar.webp"
+              imageSrcSet="/Image/Abhijeet_kumar.webp 1x"
+            />
+
+            <Image
+              width={500}
+              height={500}
+              loading='lazy'
               style={{ width: "100%", height: "100%", mixBlendMode: 'darken' }}
               alt="Abhijeet Kumar"
-              src="/Image/Abhijeet_kumar.png"
+              src="/Image/Abhijeet_kumar.webp"
             />
-            <img
+            <link
+              rel="preload"
+              as="image"
+              href="/Image/donut_3d_shape.webp"
+              imageSrcSet="/Image/donut_3d_shape.webp 1x"
+            />
+            <Image
+              width={500}
+              height={500}
+              loading='lazy'
+              className={Style.donut_3d_shape}
               style={{
                 width: "100%", height: "100%", mixBlendMode: 'darken', position: 'absolute',
                 left: '0',
@@ -116,7 +136,7 @@ function Home() {
                 marginTop: "-195px"
               }}
               alt="Abhijeet Kumar"
-              src="/Image/donut_3d_shape.png"
+              src="/Image/donut_3d_shape.webp"
             />
           </div>
         </div>

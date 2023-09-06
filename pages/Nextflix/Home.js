@@ -41,7 +41,7 @@ function Home() {
                                 <option>English</option>
                                 <option>Hindi</option>
                             </select>
-                            <button className={Style.siginBtn}>Sign In</button>
+                            <button aria-label="signIn_Btn" className={Style.siginBtn}>Sign In</button>
                         </div>
                     </div>
                     {/* ...................................................................................................................................*/}
@@ -75,7 +75,7 @@ function Home() {
                                 margin: " 0px 10px 10px 0px",
                             }}
                         >
-                            <button onClick={redirect} className={Style.emailIDEnteredbtn}>
+                            <button aria-label="emailID_Entered" onClick={redirect} className={Style.emailIDEnteredbtn}>
                                 {" "}
                                 Get Started{" "}
                                 <i className="fa fa-chevron-right" aria-hidden="true"></i>

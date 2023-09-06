@@ -9,7 +9,7 @@ import projects from '../Json/Projects.json'
 import Head from 'next/head';
 import AOS from 'aos';
 import Image from 'next/image'
-import Footer from './Footer';
+
 import NavBar from './NavBar';
 
 
@@ -65,7 +65,7 @@ function Project() {
                                     </CardContent>
                                 </CardActionArea>
                                 <CardActions>
-                                    <Button size="small" onClick={() => handleClick(element.button)} color="primary">
+                                    <Button aria-label='open_Project' size="small" onClick={() => handleClick(element.button)} color="primary">
                                         View Project
                                     </Button>
                                 </CardActions>
@@ -74,7 +74,7 @@ function Project() {
                     </div>
                 ))}
             </div>
-            <Footer />
+         
         </>
     )
 }

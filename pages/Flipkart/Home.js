@@ -196,7 +196,7 @@ function Home() {
               rel="preload"
               as="image"
               href="/flipkart/Flipkart_div_image.webp"
-              imagesrcset="/flipkart/Flipkart_div_image.webp 1x"
+              imageSrcSet="/flipkart/Flipkart_div_image.webp 1x"
             />
             <Image
               loading="lazy"

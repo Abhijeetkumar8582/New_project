@@ -257,11 +257,12 @@ function MainPage() {
                         <div className={Style.Licensesmaindiv_map} >
                             {AboutmeLicenses.map((element, i) => (
                                 <div className={Style.LicensesmainDivitem} key={i}>
+
                                     <div style={{ width: '30%', alignItems: 'center', display: 'flex' }}> <Image alt="MyImage" loading='lazy' width={500} height={500} src={element.logo} style={{ width: '100%', margin: '0px 0px' }} /></div>
                                     <div className={Style.LicensesmainDivitemcontent}>
                                         <div><h6>{element.tittle}</h6></div>
                                         <div><p className={Style.Contentjustify}>{element.description}</p></div>
-                                        <button  aria-label="viewProjectBtn" className={Style.viewProjectBtn} onClick={() => handleClickOpen(element.tittle)} >View Project</button>
+                                        <button  aria-label="viewProjectBtn" className={Style.viewProjectBtn} onClick={() => handleClickOpen(element.tittle)} >View Certificate</button>
                                     </div>
                                     <Dialog
                                         disablePortal

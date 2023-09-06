@@ -114,8 +114,8 @@ function Home() {
         <meta property="og:type" content="https://abhijeet-kumar-dev.netlify.app/Portfolio/Home" />
         <meta property="og:site_name" content="ABHI" />
       </Head>
-
-
+  
+      <Footer/>
     </>
   )
 

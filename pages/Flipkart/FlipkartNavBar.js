@@ -74,6 +74,7 @@ function FlipkartNavBar() {
                         </ul>
                     </div>
                     <button
+                        aria-label="handleDownload"
                         className={`${Style.custombtn} ${Style.btn12}`}
                         onClick={() => handleDownload()}
                     >
