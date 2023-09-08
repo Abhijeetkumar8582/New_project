@@ -70,9 +70,18 @@ function Home() {
   }, [throwError, getUserName]);
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
+
       <Head>
-        <title>Abhiflex || Flipkart UI</title>
+        <title>Flipkart - Abhijeet</title>
+        <meta property="og:title" content="Flipkart - Abhijeet" />
+        <meta property="og:description" content="I'm designing my portfolio as a Flipkart-inspired UI, also developing a search algorithm for easy inquiries about me. Exciting things coming soon!" />
+        <meta property="og:image" content="/Image/flipkartUi.webp" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="628" />
+        <meta property="og:url" content="https://beta-abhijeet-kumar-dev.netlify.app/Flipkart/Home" />
+        <meta property="og:type" content="website" />
       </Head>
+
       <div className={Style.flipkartBox}>
         <div className={Style.flipkartBox_one}>
           <div style={{ display: "flex", alignItems: "center" }}>
@@ -128,12 +137,12 @@ function Home() {
                 marginBottom: "30px",
               }}
             >
-            <label>
-              <input className={Style.userConcern} lable="checkbox" type="checkbox" />
-             
-              <p style={{ display: "contents", fontSize: "12px" }}>
-                Keep Name for all the portfolio
-              </p>
+              <label>
+                <input className={Style.userConcern} lable="checkbox" type="checkbox" />
+
+                <p style={{ display: "contents", fontSize: "12px" }}>
+                  Keep Name for all the portfolio
+                </p>
               </label>
             </div>
             <div>
@@ -199,7 +208,6 @@ function Home() {
               imageSrcSet="/flipkart/Flipkart_div_image.webp 1x"
             />
             <Image
-              loading="lazy"
               className={Style.flipkartBox_two_image}
               width={382}
               height={400}

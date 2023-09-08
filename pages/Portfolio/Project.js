@@ -25,7 +25,7 @@ function Project() {
     return (
         <>
             <Head>
-                <title>ABHI | Project</title>
+            <title >Abhijeet Portfolio</title>
                 <meta name="description"
                     content="Skilled and innovative developer who's passionate about making life easier. Explore my portfolio of projects, including Omnipexel, Newsapp, and Chartext, and discover.... "
                 />

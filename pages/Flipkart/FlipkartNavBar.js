@@ -17,8 +17,8 @@ function FlipkartNavBar() {
 
     return (
         <>
-        <Head>
-                <title>Abhiflex || Flipkart UI</title>
+            <Head>
+                <title>Flipkart - Abhijeet</title>
             </Head>
             <nav
                 className="navbar navbar-expand-lg bg-body-tertiary"
@@ -28,7 +28,7 @@ function FlipkartNavBar() {
                     <Link
                         className="navbar-brand"
                         href="/"
-                        style={{ color: "white" ,fontWeight:'500'}}
+                        style={{ color: "white", fontWeight: '500' }}
                     >
                         Abhijeet Kumar
                     </Link>

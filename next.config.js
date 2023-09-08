@@ -31,7 +31,8 @@ const nextConfig = {
       "img.freepik.com",
       "cdn-icons-png.flaticon.com",
       "randomuser.me",
-      "i0.wp.com"
+      "i0.wp.com",
+      "images.wallpapersden.com"
     ]
   },
   distDir: '.next',
@@ -43,5 +44,6 @@ const nextConfig = {
     return config;
   },
 };
+
 
 module.exports = { ...nextConfig };

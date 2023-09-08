@@ -8,7 +8,7 @@ function IndexFile() {
   return (
     <>
       <Head>
-        <title>Welcome to My PortFolio</title>
+        <title >Abhijeet Portfolio</title>
       </Head>
       <Home />
 

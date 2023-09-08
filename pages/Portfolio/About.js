@@ -38,7 +38,7 @@ function About() {
     return (
         <>
             <Head>
-                <title >ABHI | About</title>
+                <title >Abhijeet Portfolio</title>
                 <meta name="description"
                     content="Passionate frontend developer with an interest in web development and experience in creating chatbots for an AI startup.... "
                 />

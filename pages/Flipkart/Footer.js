@@ -7,8 +7,8 @@ function Footer() {
     });
     return (
         <><Head>
-        <title>Abhiflex || Flipkart UI</title>
-    </Head>
+             <title>Flipkart - Abhijeet</title>
+        </Head>
             <nav
                 className="navbar navbar-expand-lg bg-body-tertiary"
                 style={{

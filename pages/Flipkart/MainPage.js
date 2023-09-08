@@ -99,7 +99,14 @@ function MainPage() {
 
         <div>
             <Head>
-                <title>Abhiflex || Flipkart UI</title>
+                <title>Flipkart - Abhijeet</title>
+                <meta property="og:title" content="Flipkart - Abhijeet" />
+                <meta property="og:description" content="I'm designing my portfolio as a Flipkart-inspired UI, also developing a search algorithm for easy inquiries about me. Exciting things coming soon!" />
+                <meta property="og:image" content="/Image/flipkartUi.webp" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="628" />
+                <meta property="og:url" content="https://beta-abhijeet-kumar-dev.netlify.app/Flipkart/Home" />
+                <meta property="og:type" content="website" />
             </Head>
             <FlipkartNavBar />
 
@@ -168,7 +175,7 @@ function MainPage() {
                             </Popover>
                         </div>
                         <div style={{ maxWidth: '250px', marginBottom: '30px' }}>
-                            <button aria-label = "letsTalkBtn"className={Style.letsTalkBtn}>let's have a chat</button>
+                            <button aria-label="letsTalkBtn" className={Style.letsTalkBtn}>let's have a chat</button>
                         </div>
                         <div ref={aboutRef}>
                             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -262,7 +269,7 @@ function MainPage() {
                                     <div className={Style.LicensesmainDivitemcontent}>
                                         <div><h6>{element.tittle}</h6></div>
                                         <div><p className={Style.Contentjustify}>{element.description}</p></div>
-                                        <button  aria-label="viewProjectBtn" className={Style.viewProjectBtn} onClick={() => handleClickOpen(element.tittle)} >View Certificate</button>
+                                        <button aria-label="viewProjectBtn" className={Style.viewProjectBtn} onClick={() => handleClickOpen(element.tittle)} >View Certificate</button>
                                     </div>
                                     <Dialog
                                         disablePortal

@@ -24,7 +24,7 @@ function Experience() {
     return (
         <>
             <Head>
-                <title>ABHI | Experience</title>
+            <title >Abhijeet Portfolio</title>
                 <meta name="description"
                     content="Discover the professional experiences of an eager learner who's always looking to grow.... "
                 />

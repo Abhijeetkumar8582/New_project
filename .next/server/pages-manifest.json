@@ -1,6 +1,24 @@
 {
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js"
+  "/_app": "pages/_app.js",
+  "/Flipkart/FlipkartNavBar": "pages/Flipkart/FlipkartNavBar.html",
+  "/404": "pages/404.html",
+  "/Flipkart/Home": "pages/Flipkart/Home.html",
+  "/Flipkart/Footer": "pages/Flipkart/Footer.html",
+  "/Godzilla/Home": "pages/Godzilla/Home.html",
+  "/Flipkart/MainPage": "pages/Flipkart/MainPage.html",
+  "/Introduction": "pages/Introduction.html",
+  "/Portfolio/About": "pages/Portfolio/About.html",
+  "/Nextflix/Home": "pages/Nextflix/Home.html",
+  "/Portfolio/Experience": "pages/Portfolio/Experience.html",
+  "/Nextflix/Main": "pages/Nextflix/Main.html",
+  "/Portfolio/Footer": "pages/Portfolio/Footer.html",
+  "/Portfolio/Home": "pages/Portfolio/Home.html",
+  "/Portfolio/NavBar": "pages/Portfolio/NavBar.html",
+  "/Portfolio/Project": "pages/Portfolio/Project.html",
+  "/Portfolio/SideNavBar": "pages/Portfolio/SideNavBar.html",
+  "/api/hello": "pages/api/hello.js",
+  "/Welcome/Home": "pages/Welcome/Home.html",
+  "/": "pages/index.html",
+  "/_error": "pages/_error.js"
 }

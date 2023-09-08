@@ -3,6 +3,8 @@ import Style from "/styles/Netflix.module.css";
 import TextField from "@mui/material/TextField";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Head from "next/head";
+
 
 function Home() {
     const router = useRouter();
@@ -29,6 +31,17 @@ function Home() {
 
     return (
         <>
+
+            <Head>
+                <title>Netflix - Abhijeet</title>
+                <meta property="og:title" content="Flipkart - Abhijeet" />
+                <meta property="og:description" content="I attempted to replicate the Netflix UI for my portfolio, and I've included a video detailing my journey within this field." />
+                <meta property="og:image" content="/Image/netflixUi.webp" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="628" />
+                <meta property="og:url" content="https://beta-abhijeet-kumar-dev.netlify.app/Nextflix/Home" />
+                <meta property="og:type" content="website" />
+            </Head>
             <div className={Style.MainDiv}>
                 <div className={Style.MainPageSectionOne}>
                     {/* ...................................................................................................................................*/}
@@ -145,7 +158,7 @@ function Home() {
                     </div>
                     <div>
                         {accordionData.map((element, i) => (
-                            <div style={{ marginBottom: "10px" }} key={i}>
+                            <div style={{ marginBottom: "10px" }} key={i} onClick={() => setOpenAccordionIndex(prevIndex => prevIndex === i ? -1 : i)}>
                                 <div className={Style.accordainSubDiv_title}>
                                     <h5 className={Style.accordainSubDiv_title_text}>{element.title}</h5>
                                     <div>

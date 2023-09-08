@@ -101,11 +101,6 @@
   justify-content: center;
   text-align: center;
 }
-.alertCss{
-  background: black;
-  color: white;
-
-}
 
 @media only screen and (max-width: 750px) {
 .introPageMainDiv{

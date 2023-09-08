@@ -35,7 +35,7 @@ function Home() {
     <>
 
       <Head>
-        <title>Home</title>
+      <title >Abhijeet Portfolio</title>
       </Head>
 
 

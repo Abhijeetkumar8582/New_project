@@ -18,7 +18,7 @@ function SideNavBar() {
   return (
     <>
       <Head>
-        <title>Home</title>
+      <title >Abhijeet Portfolio</title>
       </Head>
 
       <div style={{ position: "fixed",zIndex:'1' }}>

@@ -3,28 +3,27 @@ import Style from "/styles/HomePage.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
-import Alert from '@mui/material/Alert';
+import Alert from "@mui/material/Alert";
 
 function Home() {
-
   const porfolio = [
     {
       image: "/Image/netflixUi.webp",
-      title: "AbhiFlix",
+      title: "Netflix - UI",
       link: "/Nextflix/Home",
       description:
         "I attempted to replicate the Netflix UI for my portfolio, and I've included a video detailing my journey within this field.",
     },
     {
       image: "/Image/flipkartUi.webp",
-      title: "AbhiKart",
+      title: "Flipkart - UI",
       link: "/Flipkart/Home",
       description:
         "I'm designing my portfolio as a Flipkart-inspired UI, also developing a search algorithm for easy inquiries about me. Exciting things coming soon!",
     },
     {
       image: "/Image/simpleUi.webp",
-      title: "My Design",
+      title: "Modern design",
       link: "/Introduction",
       description:
         "This marks the debut of my portfolio website, with exciting plans for the future, including the development of an AI chatbot for interactive engagement. Stay tuned!",
@@ -32,7 +31,7 @@ function Home() {
     {
       image:
         "https://i0.wp.com/dianisa.com/wp-content/uploads/2023/02/Sejarah-Coming-Soon.jpg?resize=950%2C550&ssl=1",
-      title: "Airbnb",
+      title: "Airbnb - UI",
       link: "",
       description:
         "I am working on designing a user interface similar to Airbnb's, and I'm also developing algorithms to enhance its interactivity.",
@@ -40,7 +39,7 @@ function Home() {
     {
       image:
         "https://i0.wp.com/dianisa.com/wp-content/uploads/2023/02/Sejarah-Coming-Soon.jpg?resize=950%2C550&ssl=1",
-      title: "Godzilla",
+      title: "Godzilla - UI",
       link: "",
       description:
         "As a huge Godzilla fan, I'm excited to craft a uniquely creative UI inspired by the mighty monster!",
@@ -48,36 +47,54 @@ function Home() {
   ];
   const [alertOpen, alertsetOpen] = useState(true);
   useEffect(() => {
-    if (sessionStorage.getItem('MainPage_alert')) {
+    if (sessionStorage.getItem("MainPage_alert")) {
       alertsetOpen(false);
     }
-  })
+  });
   const alertBTn = () => {
-    sessionStorage.setItem('MainPage_alert', 'Completed');
+    sessionStorage.setItem("MainPage_alert", "Completed");
     alertsetOpen(false);
-
-  }
+  };
 
   return (
     <>
       <Head>
         <title>Welcome</title>
+        <meta property="og:title" content="Abhijeet Kumar" />
+        <meta
+          name="description"
+          content="🚀 Abhijeet Kumar: Crafting digital experiences with a blend of frontend finesse and backend wizardry. Join me on a journey through the world of Node.js development! 💻✨"
+        />
+        <meta
+          property="og:description"
+          content="🚀 Abhijeet Kumar: Crafting digital experiences with a blend of frontend finesse and backend wizardry. Join me on a journey through the world of Node.js development! 💻✨"
+        />
+        <meta property="og:image" content="/Image/Abhijeet_kumar.webp" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="628" />
+        <meta
+          property="og:url"
+          content="https://beta-abhijeet-kumar-dev.netlify.app/"
+        />
+        <meta
+          property="og:type"
+          content="https://beta-abhijeet-kumar-dev.netlify.app/"
+        />
+        <meta property="og:site_name" content="ABHI" />
       </Head>
 
-      <meta property="og:title" content="ABHI | Home" />
-      <meta
-        property="og:description"
-        content="As a passionate frontend developer, I am always eager to explore the latest technologies and stay ahead of the curve. With a deep understanding of the frontend"
-      />
-      <meta property="og:image" content="/mainPage.png" />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="628" />
-      <meta property="og:url" content="https://your-website-url.com" />
-      <meta property="og:type" content="website" />
-
-      {alertOpen &&
-        <Alert className={Style.alertCss} onClose={() => alertBTn()}>Welcome to my Portfolio website!👨‍💻 Expect some adorable alerts from my furry friends🐶 </Alert>
-      }
+      {alertOpen && (
+        <Alert
+          sx={{
+            bgcolor: "black",
+            color: "white",
+          }}
+          onClose={() => alertBTn()}
+        >
+          Welcome to my Portfolio website!👨‍💻 Expect some adorable alerts from my
+          furry friends🐶{" "}
+        </Alert>
+      )}
       <div className={Style.introPageMainDiv}>
         <div className={Style.introPageMainDiv_one}>
           <div>
@@ -100,7 +117,7 @@ function Home() {
               maxWidth: "450px",
               display: "flex",
               justifyContent: "flex-end",
-              position: 'relative'
+              position: "relative",
             }}
           >
             <link
@@ -113,9 +130,10 @@ function Home() {
             <Image
               width={500}
               height={500}
-              loading='lazy'
-              style={{ width: "100%", height: "100%", mixBlendMode: 'darken' }}
+              priority
+              style={{ width: "100%", height: "100%", mixBlendMode: "darken" }}
               alt="Abhijeet Kumar"
+              decoding="async"
               src="/Image/Abhijeet_kumar.webp"
             />
             <link
@@ -127,13 +145,17 @@ function Home() {
             <Image
               width={500}
               height={500}
-              loading='lazy'
+              priority
+              decoding="async"
               className={Style.donut_3d_shape}
               style={{
-                width: "100%", height: "100%", mixBlendMode: 'darken', position: 'absolute',
-                left: '0',
-                marginLeft: '-308px',
-                marginTop: "-195px"
+                width: "100%",
+                height: "100%",
+                mixBlendMode: "darken",
+                position: "absolute",
+                left: "0",
+                marginLeft: "-308px",
+                marginTop: "-195px",
               }}
               alt="Abhijeet Kumar"
               src="/Image/donut_3d_shape.webp"

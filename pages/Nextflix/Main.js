@@ -10,6 +10,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import Image from "next/image";
 import Button from "@mui/material/Button";
+import Head from "next/head";
 
 function Main() {
     const [islicenseOpen, setislicenseOpen] = useState(false);
@@ -75,6 +76,16 @@ function Main() {
 
     return (
         <>
+            <Head>
+                <title>Netflix - Abhijeet</title>
+                <meta property="og:title" content="Flipkart - Abhijeet" />
+                <meta property="og:description" content="I attempted to replicate the Netflix UI for my portfolio, and I've included a video detailing my journey within this field." />
+                <meta property="og:image" content="/Image/netflixUi.webp" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="628" />
+                <meta property="og:url" content="https://beta-abhijeet-kumar-dev.netlify.app/Nextflix/Home" />
+                <meta property="og:type" content="website" />
+            </Head>
             {" "}
             <div style={{ background: "black", color: "white" }}>
                 <div className={Style.NetfixVideoDiv}>
@@ -191,7 +202,7 @@ function Main() {
 
                 <div>
                     <div className={Style.NextflixMainHeading_div}>
-                        <h2  className={Style.heading_netflix_tag}>More like this</h2>
+                        <h2 className={Style.heading_netflix_tag}>More like this</h2>
                     </div>
                 </div>
                 <div className={Style.ProjectMain_div}>
@@ -242,7 +253,7 @@ function Main() {
 
                 <div>
                     <div className={Style.NextflixMainHeading_div}>
-                        <h2  className={Style.heading_netflix_tag}>Licenses Trailer</h2>
+                        <h2 className={Style.heading_netflix_tag}>Licenses Trailer</h2>
                     </div>
                 </div>
                 <div className={Style.AboutmeLicensesMainDiv}>
@@ -281,7 +292,7 @@ function Main() {
                                 </div>
                                 <Dialog
                                     disablePortal
-                                    sx={{ width: "100%"}}
+                                    sx={{ width: "100%" }}
                                     open={open[element.tittle] || false}
                                     onClose={() => handleClose(element.tittle)}
                                     maxWidth="xl"
@@ -294,7 +305,7 @@ function Main() {
                                                 element.certificate = "/Image/aboutPageImage.jpg";
                                             }}
                                             priority
-                                            style={{width:'100%',height:'100%',overflow:'auto'}}
+                                            style={{ width: '100%', height: '100%', overflow: 'auto' }}
                                             alt={element.tittle}
                                             width={950}
                                             height={550}
