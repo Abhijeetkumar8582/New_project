@@ -501,9 +501,12 @@
 .Licensesmaindiv_map {
   display: flex;
   flex-direction: row;
+  /* overflow-x: scroll; */
+}
+.Licensesmaindiv_map_Main_div{
+  display: flex;
   overflow-x: scroll;
 }
-
 .LicensesmainDivitem {
   width: 500px;
   display: flex;

@@ -15,7 +15,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Button from '@mui/material/Button';
 import Popover from '@mui/material/Popover';
 import Typography from '@mui/material/Typography';
-import screenSize from '../ScreenSize'
+// import useScreenDimensions from '../ScreenSize'
 
 
 function MainPage() {
@@ -52,7 +52,34 @@ function MainPage() {
             }
         }
     }, [valuefield, setvaluefield]);
-    const screenDimensions = screenSize();
+    // const screenDimensions = useScreenDimensions();
+    
+    const [screenDimensions, setScreenDimensions] = useState({
+        screenWidth: 0,
+        screenHeight: 0,
+      });
+    
+      const handleResize = () => {
+        setScreenDimensions({
+          screenWidth: window.innerWidth,
+          screenHeight: window.innerHeight,
+        });
+      };
+    
+      useEffect(() => {
+        if (typeof window !== 'undefined') {
+          window.addEventListener('resize', handleResize);
+          setScreenDimensions({
+            screenWidth: window.innerWidth,
+            screenHeight: window.innerHeight,
+          });
+          return () => {
+            window.removeEventListener('resize', handleResize);
+          };
+        }
+      }, []);
+    // -___-----------________
+    
     const pincodeserver = [700122, 560078, 560076];
     const onPincodeEnteredFunction = useCallback(() => {
         if (valuefield.length == 6) {
@@ -314,6 +341,20 @@ function MainPage() {
                             <h4>Frequently got Licenses/Certifications</h4>
                         </div>
                         <div className={Style.Licensesmaindiv_map} >
+                        {prevbuttonIndex === 0 ? (
+                            <div className={Style.Flipkart_Content_Skills_div_arrow_left}>
+                                <button className={Style.prevbutton} style={{ background: "transparent" }} disabled onClick={prevbutton}>
+                                    <i className="fa fa-arrow-circle-left" style={{ color: 'white', backgroundColor: 'transparent' }} aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        ) : (
+                            <div className={Style.Flipkart_Content_Skills_div_arrow_left}>
+                                <button className={Style.prevbutton} style={{ background: "transparent" }} onClick={prevbutton}>
+                                    <i className="fa fa-arrow-circle-left" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        )}
+                        <div className={Style.Licensesmaindiv_map_Main_div}>
                             {AboutmeLicenses.map((element, i) => (
                                 <div className={Style.LicensesmainDivitem} key={i}>
 
@@ -340,6 +381,16 @@ function MainPage() {
                                     </Dialog>
                                 </div>
                             ))}
+                            </div>
+                            {nextbuttonIndex == ProjectJson.length ? (<div className={Style.Flipkart_Content_Skills_div_arrow_left}>
+                            <button className={Style.prevbutton} style={{ background: "transparent" }} disabled onClick={nextbutton}>
+                                <i className="fa fa-arrow-circle-right" style={{ color: 'white' }} aria-hidden="true"></i>
+                            </button>
+                        </div>) : (<div className={Style.Flipkart_Content_Skills_div_arrow_left}>
+                            <button className={Style.prevbutton} style={{ background: "transparent" }} onClick={nextbutton}>
+                                <i className="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                            </button>
+                        </div>)}
                         </div>
                     </div>
                 </div>
