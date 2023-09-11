@@ -1,5 +1,4 @@
-import React, { useState, useMemo, useCallback, useRef } from 'react'
-import About from '../Portfolio/About';
+import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import Head from 'next/head';
 import Image from 'next/legacy/image'
 import FlipkartNavBar from './FlipkartNavBar'
@@ -16,6 +15,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Button from '@mui/material/Button';
 import Popover from '@mui/material/Popover';
 import Typography from '@mui/material/Typography';
+import screenSize from '../ScreenSize'
 
 
 function MainPage() {
@@ -23,7 +23,7 @@ function MainPage() {
     const [validPincode, setvalidPincode] = useState(false)
     const [pincodeentered, setpincodeentered] = useState(false)
     const [valuefield, setvaluefield] = useState('')
-    const [mainImageUrl, setMainImageUrl] = useState('/Image/AbhiFlipkart.webp');
+    const [mainImageUrl, setMainImageUrl] = useState('/Image/Abhijeetkumar2.webp');
     const handleClick = useCallback((event) => {
         window.open(event, '_blank');
     }, [])
@@ -52,7 +52,7 @@ function MainPage() {
             }
         }
     }, [valuefield, setvaluefield]);
-
+    const screenDimensions = screenSize();
     const pincodeserver = [700122, 560078, 560076];
     const onPincodeEnteredFunction = useCallback(() => {
         if (valuefield.length == 6) {
@@ -93,8 +93,34 @@ function MainPage() {
             ref.current.scrollIntoView({ behavior: 'smooth' });
         }
     };
+    const [prevbuttonIndex, setprevbuttonIndex] = useState(0);
+    const [nextbuttonIndex, setnextbuttonIndex] = useState(ProjectJson.length >= 3 ? 3 : ProjectJson.length);
 
+    useEffect(() => {
 
+        if (screenDimensions.screenWidth < 769) {
+            setnextbuttonIndex(1);
+        } else if (screenDimensions.screenWidth > 769 && screenDimensions.screenWidth < 1250) {
+            setnextbuttonIndex(2);
+        }
+        else {
+            setnextbuttonIndex(ProjectJson.length >= 3 ? 3 : ProjectJson.length);
+        }
+    }, [screenDimensions.screenWidth, setnextbuttonIndex]);
+   
+    const prevbutton = () => {
+        if (prevbuttonIndex !== 0) {
+            setnextbuttonIndex(nextbuttonIndex - 1);
+            setprevbuttonIndex(prevbuttonIndex - 1);
+        }
+    };
+    const nextbutton = () => {
+        if (nextbuttonIndex !== AboutmeSkills.length) {
+            setprevbuttonIndex(prevbuttonIndex + 1);
+            setnextbuttonIndex(nextbuttonIndex + 1);
+        }
+    };
+   
     return (
 
         <div>
@@ -124,12 +150,12 @@ function MainPage() {
                 <div className={Style.flipkartMainBox}>
                     <div className={Style.flipkartMainBox_Image}>
                         <div className={Style.flipkartMainboxImage_subimage}>
-                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/AbhiFlipkart.webp')}><Image loading='lazy' layout='responsive' width={60} height={60} style={{ width: '100%' }} alt="MyImage" src='/Image/AbhiFlipkart.webp' /></div>
-                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('https://img.freepik.com/free-vector/man-works-home-with-laptop-prevent-virus-infection_1150-34980.jpg?w=1380&t=st=1689398758~exp=1689399358~hmac=06b4a1c45813249b2dc6cb41b2c6365b575130843b6a359b18a93111e5b4a7a5')}><Image loading='lazy' width={60} height={60} alt="MyImage" style={{ width: '100%' }} src='https://img.freepik.com/free-vector/man-works-home-with-laptop-prevent-virus-infection_1150-34980.jpg?w=1380&t=st=1689398758~exp=1689399358~hmac=06b4a1c45813249b2dc6cb41b2c6365b575130843b6a359b18a93111e5b4a7a5' /></div>
-                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('https://img.freepik.com/premium-vector/creative-abstract-saas-illustration_52683-79843.jpg?w=1800')}><Image alt="MyImage" loading='lazy' width={60} height={60} style={{ width: '100%' }} src='https://img.freepik.com/premium-vector/creative-abstract-saas-illustration_52683-79843.jpg?w=1800' /></div>
-                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('https://cdn-icons-png.flaticon.com/512/1831/1831655.png')}><Image loading='lazy' width={60} height={60} style={{ width: '100%' }} alt="MyImage" src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' /></div>
+                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/Abhijeetkumar2.webp')}><Image loading='lazy' layout='responsive' width={60} height={60} style={{ maxWidth: '100%', objectFit: 'contain' }} alt="MyImage" src='/Image/Abhijeetkumar2.webp' /></div>
+                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/AbhijeetKumar_1.webp')}><Image loading='lazy' width={60} height={60} alt="MyImage" style={{ maxWidth: '100%' }} src='/Image/AbhijeetKumar_1.webp' /></div>
+                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('https://img.freepik.com/premium-vector/creative-abstract-saas-illustration_52683-79843.jpg?w=1800')}><Image alt="MyImage" loading='lazy' width={60} height={60} style={{ maxWidth: '100%' }} src='https://img.freepik.com/premium-vector/creative-abstract-saas-illustration_52683-79843.jpg?w=1800' /></div>
+                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('https://cdn-icons-png.flaticon.com/512/1831/1831655.png')}><Image loading='lazy' width={60} height={60} style={{ maxWidth: '100%' }} alt="MyImage" src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' /></div>
                         </div>
-                        <div className={Style.flipkartMainboxImage_Mainimage}><Image loading='lazy' alt="MyImage" width={500} height={500} style={{ width: '100%' }} src={mainImageUrl} /></div>
+                        <div className={Style.flipkartMainboxImage_Mainimage}><Image loading='lazy' alt="MyImage" width={500} height={500} style={{ objectFit: 'contain', width: '100%', height: '100%' }} src={mainImageUrl} /></div>
                     </div>
                     <div className={Style.flipkartMainBox_Content}>
                         <div>
@@ -197,7 +223,7 @@ function MainPage() {
                                 {experienceJson.map((element, i) => (
                                     <div className={Style.experienceJsonmaindiv} key={i}>
                                         <div className={Style.experienceJsonImageDiv}>
-                                            <Image alt="MyImage" loading='lazy' width={50} height={50} style={{ width: "100%" }} src={element.logo} />
+                                            <Image alt="MyImage" loading='lazy' width={50} height={50} style={{ maxWidth: "100%" }} src={element.logo} />
                                         </div>
                                         <div className={Style.experienceJsondiv}>
                                             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -216,10 +242,10 @@ function MainPage() {
                 </div>
 
                 <div style={{ background: 'white', marginTop: '15px' }}>
-                    <div style={{ display: "flex", justifyContent: "space-evenly", flexWrap: 'wrap' }}>
+                    <div className={Style.Skills_sub_Main_div}>
                         {AboutmeSkills.map((element, i) => (
                             <div className={Style.Skills_sub_div} key={i}>
-                                <div style={{ display: 'flex', alignItems: 'center' }}><Image alt="MyImage" loading='lazy' width={60} height={60} src={element.logo} style={{ maxWidth: '60px', margin: '0px 5px' }} /></div>
+                                <div style={{ display: 'flex', alignItems: 'center' }}><Image alt="MyImage" loading='lazy' width={40} height={40} src={element.logo} style={{ maxWidth: '40px', marginLeft: '5px' }} /></div>
                                 <div style={{ display: 'flex', alignItems: 'center' }}>{element.skills}</div>
                             </div>
                         ))}
@@ -230,18 +256,44 @@ function MainPage() {
                     <div className={`${Style.projectdivtext} ${Style.headingtext}`}>
                         <h4>You might be interested in my Projects</h4>
                     </div>
-                    <div style={{ display: 'flex', overflowX: 'scroll' }}>
-                        {ProjectJson.map((element, i) => (
-                            <div className={Style.projectDivItem} key={i}>
-                                <div><Image alt="MyImage" loading='lazy' width={400} height={200} src={element.image} style={{ width: '100%', margin: '0px 5px' }} /></div>
-                                <div className={Style.projectDivItemcontent}>
-                                    <h6>{element.title}</h6>
-                                    <p className={Style.Contentjustify}>{element.description}</p>
-                                    <p className={Style.Contentjustify}><strong>{element.code}</strong></p>
-                                    <button aria-label='viewProjectBtn' className={Style.viewProjectBtn} onClick={() => handleClick(element.button)}><strong>View Project</strong></button>
-                                </div>
+                    <div className={Style.Flipkart_Content_Skills_div_container}>
+                        {prevbuttonIndex === 0 ? (
+                            <div className={Style.Flipkart_Content_Skills_div_arrow_left}>
+                                <button className={Style.prevbutton} style={{ background: "transparent" }} disabled onClick={prevbutton}>
+                                    <i className="fa fa-arrow-circle-left" style={{ color: 'white', backgroundColor: 'transparent' }} aria-hidden="true"></i>
+                                </button>
                             </div>
-                        ))}
+                        ) : (
+                            <div className={Style.Flipkart_Content_Skills_div_arrow_left}>
+                                <button className={Style.prevbutton} style={{ background: "transparent" }} onClick={prevbutton}>
+                                    <i className="fa fa-arrow-circle-left" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        )}
+
+                        <div className={Style.Flipkart_Content_Skills_div_Main}>
+                            {ProjectJson.slice(prevbuttonIndex, nextbuttonIndex).map((element, i) => (
+                                <div className={Style.projectDivItem} key={i}>
+                                    <div><Image alt="MyImage" loading='lazy' width={400} height={200} src={element.image} /></div>
+                                    <div className={Style.projectDivItemcontent}>
+                                        <h6>{element.title}</h6>
+                                        <p className={Style.Contentjustify}>{element.description}</p>
+                                        <p className={Style.Contentjustify}><strong>{element.code}</strong></p>
+                                        <button aria-label='viewProjectBtn' className={Style.viewProjectBtn} onClick={() => handleClick(element.button)}><strong>View Project</strong></button>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                        {nextbuttonIndex == ProjectJson.length ? (<div className={Style.Flipkart_Content_Skills_div_arrow_left}>
+                            <button className={Style.prevbutton} style={{ background: "transparent" }} disabled onClick={nextbutton}>
+                                <i className="fa fa-arrow-circle-right" style={{ color: 'white' }} aria-hidden="true"></i>
+                            </button>
+                        </div>) : (<div className={Style.Flipkart_Content_Skills_div_arrow_left}>
+                            <button className={Style.prevbutton} style={{ background: "transparent" }} onClick={nextbutton}>
+                                <i className="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                            </button>
+                        </div>)}
+
                     </div>
                 </div>
 

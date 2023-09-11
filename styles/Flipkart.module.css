@@ -38,7 +38,7 @@
 
 .Available_offers_div_img {
   max-width: 20px;
-  margin: 0px 5px;
+  margin-left: 5px;
 }
 
 .Skills_sub_div {
@@ -304,6 +304,7 @@
   display: flex;
   padding: 15px;
   background-color: white;
+  max-height: 700px;
   /* position: relative; */
 }
 
@@ -320,17 +321,20 @@
   padding: 15px;
   flex-direction: column;
   display: flex;
+  overflow-x: scroll;
 }
 
 .flipkartMainboxImage_subimage {
   width: 20%;
   padding: 10px;
+  position: sticky;
   /* margin-bottom: 10px; */
 
 }
 
 .flipkartMainboxImage_Mainimage {
-  width: 80%
+  width: 80%;
+  object-fit: contain;
 }
 
 .flipkartMainboxImage_subimage_Box {
@@ -521,7 +525,40 @@
   padding: 0px 20px 0px 0px;
   align-items: center;
 }
+.Skills_sub_Main_div{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.prevbutton{
+  background-color: white;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+  border: none;
+  color: rgb(1, 1, 1);
+  font-size: 24px;
+  cursor: pointer;
+  outline: none;
+  margin: 10px;
+}
+.Flipkart_Content_Skills_div_container {
+  display: flex;
+}
+.Flipkart_Content_Skills_div_arrow_left {
+  width: 5%;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+.Flipkart_Content_Skills_div_Main{
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  width: 90%;
+  overflow-x: auto;
+  transition: transform 0.3s ease-in-out;
 
+}
 @media only screen and (max-width: 750px) {
   .subNavbarText {
     font-size: 12px;
@@ -529,6 +566,7 @@
 
   .flipkartMainBox {
     flex-direction: column;
+    max-height: 100%;
   }
 
   .flipkartMainBox_Image {
@@ -538,6 +576,7 @@
 
   .flipkartMainBox_Content {
     width: 100%;
+    overflow-x: hidden; 
   }
 
   .Contentjustify {
@@ -566,7 +605,33 @@
   .experienceJsondiv {
     padding: 10px;
   }
+  .projectDivItem {
+    width: 275px;
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+    margin: 0px 5px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    flex-shrink: 0;
 
+  }
+  .viewProjectBtn {
+    padding: 8px 6px;
+    font-size: 13px;
+    text-transform: capitalize;
+    box-shadow: none;
+    background: #2874f0;
+    color: rgb(255, 255, 255);
+    font-size: medium;
+    font-weight: 300;
+    border: none;
+    max-width: 165px;
+  }
+  .Skills_sub_Main_div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
 
 }
 
