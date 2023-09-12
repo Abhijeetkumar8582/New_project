@@ -27,7 +27,7 @@
 .Instragram_Content_Main_div {
   width: 80%;
   padding: 2rem 4rem;
-  color: white;
+  color: #ffffff;
   overflow-x: scroll;
 }
 .Instragram_Content_Intro_section {
@@ -70,10 +70,10 @@
 
 .Instragram_Content_Skills_div {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   gap: 32px;
   width: 90%;
-  overflow-x: auto;
+  overflow-x: scroll;
   white-space: nowrap;
   transition: transform 0.3s ease-in-out;
 }
@@ -89,7 +89,7 @@
   background-color: transparent;
   transition: transform 0.3s ease-in-out;
   border: none;
-  color: white;
+  color: #ffffff;
   font-size: 24px;
   cursor: pointer;
   outline: none;
@@ -110,7 +110,7 @@
 
 .Instragram_Content_Major_div_item:focus,
 .Instragram_Content_Major_div_item:active {
-  color: white;
+  color: #ffffff;
   border-bottom: none;
   border-top: 1px solid white;
   outline: none;
@@ -128,4 +128,242 @@
 .Project_card_item {
   max-width: 300px;
   gap: 10px;
+}
+.expirence_Product_card_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.expirence_card_list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  gap: 20px;
+}
+.viewProject_btn {
+  font-family: monospace;
+  font-size: 16px;
+  color: #fafafa;
+  text-transform: uppercase;
+  padding: 4px 15px;
+  border-radius: 10px;
+  border: 1px solid #fafafa;
+  background: #252525;
+  box-shadow: 2px 2px #fafafa;
+  cursor: pointer;
+  margin: 25px 0;
+}
+
+.viewProject_btn:active,
+.viewProject_btn:focus {
+  box-shadow: none;
+  text-decoration: none;
+  outline: none;
+  transform: translate(3px, 3px);
+}
+
+.expirence_card {
+  padding: 20px;
+  width: 300px;
+  min-height: 370px;
+  border-radius: 20px;
+  background: #121212;
+  box-shadow: 2px 2px 4px #1b1b1b, -2px -2px 2px #272727;
+  transition: 0.4s;
+}
+
+.expirence_card:hover {
+  translate: 0 -10px;
+}
+
+.expirence_card_title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 15px 0 0 10px;
+}
+
+.expirence_card_image {
+  min-height: 140px;
+  background-color: #313131;
+  border-radius: 15px;
+  background: #313131;
+  box-shadow: inset 5px 5px 3px #2f2f2f, inset -5px -5px 3px #333333;
+}
+
+.expirence_card_body {
+  margin: 13px 0 0 10px;
+  color: rgb(184, 184, 184);
+  font-size: 15px;
+}
+
+.expirence_card_footer {
+  float: right;
+  margin: 28px 0 0 18px;
+  font-size: 13px;
+  color: #b3b3b3;
+}
+
+.by-name {
+  font-weight: 700;
+}
+
+.card {
+  min-width: 300px;
+  min-height: 280px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: #1a1a1a;
+}
+.card:hover {
+  translate: 0 -10px;
+  transition: all ease-in 0.3s;
+}
+.header {
+  display: flex;
+  color: #ffffff;
+  justify-content: space-between;
+  grid-gap: 1rem;
+  gap: 1rem;
+  text-decoration: none;
+}
+
+.title {
+  font-size: 1.125rem;
+  color: #ffffff;
+  line-height: 1.25rem;
+  font-weight: 600;
+}
+
+.name {
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: #b2b2b2;
+  line-height: 1rem;
+  font-weight: 500;
+}
+
+.image {
+  display: block;
+  flex-shrink: 0;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  background-color: royalblue;
+}
+
+.description {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: grey;
+}
+
+.AboutmeLicenses_div {
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  background: #1f1f1f;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.AboutmeLicenses_div:hover {
+  translate: 0 -10px;
+  transition: all ease-in 0.3s;
+}
+.AboutmeLicenses_div_heading {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  z-index: 2;
+}
+
+.AboutmeLicenses_div_description {
+  font-size: 0.9em;
+  color: rgb(138, 138, 138);
+  z-index: 2;
+}
+
+.AboutmeLicenses_div_description a {
+  color: #b2b2b2;
+}
+
+.AboutmeLicenses_div_button {
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 400;
+  padding-left: 25px;
+  padding-right: 25px;
+  color: #fff;
+  -webkit-clip-path: polygon(
+    0 0,
+    0 0,
+    100% 0,
+    100% 0,
+    100% calc(100% - 15px),
+    calc(100% - 15px) 100%,
+    15px 100%,
+    0 100%
+  );
+  clip-path: polygon(
+    0 0,
+    0 0,
+    100% 0,
+    100% 0,
+    100% calc(100% - 15px),
+    calc(100% - 15px) 100%,
+    15px 100%,
+    0 100%
+  );
+  height: 40px;
+  font-size: 0.7rem;
+  line-height: 14px;
+  letter-spacing: 1.2px;
+  transition: 0.2s 0.1s;
+  background-image: linear-gradient(90deg, #1c1c1c, #363638);
+  border: 0 solid;
+  overflow: hidden;
+}
+
+.AboutmeLicenses_div_button:hover {
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.DialogContent_box {
+  display: flex;
+}
+.DialogContent_box_image {
+  width: 50%;
+}
+.DialogContent_box_content {
+  width: 50%;
+  background-color: #121212;
+  color: #ffffff;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+.DialogContent_box_Avatar_div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 1rem 0rem;
+  border-bottom: 1px solid gray;
 }

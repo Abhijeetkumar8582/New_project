@@ -3,16 +3,16 @@
   margin: 60px;
   display: flex;
   background: #fff;
-  border: 5px solid rgba(0, 0, 0, .07);
-  transition: all .5s ease 0;
-  transition: all .5s ease 0s;
+  border: 5px solid rgba(0, 0, 0, 0.07);
+  transition: all 0.5s ease 0;
+  transition: all 0.5s ease 0s;
   box-shadow: 0 10px 10px 0 #5147dd;
 }
 
 .flipkartBox_one {
   width: 50%;
   padding: 30px;
-  background-color: white
+  background-color: white;
 }
 
 .flipkartBox_two {
@@ -27,7 +27,7 @@
 .ratingDiv {
   display: flex;
   margin-bottom: 10px;
-  align-items: center
+  align-items: center;
 }
 
 .Available_offers_div {
@@ -44,7 +44,7 @@
 .Skills_sub_div {
   display: flex;
   flex-direction: row;
-  padding: 10px
+  padding: 10px;
 }
 
 .ImageLogo_div {
@@ -78,20 +78,21 @@
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
-  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
-    7px 7px 20px 0px rgba(0, 0, 0, .1),
-    4px 4px 5px 0px rgba(0, 0, 0, .1);
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   outline: none;
 }
-
 
 /* 2 */
 .btn2 {
   background: rgb(240, 140, 9);
-  background: linear-gradient(0deg, rgb(250, 161, 28) 0%, rgb(247, 140, 52) 100%);
+  background: linear-gradient(
+    0deg,
+    rgb(250, 161, 28) 0%,
+    rgb(247, 140, 52) 100%
+  );
   border: none;
   margin-bottom: 30px;
-
 }
 
 .btn2:before {
@@ -100,10 +101,10 @@
 }
 
 .btn2:hover {
-  box-shadow: 2px 2px 3px 0 rgba(255, 255, 255, .5),
+  box-shadow: 2px 2px 3px 0 rgba(255, 255, 255, 0.5),
     -4px -4px 6px 0 rgba(155, 163, 173, 0.5),
-    inset -4px -4px 6px 0 rgba(255, 255, 255, .2),
-    inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, 0.4);
 }
 
 .userConcern {
@@ -124,12 +125,12 @@
 
 .textInputDIv {
   margin: 0px 0px 15px;
-  max-width: 400px
+  max-width: 400px;
 }
 
 .forgetNameBTn {
   background-color: white;
-  border: none
+  border: none;
 }
 
 .forgetNameBTn:focus {
@@ -153,8 +154,6 @@
   }
 }
 
-
-
 .avatar {
   border-radius: 50%;
   align-items: center;
@@ -171,7 +170,6 @@
 }
 
 .generateAnotherOne {
-
   width: 140px;
   height: 45px;
   font-family: Roboto, sans-serif;
@@ -187,7 +185,6 @@
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
-
 }
 
 .generateAnotherOne:hover {
@@ -222,30 +219,30 @@
 
 .btn12 span {
   background: rgb(0, 172, 238);
-  background: linear-gradient(0deg, rgba(0, 172, 238, 1) 0%, rgba(2, 126, 251, 1) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 172, 238, 1) 0%,
+    rgba(2, 126, 251, 1) 100%
+  );
   display: block;
   position: absolute;
   width: 130px;
   height: 40px;
-  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
-    7px 7px 20px 0px rgba(0, 0, 0, .1),
-    4px 4px 5px 0px rgba(0, 0, 0, .1);
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   margin: 0;
   text-align: center;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .btn12 span:nth-child(1) {
-  box-shadow:
-    -7px -7px 20px 0px #fff9,
-    -4px -4px 5px 0px #fff9,
-    7px 7px 20px 0px #0002,
-    4px 4px 5px 0px #0001;
+  box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;
   -webkit-transform: rotateX(90deg);
   -moz-transform: rotateX(90deg);
   transform: rotateX(90deg);
@@ -264,18 +261,16 @@
 }
 
 .btn12:hover span:nth-child(1) {
-  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
-    7px 7px 20px 0px rgba(0, 0, 0, .1),
-    4px 4px 5px 0px rgba(0, 0, 0, .1);
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   -webkit-transform: rotateX(0deg);
   -moz-transform: rotateX(0deg);
   transform: rotateX(0deg);
 }
 
 .btn12:hover span:nth-child(2) {
-  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
-    7px 7px 20px 0px rgba(0, 0, 0, .1),
-    4px 4px 5px 0px rgba(0, 0, 0, .1);
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   color: transparent;
   -webkit-transform: rotateX(-90deg);
   -moz-transform: rotateX(-90deg);
@@ -287,8 +282,8 @@
   flex-wrap: wrap;
   background: #fff;
   padding: 10px;
-  border: 2px solid rgba(0, 0, 0, .07);
-  transition: all .5s ease 0s;
+  border: 2px solid rgba(0, 0, 0, 0.07);
+  transition: all 0.5s ease 0s;
   box-shadow: 0 5px 5 0 #5147dd;
   justify-content: space-evenly;
 }
@@ -297,7 +292,6 @@
   font-family: monospace;
   margin: 0px 10px;
   cursor: pointer;
-
 }
 
 .flipkartMainBox {
@@ -308,12 +302,10 @@
   /* position: relative; */
 }
 
-
 .flipkartMainBox_Image {
   width: 40%;
   display: flex;
   padding: 15px;
-
 }
 
 .flipkartMainBox_Content {
@@ -329,7 +321,6 @@
   padding: 10px;
   position: sticky;
   /* margin-bottom: 10px; */
-
 }
 
 .flipkartMainboxImage_Mainimage {
@@ -350,7 +341,6 @@
   padding: 2px;
   color: white;
   font-size: smaller;
-
 }
 
 .pincodeInput {
@@ -375,7 +365,7 @@
   padding: 18px 8px;
   font-weight: 400;
   border-radius: 2px;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
   width: 98%;
   border: none;
   float: left;
@@ -390,7 +380,6 @@
 }
 
 .experienceJsonmaindiv {
-
   /* align-items: center; */
   display: flex;
 }
@@ -399,7 +388,6 @@
   width: 90%;
   margin-bottom: 10px;
   border-bottom: 2px solid gray;
-
 }
 
 .showdivBtn {
@@ -437,7 +425,8 @@
   overflow-x: auto;
   padding: 10px;
   margin: 0px 5px;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
   flex-shrink: 0;
   /* Add this line to prevent shrinking */
 }
@@ -451,7 +440,7 @@
 }
 
 .LicensesmainDivitemcontent {
-  width: 70%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -478,7 +467,6 @@
 
 .AchievementsMainDiv {
   background: rgb(255, 255, 255);
-  /* padding: 15px; */
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -493,7 +481,6 @@
 
 .LicensesmainDiv {
   background: rgb(255, 255, 255);
-  /* padding: 15px; */
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -501,20 +488,21 @@
 .Licensesmaindiv_map {
   display: flex;
   flex-direction: row;
-  /* overflow-x: scroll; */
 }
-.Licensesmaindiv_map_Main_div{
+.Licensesmaindiv_map_Main_div {
   display: flex;
   overflow-x: scroll;
+  
 }
 .LicensesmainDivitem {
-  width: 500px;
+  width: 350px;
   display: flex;
   flex-direction: row;
   overflow-x: auto;
   padding: 10px;
   margin: 0px 5px;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
   flex-shrink: 0;
 }
 
@@ -528,12 +516,12 @@
   padding: 0px 20px 0px 0px;
   align-items: center;
 }
-.Skills_sub_Main_div{
+.Skills_sub_Main_div {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
-.prevbutton{
+.prevbutton {
   background-color: white;
   position: relative;
   transition: transform 0.3s ease-in-out;
@@ -553,14 +541,13 @@
   align-items: center;
   transition: transform 0.3s ease-in-out;
 }
-.Flipkart_Content_Skills_div_Main{
+.Flipkart_Content_Skills_div_Main {
   display: flex;
   justify-content: flex-start;
   gap: 12px;
   width: 90%;
   overflow-x: auto;
   transition: transform 0.3s ease-in-out;
-
 }
 @media only screen and (max-width: 750px) {
   .subNavbarText {
@@ -579,7 +566,7 @@
 
   .flipkartMainBox_Content {
     width: 100%;
-    overflow-x: hidden; 
+    overflow-x: hidden;
   }
 
   .Contentjustify {
@@ -614,9 +601,9 @@
     flex-direction: column;
     overflow-x: auto;
     margin: 0px 5px;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+      rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
     flex-shrink: 0;
-
   }
   .viewProjectBtn {
     padding: 8px 6px;
@@ -630,12 +617,21 @@
     border: none;
     max-width: 165px;
   }
-  .Skills_sub_Main_div{
+  .Skills_sub_Main_div {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-  
-
+  .LicensesmainDivitem {
+    width: 280px;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 10px;
+    margin: 0px 5px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+      rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    flex-shrink: 0;
+  }
 }
 
 .flipkartMainboxImage_subimage_Box:hover {

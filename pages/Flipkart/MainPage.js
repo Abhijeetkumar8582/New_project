@@ -24,6 +24,7 @@ function MainPage() {
     const [pincodeentered, setpincodeentered] = useState(false)
     const [valuefield, setvaluefield] = useState('')
     const [mainImageUrl, setMainImageUrl] = useState('/Image/Abhijeetkumar2.webp');
+    const pincodeserver = [700122, 560078, 560076];
     const handleClick = useCallback((event) => {
         window.open(event, '_blank');
     }, [])
@@ -53,34 +54,33 @@ function MainPage() {
         }
     }, [valuefield, setvaluefield]);
     // const screenDimensions = useScreenDimensions();
-    
+
     const [screenDimensions, setScreenDimensions] = useState({
         screenWidth: 0,
         screenHeight: 0,
-      });
-    
-      const handleResize = () => {
+    });
+
+    const handleResize = () => {
         setScreenDimensions({
-          screenWidth: window.innerWidth,
-          screenHeight: window.innerHeight,
-        });
-      };
-    
-      useEffect(() => {
-        if (typeof window !== 'undefined') {
-          window.addEventListener('resize', handleResize);
-          setScreenDimensions({
             screenWidth: window.innerWidth,
             screenHeight: window.innerHeight,
-          });
-          return () => {
-            window.removeEventListener('resize', handleResize);
-          };
+        });
+    };
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            window.addEventListener('resize', handleResize);
+            setScreenDimensions({
+                screenWidth: window.innerWidth,
+                screenHeight: window.innerHeight,
+            });
+            return () => {
+                window.removeEventListener('resize', handleResize);
+            };
         }
-      }, []);
+    }, []);
     // -___-----------________
-    
-    const pincodeserver = [700122, 560078, 560076];
+
     const onPincodeEnteredFunction = useCallback(() => {
         if (valuefield.length == 6) {
             if (pincodeserver.includes(Number(valuefield))) {
@@ -122,32 +122,57 @@ function MainPage() {
     };
     const [prevbuttonIndex, setprevbuttonIndex] = useState(0);
     const [nextbuttonIndex, setnextbuttonIndex] = useState(ProjectJson.length >= 3 ? 3 : ProjectJson.length);
+    const [prevLicenseIndex, setprevLicenseIndex] = useState(0);
+    const [nextLicenseIndex, setnextLicenseIndex] = useState(AboutmeLicenses.length >= 4 ? 4 : AboutmeLicenses.length);
+    const [getAboutmeLicenses, setAboutmeLicenses] = useState(AboutmeLicenses.length)
 
     useEffect(() => {
 
         if (screenDimensions.screenWidth < 769) {
             setnextbuttonIndex(1);
+            setnextLicenseIndex(1);
+            setAboutmeLicenses(AboutmeLicenses.length)
         } else if (screenDimensions.screenWidth > 769 && screenDimensions.screenWidth < 1250) {
             setnextbuttonIndex(2);
+            setnextLicenseIndex(2);
+            setAboutmeLicenses(AboutmeLicenses.length + 1)
         }
         else {
             setnextbuttonIndex(ProjectJson.length >= 3 ? 3 : ProjectJson.length);
+            setnextLicenseIndex(AboutmeLicenses.length >= 4 ? 4 : AboutmeLicenses.length)
+            setAboutmeLicenses(AboutmeLicenses.length + 1)
         }
     }, [screenDimensions.screenWidth, setnextbuttonIndex]);
-   
+
     const prevbutton = () => {
         if (prevbuttonIndex !== 0) {
             setnextbuttonIndex(nextbuttonIndex - 1);
             setprevbuttonIndex(prevbuttonIndex - 1);
+
+
         }
     };
     const nextbutton = () => {
         if (nextbuttonIndex !== AboutmeSkills.length) {
             setprevbuttonIndex(prevbuttonIndex + 1);
             setnextbuttonIndex(nextbuttonIndex + 1);
+
         }
     };
-   
+    const preLicensesButton = () => {
+        if (prevLicenseIndex !== 0) {
+            setprevLicenseIndex(prevLicenseIndex - 1);
+            setnextLicenseIndex(nextLicenseIndex - 1)
+
+        }
+    }
+    const nextLicensesButton = () => {
+        if (nextbuttonIndex !== AboutmeSkills.length) {
+
+            setprevLicenseIndex(prevLicenseIndex + 1);
+            setnextLicenseIndex(nextLicenseIndex + 1)
+        }
+    };
     return (
 
         <div>
@@ -341,56 +366,56 @@ function MainPage() {
                             <h4>Frequently got Licenses/Certifications</h4>
                         </div>
                         <div className={Style.Licensesmaindiv_map} >
-                        {prevbuttonIndex === 0 ? (
-                            <div className={Style.Flipkart_Content_Skills_div_arrow_left}>
-                                <button className={Style.prevbutton} style={{ background: "transparent" }} disabled onClick={prevbutton}>
-                                    <i className="fa fa-arrow-circle-left" style={{ color: 'white', backgroundColor: 'transparent' }} aria-hidden="true"></i>
-                                </button>
-                            </div>
-                        ) : (
-                            <div className={Style.Flipkart_Content_Skills_div_arrow_left}>
-                                <button className={Style.prevbutton} style={{ background: "transparent" }} onClick={prevbutton}>
-                                    <i className="fa fa-arrow-circle-left" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                        )}
-                        <div className={Style.Licensesmaindiv_map_Main_div}>
-                            {AboutmeLicenses.map((element, i) => (
-                                <div className={Style.LicensesmainDivitem} key={i}>
-
-                                    <div style={{ width: '30%', alignItems: 'center', display: 'flex' }}> <Image alt="MyImage" loading='lazy' width={500} height={500} src={element.logo} style={{ width: '100%', margin: '0px 0px' }} /></div>
-                                    <div className={Style.LicensesmainDivitemcontent}>
-                                        <div><h6>{element.tittle}</h6></div>
-                                        <div><p className={Style.Contentjustify}>{element.description}</p></div>
-                                        <button aria-label="viewProjectBtn" className={Style.viewProjectBtn} onClick={() => handleClickOpen(element.tittle)} >View Certificate</button>
-                                    </div>
-                                    <Dialog
-                                        disablePortal
-                                        sx={{ width: "100%" }}
-                                        open={open[element.tittle] || false}
-                                        onClose={() => handleClose(element.tittle)}
-                                        maxWidth="xl"
-                                    >
-                                        <DialogTitle>{element.tittle}</DialogTitle>
-                                        <DialogContent>
-                                            <Image loading='lazy' src={element.certificate} onError={() => { element.certificate = "/Image/aboutPageImage.jpg" }} alt={element.tittle} width={950} height={550}></Image>
-                                        </DialogContent>
-                                        <DialogActions>
-                                            <Button aria-label="expirenceBTn" onClick={() => handleClose(element.tittle)}>Perfect!!!</Button>
-                                        </DialogActions>
-                                    </Dialog>
+                            {prevLicenseIndex === 0 ? (
+                                <div className={Style.Flipkart_Content_Skills_div_arrow_left}>
+                                    <button className={Style.prevbutton} style={{ background: "transparent" }} disabled onClick={preLicensesButton}>
+                                        <i className="fa fa-arrow-circle-left" style={{ color: 'white', backgroundColor: 'transparent' }} aria-hidden="true"></i>
+                                    </button>
                                 </div>
-                            ))}
+                            ) : (
+                                <div className={Style.Flipkart_Content_Skills_div_arrow_left}>
+                                    <button className={Style.prevbutton} style={{ background: "transparent" }} onClick={preLicensesButton}>
+                                        <i className="fa fa-arrow-circle-left" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            )}
+                            <div className={Style.Licensesmaindiv_map_Main_div}>
+                                {AboutmeLicenses.slice(prevLicenseIndex, nextLicenseIndex).map((element, i) => (
+                                    <div className={Style.LicensesmainDivitem} key={i}>
+
+                                        <div style={{ width: '10%', alignItems: 'flex-start', display: 'flex' }}> <Image alt="MyImage" loading='lazy' width={500} height={500} src={element.logo} style={{ width: '100%', margin: '0px 0px' }} /></div>
+                                        <div className={Style.LicensesmainDivitemcontent}>
+                                            <div><h6>{element.tittle}</h6></div>
+                                            <div><p className={Style.Contentjustify}>{element.description}</p></div>
+                                            <button aria-label="viewProjectBtn" className={Style.viewProjectBtn} onClick={() => handleClickOpen(element.tittle)} >View Certificate</button>
+                                        </div>
+                                        <Dialog
+                                            disablePortal
+                                            sx={{ width: "100%" }}
+                                            open={open[element.tittle] || false}
+                                            onClose={() => handleClose(element.tittle)}
+                                            maxWidth="xl"
+                                        >
+                                            <DialogTitle>{element.tittle}</DialogTitle>
+                                            <DialogContent>
+                                                <Image loading='lazy' src={element.certificate} onError={() => { element.certificate = "/Image/aboutPageImage.jpg" }} alt={element.tittle} width={950} height={550}></Image>
+                                            </DialogContent>
+                                            <DialogActions>
+                                                <Button aria-label="expirenceBTn" onClick={() => handleClose(element.tittle)}>Perfect!!!</Button>
+                                            </DialogActions>
+                                        </Dialog>
+                                    </div>
+                                ))}
                             </div>
-                            {nextbuttonIndex == ProjectJson.length ? (<div className={Style.Flipkart_Content_Skills_div_arrow_left}>
-                            <button className={Style.prevbutton} style={{ background: "transparent" }} disabled onClick={nextbutton}>
-                                <i className="fa fa-arrow-circle-right" style={{ color: 'white' }} aria-hidden="true"></i>
-                            </button>
-                        </div>) : (<div className={Style.Flipkart_Content_Skills_div_arrow_left}>
-                            <button className={Style.prevbutton} style={{ background: "transparent" }} onClick={nextbutton}>
-                                <i className="fa fa-arrow-circle-right" aria-hidden="true"></i>
-                            </button>
-                        </div>)}
+                            {nextLicenseIndex == getAboutmeLicenses ? (<div className={Style.Flipkart_Content_Skills_div_arrow_left}>
+                                <button className={Style.prevbutton} style={{ background: "transparent" }} disabled onClick={nextLicensesButton}>
+                                    <i className="fa fa-arrow-circle-right" style={{ color: 'white' }} aria-hidden="true"></i>
+                                </button>
+                            </div>) : (<div className={Style.Flipkart_Content_Skills_div_arrow_left}>
+                                <button className={Style.prevbutton} style={{ background: "transparent" }} onClick={nextLicensesButton}>
+                                    <i className="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                                </button>
+                            </div>)}
                         </div>
                     </div>
                 </div>
