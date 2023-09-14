@@ -92,7 +92,11 @@ function Home() {
         <div className={Style.Instragram_Div_Side_NavBar}>
           <div className={Style.Instragram_Div_Side_NavBar_heading}>
             <div>
-              <h3>Instagram</h3>
+              <h3 className={Style.Instragram_Div_Side_NavBar_instagram_title}>Instagram</h3>
+              <i
+                className={`${"fa fa-instagram"} ${Style.Instragram_Div_Side_NavBar_instagram_icon}`}
+                aria-hidden="true"
+              ></i>
             </div>
             <div className={Style.Instragram_Div_Side_NavBar_subHeading}>
               {SideNavBar_array.map((element, i) => (
@@ -100,16 +104,17 @@ function Home() {
                   className={Style.Instragram_Div_Side_NavBar_subHeading_list}
                   key={i}
                 >
-                  <i className={element.fafa} aria-hidden="true"></i>
+                  <i className={`${element.fafa} ${Style.fafaIcon}`} aria-hidden="true"></i>
                   <div style={{ display: "flex", alignItems: "center" }}>
-                    <h5>{element.title}</h5>
+                    <h5 className={Style.Instragram_Div_Side_NavBar_heading_title}>{element.title}</h5>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div>
-              <h6>Menu</h6>
+            <div className={Style.Instragram_Div_Side_NavBar_Menu_title}>
+              <i className={`${"fa fa-bars"} ${Style.Instragram_Div_Side_NavBar_Menu_icon}`} aria-hidden="true"></i>
+              <h6 className={Style.Instragram_Div_Side_NavBar_instagram_menu_Section}>Menu</h6>
             </div>
           </div>
         </div>
@@ -121,6 +126,7 @@ function Home() {
                 alt="Remy Sharp"
                 src="/Image/Abhijeet_kumar_insta_img.webp"
                 sx={{ width: 150, height: 150 }}
+              
               />
             </div>
             <div>
@@ -152,7 +158,7 @@ function Home() {
               <div>
                 <h6>Abhijeet kumar</h6>
               </div>
-              <div>
+              <div className={Style.Instagram_status}>
                 <h6>Coding enthusiast 🚀 | Constantly learning and evolving 💡 | Turning pixels into beautiful experiences ✨</h6> #FrontendDevLife #CodePassion #AlwaysLearning  </div>
             </div>
           </div>
@@ -192,7 +198,7 @@ function Home() {
                 <Avatar
                   alt="Remy Sharp"
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRal66RNJGRaNvsBcwWGY8S9rZO5UPXXpAEwg&usqp=CAU"
-                  style={{ border: '1px solid gray', padding: '3px' }}
+                  style={{ border: '1px solid gray', padding: '3px', width: '100%' }}
                   sx={{ width: 70, height: 70 }}
                 />
                 <h6>Add skills</h6>
@@ -275,7 +281,7 @@ function Home() {
                 </TabPanel>
 
                 <TabPanel value="3">
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'center' }}>
                     {AboutmeLicenses.map((element, i) => (
                       <div className={Style.AboutmeLicenses_div} key={i}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>

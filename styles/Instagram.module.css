@@ -5,11 +5,11 @@
   display: flex;
 }
 .Instragram_Div_Side_NavBar {
-  width: 20%;
+  width: 15%;
   color: rgb(250, 250, 250);
   height: 100vh;
   background-color: rgb(0, 0, 0);
-  border-right: 1px solid white;
+  border-right: 1px solid rgb(87, 87, 87);
   display: flex;
   flex-direction: row;
   padding: 4rem 2rem;
@@ -17,6 +17,11 @@
 
 .Instragram_Div_Side_NavBar_subHeading {
   margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+.Instragram_Div_Side_NavBar_instagram_icon {
+  display: none;
 }
 .Instragram_Div_Side_NavBar_subHeading_list {
   display: flex;
@@ -25,17 +30,18 @@
   margin-bottom: 20px;
 }
 .Instragram_Content_Main_div {
-  width: 80%;
+  width: 85%;
   padding: 2rem 4rem;
   color: #ffffff;
   overflow-x: scroll;
 }
 .Instragram_Content_Intro_section {
   display: flex;
+  justify-content: center;
   margin-bottom: 30px;
 }
 .Instragram_Intro_section_image {
-  width: 30%;
+  /* width: 30%; */
   padding: 0rem 2rem;
   display: flex;
   justify-content: center;
@@ -53,10 +59,28 @@
   padding: 4px 15px;
   font-size: 15px;
 }
+.fafaIcon {
+  font-size: 25px;
+}
+.Instragram_Div_Side_NavBar_heading_title {
+  font-weight: 400;
+  font-size: 18px;
+}
 .Instragram_Content_Post_Section {
   display: flex;
   gap: 30px;
   margin-bottom: 30px;
+}
+.Instragram_Div_Side_NavBar_Menu_title {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.Instragram_Div_Side_NavBar_Menu_icon {
+  display: block;
+  font-size: 25px;
 }
 .Instragram_Content_Skills_div_container {
   display: flex;
@@ -132,6 +156,7 @@
 .expirence_Product_card_list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
 }
 .expirence_card_list {
@@ -366,4 +391,140 @@
   gap: 20px;
   padding: 1rem 0rem;
   border-bottom: 1px solid gray;
+}
+/* @media only screen and (max-width: 750px) {
+  .Instragram_Main_Div {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+  }
+  .Instragram_Div_Side_NavBar {
+    width: 100%;
+    color: rgb(250, 250, 250);
+    background-color: rgb(0, 0, 0);
+    border-right: 1px solid white;
+    display: none;
+    flex-direction: row;
+  }
+  .Instragram_Div_Side_NavBar_subHeading_list{
+    flex-direction: column;
+  }
+  .Instragram_Content_Main_div {
+    width: 100%;
+    padding: 1rem;
+    color: #ffffff;
+  }
+  .Instragram_Content_Intro_section {
+    display: flex;
+    margin-bottom: 30px;
+    max-width: 100%;
+  }
+  .Instragram_Intro_section_image {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+  }
+  .expirence_card_list {
+    display: grid;
+    grid-template-columns: 1fr ;
+    place-items: center;
+    gap: 20px;
+  }
+} */
+
+@media only screen and (max-width: 1290px) {
+  .Instragram_Div_Side_NavBar {
+    width: 6%;
+    color: rgb(250, 250, 250);
+    height: 100vh;
+    background-color: rgb(0, 0, 0);
+    border-right: 1px solid white;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    padding: 20px;
+    position: relative;
+  }
+  .Instragram_Content_Main_div {
+    width: 94%;
+    padding: 2rem 4rem;
+
+    color: #ffffff;
+    overflow-x: scroll;
+  }
+  .Instragram_Div_Side_NavBar_heading_title {
+    display: none; /* Hide text by default */
+  }
+
+  .Instragram_Div_Side_NavBar_subHeading_list:hover
+    .Instragram_Div_Side_NavBar_heading_title {
+    display: block; /* Show text on hover */
+  }
+  .Instragram_Content_Intro_section {
+    justify-content: center;
+  }
+  .fafaIcon {
+    font-size: 25px;
+  }
+  .Instragram_Div_Side_NavBar_instagram_title {
+    display: none;
+  }
+  .Instragram_Div_Side_NavBar_instagram_icon {
+    display: block;
+    font-size: 25px;
+  }
+  .Instragram_Div_Side_NavBar_subHeading {
+    margin-top: 50px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .Instragram_Div_Side_NavBar_Menu_title {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+  }
+  .Instragram_Div_Side_NavBar_instagram_menu_Section {
+    display: none;
+  }
+  .Instragram_Div_Side_NavBar_Menu_icon {
+    display: block;
+    font-size: 25px;
+  }
+  .Instragram_Div_Side_NavBar_instagram_menu_Section {
+    display: none; /* Hide text by default */
+  }
+
+  .Instragram_Div_Side_NavBar_Menu_title:hover
+    .Instragram_Div_Side_NavBar_instagram_menu_Section {
+    display: block; /* Show text on hover */
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .Instragram_Div_Side_NavBar {
+    display: none;
+  }
+  .Instragram_Content_Main_div {
+    width: 100%;
+    color: #ffffff;
+    padding: 30px 10px;
+    overflow-x: scroll;
+  }
+ 
+  .Instragram_Content_Intro_section {
+    min-height: 250px;
+    margin-bottom: 60px;
+    position: relative;
+  }
+  .Instagram_status {
+    position: absolute;
+    left: 0;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+  }
+  .Instragram_Intro_section_image{
+    width: 10%;
+  }
 }

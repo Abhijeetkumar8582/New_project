@@ -120,6 +120,8 @@ function MainPage() {
             ref.current.scrollIntoView({ behavior: 'smooth' });
         }
     };
+    const [OddProject,SetOddProject]=useState(1)
+    const [OddLicense,SetOddLicense]=useState(1)
     const [prevbuttonIndex, setprevbuttonIndex] = useState(0);
     const [nextbuttonIndex, setnextbuttonIndex] = useState(ProjectJson.length >= 3 ? 3 : ProjectJson.length);
     const [prevLicenseIndex, setprevLicenseIndex] = useState(0);
@@ -132,33 +134,45 @@ function MainPage() {
             setnextbuttonIndex(1);
             setnextLicenseIndex(1);
             setAboutmeLicenses(AboutmeLicenses.length)
-        } else if (screenDimensions.screenWidth > 769 && screenDimensions.screenWidth < 1250) {
+        } else if (screenDimensions.screenWidth > 769 && screenDimensions.screenWidth < 1080) {
             setnextbuttonIndex(2);
             setnextLicenseIndex(2);
             setAboutmeLicenses(AboutmeLicenses.length + 1)
+            SetOddProject(ProjectJson.length%2==0?2:1)
+            SetOddLicense(AboutmeLicenses.length%2==0?2:1)
+        }
+        else if (screenDimensions.screenWidth > 1080 && screenDimensions.screenWidth < 1250) {
+            setnextbuttonIndex(3);
+            setnextLicenseIndex(2);
+            setAboutmeLicenses(AboutmeLicenses.length + 1)
+            SetOddProject(ProjectJson.length%2==0?3:2)
+            SetOddLicense(AboutmeLicenses.length%2==0?3:2)
         }
         else {
-            setnextbuttonIndex(ProjectJson.length >= 3 ? 3 : ProjectJson.length);
+            setnextbuttonIndex(ProjectJson.length >= 4 ? 4 : ProjectJson.length);
             setnextLicenseIndex(AboutmeLicenses.length >= 4 ? 4 : AboutmeLicenses.length)
-            setAboutmeLicenses(AboutmeLicenses.length + 1)
+            setAboutmeLicenses(AboutmeLicenses.length + 1);
+            SetOddProject(ProjectJson.length%2==0?2:1)
+            SetOddLicense(AboutmeLicenses.length%2==0?2:1)
         }
     }, [screenDimensions.screenWidth, setnextbuttonIndex]);
 
     const prevbutton = () => {
         if (prevbuttonIndex !== 0) {
-            setnextbuttonIndex(nextbuttonIndex - 1);
-            setprevbuttonIndex(prevbuttonIndex - 1);
+            setnextbuttonIndex(nextbuttonIndex - OddProject);
+            setprevbuttonIndex(prevbuttonIndex - OddProject);
 
 
         }
     };
     const nextbutton = () => {
-        if (nextbuttonIndex !== AboutmeSkills.length) {
-            setprevbuttonIndex(prevbuttonIndex + 1);
-            setnextbuttonIndex(nextbuttonIndex + 1);
-
+        console.log(nextbuttonIndex)
+        if (nextbuttonIndex !== ProjectJson.length && nextbuttonIndex < ProjectJson.length + OddProject+1) {
+            setprevbuttonIndex(prevbuttonIndex + OddProject);
+            setnextbuttonIndex(nextbuttonIndex + OddProject);
         }
     };
+    
     const preLicensesButton = () => {
         if (prevLicenseIndex !== 0) {
             setprevLicenseIndex(prevLicenseIndex - 1);
@@ -167,12 +181,13 @@ function MainPage() {
         }
     }
     const nextLicensesButton = () => {
-        if (nextbuttonIndex !== AboutmeSkills.length) {
+        if (nextbuttonIndex !== AboutmeLicenses.length) {
 
             setprevLicenseIndex(prevLicenseIndex + 1);
             setnextLicenseIndex(nextLicenseIndex + 1)
         }
     };
+    // console.log(nextbutton)
     return (
 
         <div>
@@ -336,7 +351,7 @@ function MainPage() {
                                 </div>
                             ))}
                         </div>
-                        {nextbuttonIndex == ProjectJson.length ? (<div className={Style.Flipkart_Content_Skills_div_arrow_left}>
+                        {nextbuttonIndex == ProjectJson.length && nextbuttonIndex < ProjectJson.length + OddProject+1? (<div className={Style.Flipkart_Content_Skills_div_arrow_left}>
                             <button className={Style.prevbutton} style={{ background: "transparent" }} disabled onClick={nextbutton}>
                                 <i className="fa fa-arrow-circle-right" style={{ color: 'white' }} aria-hidden="true"></i>
                             </button>
