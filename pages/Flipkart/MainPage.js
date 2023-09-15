@@ -15,7 +15,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Button from '@mui/material/Button';
 import Popover from '@mui/material/Popover';
 import Typography from '@mui/material/Typography';
-// import useScreenDimensions from '../ScreenSize'
+
 
 
 function MainPage() {
@@ -53,7 +53,7 @@ function MainPage() {
             }
         }
     }, [valuefield, setvaluefield]);
-    // const screenDimensions = useScreenDimensions();
+
 
     const [screenDimensions, setScreenDimensions] = useState({
         screenWidth: 0,
@@ -120,8 +120,8 @@ function MainPage() {
             ref.current.scrollIntoView({ behavior: 'smooth' });
         }
     };
-    const [OddProject,SetOddProject]=useState(1)
-    const [OddLicense,SetOddLicense]=useState(1)
+    const [OddProject, SetOddProject] = useState(1)
+    const [OddLicense, SetOddLicense] = useState(1)
     const [prevbuttonIndex, setprevbuttonIndex] = useState(0);
     const [nextbuttonIndex, setnextbuttonIndex] = useState(ProjectJson.length >= 3 ? 3 : ProjectJson.length);
     const [prevLicenseIndex, setprevLicenseIndex] = useState(0);
@@ -138,22 +138,22 @@ function MainPage() {
             setnextbuttonIndex(2);
             setnextLicenseIndex(2);
             setAboutmeLicenses(AboutmeLicenses.length + 1)
-            SetOddProject(ProjectJson.length%2==0?2:1)
-            SetOddLicense(AboutmeLicenses.length%2==0?2:1)
+            SetOddProject(ProjectJson.length % 2 == 0 ? 2 : 1)
+            SetOddLicense(AboutmeLicenses.length % 2 == 0 ? 2 : 1)
         }
         else if (screenDimensions.screenWidth > 1080 && screenDimensions.screenWidth < 1250) {
             setnextbuttonIndex(3);
             setnextLicenseIndex(2);
             setAboutmeLicenses(AboutmeLicenses.length + 1)
-            SetOddProject(ProjectJson.length%2==0?3:2)
-            SetOddLicense(AboutmeLicenses.length%2==0?3:2)
+            SetOddProject(ProjectJson.length % 2 == 0 ? 3 : 2)
+            SetOddLicense(AboutmeLicenses.length % 2 == 0 ? 3 : 2)
         }
         else {
             setnextbuttonIndex(ProjectJson.length >= 4 ? 4 : ProjectJson.length);
             setnextLicenseIndex(AboutmeLicenses.length >= 4 ? 4 : AboutmeLicenses.length)
             setAboutmeLicenses(AboutmeLicenses.length + 1);
-            SetOddProject(ProjectJson.length%2==0?2:1)
-            SetOddLicense(AboutmeLicenses.length%2==0?2:1)
+            SetOddProject(ProjectJson.length % 2 == 0 ? 2 : 1)
+            SetOddLicense(AboutmeLicenses.length % 2 == 0 ? 2 : 1)
         }
     }, [screenDimensions.screenWidth, setnextbuttonIndex]);
 
@@ -167,12 +167,12 @@ function MainPage() {
     };
     const nextbutton = () => {
         console.log(nextbuttonIndex)
-        if (nextbuttonIndex !== ProjectJson.length && nextbuttonIndex < ProjectJson.length + OddProject+1) {
+        if (nextbuttonIndex !== ProjectJson.length && nextbuttonIndex < ProjectJson.length + OddProject + 1) {
             setprevbuttonIndex(prevbuttonIndex + OddProject);
             setnextbuttonIndex(nextbuttonIndex + OddProject);
         }
     };
-    
+
     const preLicensesButton = () => {
         if (prevLicenseIndex !== 0) {
             setprevLicenseIndex(prevLicenseIndex - 1);
@@ -217,10 +217,10 @@ function MainPage() {
                 <div className={Style.flipkartMainBox}>
                     <div className={Style.flipkartMainBox_Image}>
                         <div className={Style.flipkartMainboxImage_subimage}>
-                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/Abhijeetkumar2.webp')}><Image loading='lazy' layout='responsive' width={60} height={60} style={{ maxWidth: '100%', objectFit: 'contain' }} alt="MyImage" src='/Image/Abhijeetkumar2.webp' /></div>
-                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/AbhijeetKumar_1.webp')}><Image loading='lazy' width={60} height={60} alt="MyImage" style={{ maxWidth: '100%' }} src='/Image/AbhijeetKumar_1.webp' /></div>
-                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('https://img.freepik.com/premium-vector/creative-abstract-saas-illustration_52683-79843.jpg?w=1800')}><Image alt="MyImage" loading='lazy' width={60} height={60} style={{ maxWidth: '100%' }} src='https://img.freepik.com/premium-vector/creative-abstract-saas-illustration_52683-79843.jpg?w=1800' /></div>
-                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('https://cdn-icons-png.flaticon.com/512/1831/1831655.png')}><Image loading='lazy' width={60} height={60} style={{ maxWidth: '100%' }} alt="MyImage" src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' /></div>
+                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/Abhijeetkumar2.webp')}><Image loading='lazy'  width={60} height={60} style={{ maxWidth: '100%', objectFit: 'contain' }} alt="MyImage" src='/Image/Abhijeetkumar2.webp' /></div>
+                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/AbhijeetKumar_1.webp')}><Image loading='lazy'  width={60} height={60} alt="MyImage" style={{ maxWidth: '100%', objectFit: 'contain' }} src='/Image/AbhijeetKumar_1.webp' /></div>
+                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('https://img.freepik.com/premium-vector/creative-abstract-saas-illustration_52683-79843.jpg?w=1800')}><Image alt="MyImage"  loading='lazy' width={60} height={60} style={{ maxWidth: '100%', objectFit: 'contain' }} src='https://img.freepik.com/premium-vector/creative-abstract-saas-illustration_52683-79843.jpg?w=1800' /></div>
+                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('https://cdn-icons-png.flaticon.com/512/1831/1831655.png')}><Image  loading='lazy' width={60} height={60} style={{ maxWidth: '100%', objectFit: 'contain' }} alt="MyImage" src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' /></div>
                         </div>
                         <div className={Style.flipkartMainboxImage_Mainimage}><Image loading='lazy' alt="MyImage" width={500} height={500} style={{ objectFit: 'contain', width: '100%', height: '100%' }} src={mainImageUrl} /></div>
                     </div>
@@ -351,7 +351,7 @@ function MainPage() {
                                 </div>
                             ))}
                         </div>
-                        {nextbuttonIndex == ProjectJson.length && nextbuttonIndex < ProjectJson.length + OddProject+1? (<div className={Style.Flipkart_Content_Skills_div_arrow_left}>
+                        {nextbuttonIndex == ProjectJson.length && nextbuttonIndex < ProjectJson.length + OddProject + 1 ? (<div className={Style.Flipkart_Content_Skills_div_arrow_left}>
                             <button className={Style.prevbutton} style={{ background: "transparent" }} disabled onClick={nextbutton}>
                                 <i className="fa fa-arrow-circle-right" style={{ color: 'white' }} aria-hidden="true"></i>
                             </button>
@@ -422,7 +422,7 @@ function MainPage() {
                                     </div>
                                 ))}
                             </div>
-                            {nextLicenseIndex == getAboutmeLicenses ? (<div className={Style.Flipkart_Content_Skills_div_arrow_left}>
+                            {nextLicenseIndex == getAboutmeLicenses && nextLicenseIndex < AboutmeLicenses.length + OddLicense + 1 ? (<div className={Style.Flipkart_Content_Skills_div_arrow_left}>
                                 <button className={Style.prevbutton} style={{ background: "transparent" }} disabled onClick={nextLicensesButton}>
                                     <i className="fa fa-arrow-circle-right" style={{ color: 'white' }} aria-hidden="true"></i>
                                 </button>

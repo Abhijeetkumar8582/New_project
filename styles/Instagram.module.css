@@ -41,13 +41,14 @@
   margin-bottom: 30px;
 }
 .Instragram_Intro_section_image {
-  /* width: 30%; */
+  width: 30%;
   padding: 0rem 2rem;
   display: flex;
   justify-content: center;
 }
 .Instragram_Content_username_Section {
   display: flex;
+  width: 70%;
   gap: 30px;
   margin-bottom: 20px;
 }
@@ -299,15 +300,13 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
+  flex-shrink: 0;
   gap: 20px;
   padding: 20px;
   position: relative;
   overflow: hidden;
 }
-.AboutmeLicenses_div:hover {
-  translate: 0 -10px;
-  transition: all ease-in 0.3s;
-}
+
 .AboutmeLicenses_div_heading {
   font-size: 20px;
   font-weight: 600;
@@ -392,46 +391,10 @@
   padding: 1rem 0rem;
   border-bottom: 1px solid gray;
 }
-/* @media only screen and (max-width: 750px) {
-  .Instragram_Main_Div {
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-  }
-  .Instragram_Div_Side_NavBar {
-    width: 100%;
-    color: rgb(250, 250, 250);
-    background-color: rgb(0, 0, 0);
-    border-right: 1px solid white;
-    display: none;
-    flex-direction: row;
-  }
-  .Instragram_Div_Side_NavBar_subHeading_list{
-    flex-direction: column;
-  }
-  .Instragram_Content_Main_div {
-    width: 100%;
-    padding: 1rem;
-    color: #ffffff;
-  }
-  .Instragram_Content_Intro_section {
-    display: flex;
-    margin-bottom: 30px;
-    max-width: 100%;
-  }
-  .Instragram_Intro_section_image {
-    width: 30%;
-    display: flex;
-    justify-content: center;
-  }
-  .expirence_card_list {
-    display: grid;
-    grid-template-columns: 1fr ;
-    place-items: center;
-    gap: 20px;
-  }
-} */
-
+.Setting_edit_profile_button {
+  display: flex;
+  align-items: center;
+}
 @media only screen and (max-width: 1290px) {
   .Instragram_Div_Side_NavBar {
     width: 6%;
@@ -511,20 +474,77 @@
     padding: 30px 10px;
     overflow-x: scroll;
   }
- 
+
   .Instragram_Content_Intro_section {
     min-height: 250px;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
     position: relative;
   }
   .Instagram_status {
     position: absolute;
     left: 0;
-    margin-top: 50px;
-    margin-left: 50px;
-    margin-bottom: 50px;
+    margin-top: 25px;
+    margin-left: 10px;
+    /* margin-bottom: 50px; */
   }
-  .Instragram_Intro_section_image{
+  .Instragram_Intro_section_image {
     width: 10%;
+  }
+  .DialogContent_box {
+    flex-direction: column;
+  }
+  .DialogContent_box_image {
+    width: 100%;
+  }
+  .DialogContent_box_content {
+    width: 100%;
+    background-color: #121212;
+    color: #ffffff;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 20px;
+  }
+  .DialogContent_box_Avatar_div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 1rem 0rem;
+    border-bottom: 1px solid gray;
+  }
+  .mobile_text {
+    font-size: 14px;
+    font-weight: 300;
+  }
+  .edit_profile_button {
+    font-size: 14px;
+  }
+  /* .edit_profile_button{
+    display: none;
+  } */
+  .abhijeetkumarText {
+    position: absolute;
+    left: 0;
+    margin-left: 10px;
+  }
+  .Instragram_Content_username_Section_Main_div {
+    width: 90%;
+    margin-left: 25px;
+  }
+  /* .Instragram_Content_username_Section{
+    width: 90%;
+  } */
+}
+
+@media only screen and (max-width: 568px) {
+  .edit_profile_button {
+    display: none;
+  }
+  .Instragram_Content_Intro_section {
+    margin-bottom: 20px;
+  }
+  .Setting_edit_profile_button {
+    display: none;
   }
 }

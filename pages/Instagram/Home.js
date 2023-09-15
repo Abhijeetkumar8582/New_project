@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import Style from "styles/Instagram.module.css";
 import Avatar from "@mui/material/Avatar";
 import AboutmeSkills from "../Json/AboutmeSkills.json";
@@ -67,7 +67,8 @@ function Home() {
       title: "Profile",
     },
   ];
-
+  const [profileavatarSize, setprofileavatarSize] = useState(150)
+  const [skillAvatar, setskillAvatar] = useState(150)
   const [open, setOpen] = useState({});
   const handleClickOpen = useCallback((tittle) => {
     setOpen({ ...open, [tittle]: true });
@@ -86,6 +87,49 @@ function Home() {
     window.open(event, '_blank');
   }
 
+  const [screenDimensions, setScreenDimensions] = useState({
+    screenWidth: 0,
+    screenHeight: 0,
+  });
+
+  const handleResize = () => {
+    setScreenDimensions({
+      screenWidth: window.innerWidth,
+      screenHeight: window.innerHeight,
+    });
+  };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize);
+      setScreenDimensions({
+        screenWidth: window.innerWidth,
+        screenHeight: window.innerHeight,
+      });
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }
+  }, []);
+
+  useEffect(() => {
+
+    if (screenDimensions.screenWidth < 769) {
+      setprofileavatarSize(50)
+      setskillAvatar(40)
+    } else if (screenDimensions.screenWidth > 769 && screenDimensions.screenWidth < 1080) {
+      setprofileavatarSize(80)
+      setskillAvatar(50)
+    }
+    else if (screenDimensions.screenWidth > 1080 && screenDimensions.screenWidth < 1250) {
+      setprofileavatarSize(90)
+      setskillAvatar(60)
+    }
+    else {
+      setprofileavatarSize(150)
+      setskillAvatar(70)
+    }
+  }, [screenDimensions.screenWidth, setnextbuttonIndex]);
   return (
     <>
       <div className={Style.Instragram_Main_Div}>
@@ -114,7 +158,9 @@ function Home() {
 
             <div className={Style.Instragram_Div_Side_NavBar_Menu_title}>
               <i className={`${"fa fa-bars"} ${Style.Instragram_Div_Side_NavBar_Menu_icon}`} aria-hidden="true"></i>
-              <h6 className={Style.Instragram_Div_Side_NavBar_instagram_menu_Section}>Menu</h6>
+              <div style={{ display: 'flex', alignItems: 'center' }}>
+                <h6 className={Style.Instragram_Div_Side_NavBar_instagram_menu_Section}>Menu</h6>
+              </div>
             </div>
           </div>
         </div>
@@ -125,11 +171,11 @@ function Home() {
               <Avatar
                 alt="Remy Sharp"
                 src="/Image/Abhijeet_kumar_insta_img.webp"
-                sx={{ width: 150, height: 150 }}
-              
+                sx={{ width: profileavatarSize, height: profileavatarSize }}
+
               />
             </div>
-            <div>
+            <div className={Style.Instragram_Content_username_Section_Main_div}>
               <div className={Style.Instragram_Content_username_Section}>
                 <div style={{ display: "flex", alignItems: "center" }}>
                   <h5>daredevil8582</h5>
@@ -140,26 +186,26 @@ function Home() {
                 <div>
                   <button className={Style.edit_profile_button}>view archieve</button>
                 </div>
-                <div>
-                  <i className="fa fa-cog fa-2x" aria-hidden="true"></i>
+                <div className={Style.Setting_edit_profile_button}>
+                  <i className="fa fa-cog fa-1x" aria-hidden="true"></i>
                 </div>
               </div>
               <div className={Style.Instragram_Content_Post_Section}>
                 <div>
-                  <h6>{AboutmeSkills.length} Skills</h6>
+                  <h6 className={Style.mobile_text}>{AboutmeSkills.length} Skills</h6>
                 </div>
                 <div>
-                  <h6>{AboutmeLicenses.length} Certifications</h6>
+                  <h6 className={Style.mobile_text}>{AboutmeLicenses.length} Certifications</h6>
                 </div>
                 <div>
-                  <h6>{AboutmeProject.length} Projects</h6>
+                  <h6 className={Style.mobile_text}> {AboutmeProject.length} Projects</h6>
                 </div>
               </div>
               <div>
-                <h6>Abhijeet kumar</h6>
+                <h6 className={`${Style.mobile_text} ${Style.abhijeetkumarText}`}>Abhijeet kumar</h6>
               </div>
               <div className={Style.Instagram_status}>
-                <h6>Coding enthusiast 🚀 | Constantly learning and evolving 💡 | Turning pixels into beautiful experiences ✨</h6> #FrontendDevLife #CodePassion #AlwaysLearning  </div>
+                <h6 className={Style.mobile_text}>Coding enthusiast 🚀 | Constantly learning and evolving 💡 | Turning pixels into beautiful experiences ✨</h6 > #FrontendDevLife #CodePassion #AlwaysLearning  </div>
             </div>
           </div>
 
@@ -188,7 +234,7 @@ function Home() {
                       alt="Remy Sharp"
                       src={element.logo}
                       style={{ border: '1px solid gray', padding: '3px' }}
-                      sx={{ width: 70, height: 70 }}
+                      sx={{ width: skillAvatar, height: skillAvatar }}
                     />
                     <h6>{element.skills}</h6>
                   </div>
@@ -199,7 +245,7 @@ function Home() {
                   alt="Remy Sharp"
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRal66RNJGRaNvsBcwWGY8S9rZO5UPXXpAEwg&usqp=CAU"
                   style={{ border: '1px solid gray', padding: '3px', width: '100%' }}
-                  sx={{ width: 70, height: 70 }}
+                  sx={{ width: skillAvatar, height: skillAvatar }}
                 />
                 <h6>Add skills</h6>
               </div>
@@ -290,6 +336,7 @@ function Home() {
                         </div>
                         <p className={Style.AboutmeLicenses_div_description}>{element.description}</p>
                         <button className={Style.AboutmeLicenses_div_button} onClick={() => handleClickOpen(element.tittle)}>View Certificate</button>
+
                         <Dialog
                           disablePortal
                           sx={{ width: "100%", background: 'black' }}
@@ -305,16 +352,16 @@ function Home() {
                               <div className={Style.DialogContent_box_content} >
                                 <div className={Style.DialogContent_box_Avatar_div}>
                                   <Avatar
-                                    alt="Remy Sharp"
+                                    alt="Abhijeet_kumar_insta_img"
                                     src="/Image/Abhijeet_kumar_insta_img.webp"
                                     sx={{ width: 50, height: 50 }}
 
                                   />
-                                  <h6>daredevil8582</h6>
+                                  <h6 className={Style.mobile_text}>daredevil8582</h6>
                                 </div>
                                 <div>
-                                  <h5>{element.tittle}</h5>
-                                  <p>{element.description}</p>
+                                  <h5 className={Style.mobile_text}>{element.tittle}</h5>
+                                  <p className={Style.mobile_text}>{element.description}</p>
                                 </div>
                                 <div>
                                   <Button onClick={() => handleClose(element.tittle)}>Perfect!!!</Button>
