@@ -29,10 +29,9 @@ function Home() {
         "This marks the debut of my portfolio website, with exciting plans for the future, including the development of an AI chatbot for interactive engagement. Stay tuned!",
     },
     {
-      image:
-        "https://i0.wp.com/dianisa.com/wp-content/uploads/2023/02/Sejarah-Coming-Soon.jpg?resize=950%2C550&ssl=1",
-      title: "Airbnb - UI",
-      link: "",
+      image:"https://i0.wp.com/dianisa.com/wp-content/uploads/2023/02/Sejarah-Coming-Soon.jpg?resize=950%2C550&ssl=1",
+      title: "Instagram - UI",
+      link: "/Instagram/Home",
       description:
         "I am working on designing a user interface similar to Airbnb's, and I'm also developing algorithms to enhance its interactivity.",
     },

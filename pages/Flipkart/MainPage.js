@@ -155,7 +155,7 @@ function MainPage() {
             SetOddProject(ProjectJson.length % 2 == 0 ? 2 : 1)
             SetOddLicense(AboutmeLicenses.length % 2 == 0 ? 2 : 1)
         }
-    }, [screenDimensions.screenWidth, setnextbuttonIndex]);
+    }, [screenDimensions.screenWidth, setnextbuttonIndex, setAboutmeLicenses, SetOddProject, SetOddLicense]);
 
     const prevbutton = () => {
         if (prevbuttonIndex !== 0) {
@@ -217,12 +217,12 @@ function MainPage() {
                 <div className={Style.flipkartMainBox}>
                     <div className={Style.flipkartMainBox_Image}>
                         <div className={Style.flipkartMainboxImage_subimage}>
-                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/Abhijeetkumar2.webp')}><Image loading='lazy'  width={60} height={60} style={{ maxWidth: '100%', objectFit: 'contain' }} alt="MyImage" src='/Image/Abhijeetkumar2.webp' /></div>
-                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/AbhijeetKumar_1.webp')}><Image loading='lazy'  width={60} height={60} alt="MyImage" style={{ maxWidth: '100%', objectFit: 'contain' }} src='/Image/AbhijeetKumar_1.webp' /></div>
-                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('https://img.freepik.com/premium-vector/creative-abstract-saas-illustration_52683-79843.jpg?w=1800')}><Image alt="MyImage"  loading='lazy' width={60} height={60} style={{ maxWidth: '100%', objectFit: 'contain' }} src='https://img.freepik.com/premium-vector/creative-abstract-saas-illustration_52683-79843.jpg?w=1800' /></div>
-                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('https://cdn-icons-png.flaticon.com/512/1831/1831655.png')}><Image  loading='lazy' width={60} height={60} style={{ maxWidth: '100%', objectFit: 'contain' }} alt="MyImage" src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' /></div>
+                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/Abhijeetkumar2.webp')}><Image loading='lazy' width={60} height={60} style={{ maxWidth: '100%', objectFit: 'contain' }} alt="MyImage" src='/Image/Abhijeetkumar2.webp' /></div>
+                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/AbhijeetKumar_1.webp')}><Image loading='lazy' width={60} height={60} alt="MyImage" style={{ maxWidth: '100%', objectFit: 'contain' }} src='/Image/AbhijeetKumar_1.webp' /></div>
+                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/abhijeet_kumar_3.jpg')}><Image alt="MyImage" loading='lazy' width={60} height={60} style={{ maxWidth: '100%', objectFit: 'contain' }} src='/Image/abhijeet_kumar_3.jpg' /></div>
+                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/Abhijeet_kumar_4.webp')}><Image loading='lazy' width={60} height={60} style={{ maxWidth: '100%', objectFit: 'contain' }} alt="MyImage" src='/Image/Abhijeet_kumar_4.webp' /></div>
                         </div>
-                        <div className={Style.flipkartMainboxImage_Mainimage}><Image loading='lazy' alt="MyImage" width={500} height={500} style={{ objectFit: 'contain', width: '100%', height: '100%' }} src={mainImageUrl} /></div>
+                        <div className={Style.flipkartMainboxImage_Mainimage}><Image loading='lazy' alt="MyImage" style={{ objectFit:"scale-down", width: '100%', height: '100%' }}  width={500} height={500} quality={100} src={mainImageUrl} /></div>
                     </div>
                     <div className={Style.flipkartMainBox_Content}>
                         <div>

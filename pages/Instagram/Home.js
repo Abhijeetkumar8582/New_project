@@ -12,30 +12,35 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
 import Image from "next/image";
-import TerminalIcon from '@mui/icons-material/Terminal';
+import { useRouter } from "next/router";
+
 
 function Home() {
+  const router = useRouter();
   const [prevbuttonIndex, setprevbuttonIndex] = useState(0);
   const initialNextbuttonIndex = AboutmeSkills.length >= 10 ? 9 : AboutmeSkills.length;
-  const indexAdd = AboutmeSkills.length % 2 == 0 ? 2 : 3;
+  const indexAdd = AboutmeSkills.length % 2 == 0 ? 2 : 1;
+  const [getIndexValue, setIndexValue] = useState(indexAdd)
+
   const [nextbuttonIndex, setnextbuttonIndex] = useState(initialNextbuttonIndex);
+
   const prevbutton = () => {
     if (prevbuttonIndex !== 0) {
-      setnextbuttonIndex(nextbuttonIndex - indexAdd);
-      setprevbuttonIndex(prevbuttonIndex - indexAdd);
+      setprevbuttonIndex(prevbuttonIndex - getIndexValue);
+      setnextbuttonIndex(nextbuttonIndex - getIndexValue);
     }
   };
-  const nextbutton = () => {
-    if (nextbuttonIndex !== AboutmeSkills.length && nextbuttonIndex <= AboutmeSkills.length) {
-      setprevbuttonIndex(prevbuttonIndex + indexAdd);
-      setnextbuttonIndex(nextbuttonIndex + indexAdd);
-    }
 
+  const nextbutton = () => {
+
+    if (nextbuttonIndex !== AboutmeSkills.length) {
+      setprevbuttonIndex(prevbuttonIndex + getIndexValue);
+      setnextbuttonIndex(nextbuttonIndex + getIndexValue);
+    }
   };
+
   const [value, setValue] = React.useState('1');
 
   const handleChange = (event, newValue) => {
@@ -68,7 +73,7 @@ function Home() {
     },
   ];
   const [profileavatarSize, setprofileavatarSize] = useState(150)
-  const [skillAvatar, setskillAvatar] = useState(150)
+  const [skillAvatar, setskillAvatar] = useState(70)
   const [open, setOpen] = useState({});
   const handleClickOpen = useCallback((tittle) => {
     setOpen({ ...open, [tittle]: true });
@@ -92,12 +97,12 @@ function Home() {
     screenHeight: 0,
   });
 
-  const handleResize = () => {
+  const handleResize = useCallback(() => {
     setScreenDimensions({
       screenWidth: window.innerWidth,
       screenHeight: window.innerHeight,
     });
-  };
+  }, [setScreenDimensions]);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -114,22 +119,39 @@ function Home() {
 
   useEffect(() => {
 
-    if (screenDimensions.screenWidth < 769) {
+    if (screenDimensions.screenWidth < 583) {
+      setnextbuttonIndex(4)
+      setskillAvatar(40)
+      setprofileavatarSize(50)
+    }
+    else if (screenDimensions.screenWidth > 583 && screenDimensions.screenWidth < 768) {
+      setnextbuttonIndex(6)
       setprofileavatarSize(50)
       setskillAvatar(40)
+    }
+    else if (screenDimensions.screenWidth < 769) {
+      setprofileavatarSize(50)
+      setskillAvatar(40)
+      setnextbuttonIndex(7)
     } else if (screenDimensions.screenWidth > 769 && screenDimensions.screenWidth < 1080) {
       setprofileavatarSize(80)
       setskillAvatar(50)
+      setnextbuttonIndex(7)
     }
     else if (screenDimensions.screenWidth > 1080 && screenDimensions.screenWidth < 1250) {
       setprofileavatarSize(90)
       setskillAvatar(60)
+      setnextbuttonIndex(8)
     }
     else {
       setprofileavatarSize(150)
       setskillAvatar(70)
+      setnextbuttonIndex(8)
     }
-  }, [screenDimensions.screenWidth, setnextbuttonIndex]);
+  }, [screenDimensions.screenWidth, skillAvatar, profileavatarSize]);
+  const redirect = () => {
+    router.push("/");
+}
   return (
     <>
       <div className={Style.Instragram_Main_Div}>
@@ -166,10 +188,23 @@ function Home() {
         </div>
 
         <div className={Style.Instragram_Content_Main_div}>
+          <div className={Style.Moblie_Navbar_Div}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+              <i className="fa fa-lock" aria-hidden="true"></i>
+              <div>
+                <button onClick={() => redirect()} className={Style.daredevil8582_btn}>
+                  <h6 className={Style.Moblie_daredevil8582_text}>daredevil8582</h6>
+                </button></div>
+              <i className="fa fa-angle-down" aria-hidden="true"></i>
+            </div>
+            <div>
+              <i className="fa fa-bars" aria-hidden="true"></i>
+            </div>
+          </div>
           <div className={Style.Instragram_Content_Intro_section}>
             <div className={Style.Instragram_Intro_section_image}>
               <Avatar
-                alt="Remy Sharp"
+                alt="Abhijeet kumar"
                 src="/Image/Abhijeet_kumar_insta_img.webp"
                 sx={{ width: profileavatarSize, height: profileavatarSize }}
 
@@ -178,27 +213,46 @@ function Home() {
             <div className={Style.Instragram_Content_username_Section_Main_div}>
               <div className={Style.Instragram_Content_username_Section}>
                 <div style={{ display: "flex", alignItems: "center" }}>
-                  <h5>daredevil8582</h5>
+                  <h5 className={Style.daredevil8582_text}>daredevil8582</h5>
                 </div>
                 <div>
-                  <button className={Style.edit_profile_button}>Edit Profile</button>
+                  <button aria-label="edit_profile_button_Edit Profile" className={Style.edit_profile_button}>Edit Profile</button>
                 </div>
                 <div>
-                  <button className={Style.edit_profile_button}>view archieve</button>
+                  <button aria-label="edit_profile_button_view_archieve" className={Style.edit_profile_button}>view archieve</button>
                 </div>
                 <div className={Style.Setting_edit_profile_button}>
                   <i className="fa fa-cog fa-1x" aria-hidden="true"></i>
                 </div>
               </div>
               <div className={Style.Instragram_Content_Post_Section}>
-                <div>
-                  <h6 className={Style.mobile_text}>{AboutmeSkills.length} Skills</h6>
+                <div className={Style.Instragram_Content_Post_Section_subdiv}>
+                  <div>
+                    <h6 className={Style.mobile_text}>{AboutmeSkills.length}</h6>
+                  </div>
+                  <div>
+                    <h6 className={Style.mobile_text}>Skills</h6>
+                  </div>
                 </div>
                 <div>
-                  <h6 className={Style.mobile_text}>{AboutmeLicenses.length} Certifications</h6>
+                  <div className={Style.Instragram_Content_Post_Section_subdiv}>
+                    <div>
+                      <h6 className={Style.mobile_text}>{AboutmeLicenses.length}</h6>
+                    </div>
+                    <div>
+                      <h6 className={Style.mobile_text}>Certifications</h6>
+                    </div>
+                  </div>
                 </div>
                 <div>
-                  <h6 className={Style.mobile_text}> {AboutmeProject.length} Projects</h6>
+                  <div className={Style.Instragram_Content_Post_Section_subdiv}>
+                    <div>
+                      <h6 className={Style.mobile_text}>{AboutmeProject.length}</h6>
+                    </div>
+                    <div>
+                      <h6 className={Style.mobile_text}>Projects</h6>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div>
@@ -208,17 +262,27 @@ function Home() {
                 <h6 className={Style.mobile_text}>Coding enthusiast 🚀 | Constantly learning and evolving 💡 | Turning pixels into beautiful experiences ✨</h6 > #FrontendDevLife #CodePassion #AlwaysLearning  </div>
             </div>
           </div>
+          <div className={Style.mobileRenderBtn}>
+            <div className={Style.mobile_profile_button_div}>
+              <button aria-label="mobile_profile_button" className={Style.mobile_profile_button}>Edit Profile</button>
+            </div>
+            <div className={Style.mobile_profile_button_div}>
+              <button aria-label="mobile_profile_button_view archieve" className={Style.mobile_profile_button}>view archieve</button>
+            </div>
+          </div>
+
+
 
           <div className={Style.Instragram_Content_Skills_div_container}>
             <div className={Style.Instragram_Content_Skills_div_arrow_left}>
-              {prevbuttonIndex === 0 ? (<button disabled className={Style.nextbutton} onClick={nextbutton}>
+              {prevbuttonIndex === 0 ? (<button aria-label="prevbutton_diabled" disabled className={Style.nextbutton} onClick={nextbutton}>
                 <i
                   className="fa fa-arrow-circle-left"
                   style={{ color: 'black' }}
                   aria-hidden="true"
                 ></i>
               </button>) : (
-                <button className={Style.prevbutton} onClick={prevbutton}>
+                <button aria-label="prevbutton" className={Style.prevbutton} onClick={prevbutton}>
                   <i className="fa fa-arrow-circle-left" aria-hidden="true"></i>
                 </button>
               )}
@@ -231,7 +295,7 @@ function Home() {
                     key={i}
                   >
                     <Avatar
-                      alt="Remy Sharp"
+                      alt={element.skills}
                       src={element.logo}
                       style={{ border: '1px solid gray', padding: '3px' }}
                       sx={{ width: skillAvatar, height: skillAvatar }}
@@ -240,34 +304,34 @@ function Home() {
                   </div>
                 )
               )}
-              <div className={Style.Instragram_Content_Skills_avatar} >
+              {nextbuttonIndex >= AboutmeSkills.length ? (<div className={Style.Instragram_Content_Skills_avatar} >
                 <Avatar
                   alt="Remy Sharp"
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRal66RNJGRaNvsBcwWGY8S9rZO5UPXXpAEwg&usqp=CAU"
-                  style={{ border: '1px solid gray', padding: '3px', width: '100%' }}
+                  style={{ border: '1px solid gray', padding: '3px' }}
                   sx={{ width: skillAvatar, height: skillAvatar }}
                 />
                 <h6>Add skills</h6>
-              </div>
+              </div>) : null}
+
             </div>
-            {nextbuttonIndex > 8 ? (
-              <div className={Style.Instragram_Content_Skills_div_arrow_left}>
-                {nextbuttonIndex >= AboutmeSkills.length ? (<button disabled className={Style.nextbutton} onClick={nextbutton}>
+            <div className={Style.Instragram_Content_Skills_div_arrow_left}>
+              {nextbuttonIndex > AboutmeSkills.length + getIndexValue + 1 || nextbuttonIndex == AboutmeSkills.length ? (<button aria-label="disabled_btn" disabled className={Style.nextbutton} onClick={nextbutton}>
+                <i
+                  className="fa fa-arrow-circle-right"
+                  style={{ color: 'black' }}
+                  aria-hidden="true"
+                ></i>
+              </button>) : (
+                <button aria-label="nextbutton" className={Style.nextbutton} onClick={nextbutton}>
                   <i
                     className="fa fa-arrow-circle-right"
-                    style={{ color: 'black' }}
                     aria-hidden="true"
                   ></i>
-                </button>) : (
-                  <button className={Style.nextbutton} onClick={nextbutton}>
-                    <i
-                      className="fa fa-arrow-circle-right"
-                      aria-hidden="true"
-                    ></i>
-                  </button>
-                )}
-              </div>
-            ) : null}
+                </button>
+              )}
+            </div>
+
 
           </div>
 
@@ -293,7 +357,7 @@ function Home() {
                         <p className={Style.expirence_card_body}>
                           {element.description}       </p>
                         <p className={Style.expirence_card_footer}>{element.code}</p>
-                        <button className={Style.viewProject_btn} onClick={() => handleClick(element.button)} > view</button>
+                        <button aria-label={`viewProject_btn${i}`} className={Style.viewProject_btn} onClick={() => handleClick(element.button)} > view</button>
                       </div>
                     ))}
 
@@ -332,10 +396,10 @@ function Home() {
                       <div className={Style.AboutmeLicenses_div} key={i}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
                           <p className={Style.AboutmeLicenses_div_heading}>{element.tittle}</p>
-                          <Avatar alt="Remy Sharp" src={element.logo} />
+                          <Avatar alt={element.logo} src={element.logo} />
                         </div>
                         <p className={Style.AboutmeLicenses_div_description}>{element.description}</p>
-                        <button className={Style.AboutmeLicenses_div_button} onClick={() => handleClickOpen(element.tittle)}>View Certificate</button>
+                        <button aria-label={`AboutmeLicenses_div_button${i}`} className={Style.AboutmeLicenses_div_button} onClick={() => handleClickOpen(element.tittle)}>View Certificate</button>
 
                         <Dialog
                           disablePortal
@@ -357,7 +421,8 @@ function Home() {
                                     sx={{ width: 50, height: 50 }}
 
                                   />
-                                  <h6 className={Style.mobile_text}>daredevil8582</h6>
+                                  <h6 className={Style.mobile_text} >daredevil8582</h6>
+
                                 </div>
                                 <div>
                                   <h5 className={Style.mobile_text}>{element.tittle}</h5>

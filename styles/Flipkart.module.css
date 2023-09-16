@@ -326,6 +326,7 @@
 .flipkartMainboxImage_Mainimage {
   width: 80%;
   object-fit: contain;
+  margin-top: 40px;
 }
 
 .flipkartMainboxImage_subimage_Box {
@@ -603,6 +604,7 @@
     width: 100%;
     justify-content: center;
     display: flex;
+    margin-top: 10px;
   }
 
   .Contentjustify {

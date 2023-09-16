@@ -23,7 +23,7 @@ function Home() {
 
   const [open, setOpen] = React.useState(false);
   const [getUserName, setUserName] = useState("");
-  const [getAvatar, setAvatar] = useState("");
+  const [getAvatar, setAvatar] = useState("https://randomuser.me/api/portraits/med/women/84.jpg");
   const handleOpen = useCallback(() => {
     fetch(`https://randomuser.me/api/`)
       .then((res) => res.json())
@@ -236,7 +236,7 @@ function Home() {
             >
               <div className={Style.avatar}>
                 {/* <!-- Avatar image --> */}
-                <Image loading="lazy" alt={getAvatar} width={50} height={50} className={Style.avatar__image} src={getAvatar} />
+                <Image loading="lazy" alt={getAvatar}  width={50} height={50} className={Style.avatar__image} src={getAvatar} />
               </div>
               <div>
                 <h4>{getUserName}</h4>

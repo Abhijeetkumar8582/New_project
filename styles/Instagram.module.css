@@ -1,3 +1,6 @@
+.Moblie_Navbar_Div {
+  display: none;
+}
 .Instragram_Main_Div {
   height: 100vh;
   width: 100vw;
@@ -32,6 +35,7 @@
 .Instragram_Content_Main_div {
   width: 85%;
   padding: 2rem 4rem;
+  position: relative;
   color: #ffffff;
   overflow-x: scroll;
 }
@@ -48,14 +52,14 @@
 }
 .Instragram_Content_username_Section {
   display: flex;
-  width: 70%;
+  width: 100%;
   gap: 30px;
   margin-bottom: 20px;
 }
 .edit_profile_button {
-  border-radius: 10px;
+  border-radius: 5px;
   border: none;
-  background-color: #363636;
+  background-color: #232323;
   color: white;
   padding: 4px 15px;
   font-size: 15px;
@@ -311,13 +315,13 @@
   font-size: 20px;
   font-weight: 600;
   color: #ffffff;
-  z-index: 2;
+  z-index: 0;
 }
 
 .AboutmeLicenses_div_description {
   font-size: 0.9em;
   color: rgb(138, 138, 138);
-  z-index: 2;
+  z-index: 0;
 }
 
 .AboutmeLicenses_div_description a {
@@ -395,6 +399,22 @@
   display: flex;
   align-items: center;
 }
+.mobileRenderBtn {
+  display: none;
+}
+.Instragram_Content_Post_Section_subdiv {
+  display: flex;
+  gap: 5px;
+}
+.daredevil8582_btn {
+  background-color: black;
+  color: white;
+  border: none;
+}
+.daredevil8582_btn:active,
+.daredevil8582_btn:focus{
+  outline: none;
+}
 @media only screen and (max-width: 1290px) {
   .Instragram_Div_Side_NavBar {
     width: 6%;
@@ -407,6 +427,9 @@
     flex-direction: column;
     padding: 20px;
     position: relative;
+  }
+  .Instragram_Content_Skills_div {
+    justify-content: center;
   }
   .Instragram_Content_Main_div {
     width: 94%;
@@ -468,28 +491,46 @@
   .Instragram_Div_Side_NavBar {
     display: none;
   }
+  .Moblie_Navbar_Div {
+    /* display: block; */
+    width: 100%;
+    padding: 10px;
+    justify-content: space-between;
+    display: flex;
+    position: fixed;
+    margin-left: -10px;
+    background-color: #000000;
+    z-index: 1;
+    /* margin-bottom: 40px; */
+  }
+  .Moblie_daredevil8582_text {
+    margin: 0px;
+  }
   .Instragram_Content_Main_div {
     width: 100%;
     color: #ffffff;
-    padding: 30px 10px;
+    padding: 0px 10px;
     overflow-x: scroll;
   }
-
+  .expirence_card_list {
+    grid-template-columns: 1fr;
+  }
   .Instragram_Content_Intro_section {
-    min-height: 250px;
-    margin-bottom: 20px;
+    min-height: 220px;
+    margin-bottom: 0px;
     position: relative;
+    margin-top: 50px;
   }
   .Instagram_status {
     position: absolute;
     left: 0;
     margin-top: 25px;
     margin-left: 10px;
-    /* margin-bottom: 50px; */
   }
   .Instragram_Intro_section_image {
     width: 10%;
   }
+
   .DialogContent_box {
     flex-direction: column;
   }
@@ -520,9 +561,9 @@
   .edit_profile_button {
     font-size: 14px;
   }
-  /* .edit_profile_button{
+  .edit_profile_button {
     display: none;
-  } */
+  }
   .abhijeetkumarText {
     position: absolute;
     left: 0;
@@ -532,9 +573,35 @@
     width: 90%;
     margin-left: 25px;
   }
-  /* .Instragram_Content_username_Section{
-    width: 90%;
-  } */
+  .mobileRenderBtn {
+    display: block;
+  }
+
+  .mobileRenderBtn {
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  .mobile_profile_button_div {
+    width: 50%;
+  }
+  .mobile_profile_button {
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    background-color: #232323;
+    color: white;
+    padding: 4px 15px;
+    font-size: 15px;
+  }
+  .Setting_edit_profile_button {
+    display: none;
+  }
+  .daredevil8582_text {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 568px) {
@@ -546,5 +613,25 @@
   }
   .Setting_edit_profile_button {
     display: none;
+  }
+  .Instragram_Content_Skills_div_arrow_left {
+    width: 5%;
+    display: flex;
+    align-items: center;
+  }
+  .Instragram_Content_Skills_div {
+    justify-content: center;
+  }
+  .prevbutton {
+    margin: 0px -10px;
+  }
+  .nextbutton {
+    margin: 0px -4px;
+  }
+  .Instragram_Content_Post_Section_subdiv {
+    justify-content: center;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
   }
 }
