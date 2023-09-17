@@ -190,15 +190,15 @@ function Home() {
         <div className={Style.Instragram_Content_Main_div}>
           <div className={Style.Moblie_Navbar_Div}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
-              <i className="fa fa-lock" aria-hidden="true"></i>
+              <i className="fa fa-lock" style={{fontSize:'16px'}} aria-hidden="true"></i>
               <div>
                 <button onClick={() => redirect()} className={Style.daredevil8582_btn}>
                   <h6 className={Style.Moblie_daredevil8582_text}>daredevil8582</h6>
                 </button></div>
-              <i className="fa fa-angle-down" aria-hidden="true"></i>
+              <i className="fa fa-angle-down" style={{fontSize:'16px'}} aria-hidden="true"></i>
             </div>
             <div>
-              <i className="fa fa-bars" aria-hidden="true"></i>
+              <i className="fa fa-bars" style={{fontSize:'16px'}} aria-hidden="true"></i>
             </div>
           </div>
           <div className={Style.Instragram_Content_Intro_section}>
@@ -219,7 +219,7 @@ function Home() {
                   <button aria-label="edit_profile_button_Edit Profile" className={Style.edit_profile_button}>Edit Profile</button>
                 </div>
                 <div>
-                  <button aria-label="edit_profile_button_view_archieve" className={Style.edit_profile_button}>view archieve</button>
+                  <button aria-label="edit_profile_button_view_archieve" className={Style.edit_profile_button}>Achievements</button>
                 </div>
                 <div className={Style.Setting_edit_profile_button}>
                   <i className="fa fa-cog fa-1x" aria-hidden="true"></i>
@@ -267,7 +267,7 @@ function Home() {
               <button aria-label="mobile_profile_button" className={Style.mobile_profile_button}>Edit Profile</button>
             </div>
             <div className={Style.mobile_profile_button_div}>
-              <button aria-label="mobile_profile_button_view archieve" className={Style.mobile_profile_button}>view archieve</button>
+              <button aria-label="mobile_profile_button_view archieve" className={Style.mobile_profile_button}>Achievements</button>
             </div>
           </div>
 
@@ -391,7 +391,7 @@ function Home() {
                 </TabPanel>
 
                 <TabPanel value="3">
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'center' }}>
+                  <div className={Style.AboutmeLicenses_Main_div} >
                     {AboutmeLicenses.map((element, i) => (
                       <div className={Style.AboutmeLicenses_div} key={i}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>

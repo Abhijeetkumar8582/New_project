@@ -236,7 +236,7 @@ function Home() {
             >
               <div className={Style.avatar}>
                 {/* <!-- Avatar image --> */}
-                <Image loading="lazy" alt={getAvatar}  width={50} height={50} className={Style.avatar__image} src={getAvatar} />
+                <Image loading="lazy" alt={getAvatar} width={50} height={50} className={Style.avatar__image} src={getAvatar} />
               </div>
               <div>
                 <h4>{getUserName}</h4>

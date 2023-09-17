@@ -29,7 +29,7 @@ function Home() {
         "This marks the debut of my portfolio website, with exciting plans for the future, including the development of an AI chatbot for interactive engagement. Stay tuned!",
     },
     {
-      image:"https://i0.wp.com/dianisa.com/wp-content/uploads/2023/02/Sejarah-Coming-Soon.jpg?resize=950%2C550&ssl=1",
+      image: "/Image/Instagram_UI.webp",
       title: "Instagram - UI",
       link: "/Instagram/Home",
       description:

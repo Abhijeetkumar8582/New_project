@@ -48,7 +48,6 @@
   gap: 50px;
 }
 
-
 .Container_two_subdiv {
   justify-content: center;
   display: flex;
@@ -92,9 +91,9 @@
   color: black;
 }
 .LinkWithoutUnderline {
-  text-decoration: none; 
+  text-decoration: none;
 }
-.Portfoliotext_text{
+.Portfoliotext_text {
   font-size: 1.5rem;
   font-family: monospace;
   display: flex;
@@ -103,45 +102,44 @@
 }
 
 @media only screen and (max-width: 750px) {
-.introPageMainDiv{
-  flex-direction: column;
-  margin-bottom: 150px;
-}
-.introPageMainDiv_one {
-  width: 100%;
-  display: flex;
-  padding: 1rem 2rem;
-  order:1;
-  flex-direction: column;
-}
-.introPageMainDiv_two {
-  width: 100%;
-  order: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.text {
-  font-size: 2.5rem;
-  font-family: monospace;
-}
-.donut_3d_shape{
-  display: none;
-}
-.text_name {
-  font-size: 2.5rem;
-  font-family: monospace;
-  color: #ff8900;
-  font-weight: 500;
-}
-.Portfolio_Div {
-  padding: 1rem 2rem;
-  background-color: #f0f8ff;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  gap: 80px;
-}
-
+  .introPageMainDiv {
+    flex-direction: column;
+    margin-bottom: 150px;
+  }
+  .introPageMainDiv_one {
+    width: 100%;
+    display: flex;
+    padding: 1rem 2rem;
+    order: 1;
+    flex-direction: column;
+  }
+  .introPageMainDiv_two {
+    width: 100%;
+    order: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .text {
+    font-size: 2.5rem;
+    font-family: monospace;
+  }
+  .donut_3d_shape {
+    display: none;
+  }
+  .text_name {
+    font-size: 2.5rem;
+    font-family: monospace;
+    color: #ff8900;
+    font-weight: 500;
+  }
+  .Portfolio_Div {
+    padding: 1rem 2rem;
+    background-color: #f0f8ff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 80px;
+  }
 }
