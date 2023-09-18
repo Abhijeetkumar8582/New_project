@@ -15,6 +15,16 @@ import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import Image from "next/image";
 import { useRouter } from "next/router";
+import Head from "next/head";
+import Link from "next/link";
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContentText from '@mui/material/DialogContentText';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import EmailIcon from '@mui/icons-material/Email';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import InstagramIcon from '@mui/icons-material/Instagram';
+
+
 
 
 function Home() {
@@ -151,19 +161,56 @@ function Home() {
   }, [screenDimensions.screenWidth, skillAvatar, profileavatarSize]);
   const redirect = () => {
     router.push("/");
-}
+  }
+  const [openAchievement, setAchievement] = React.useState(false);
+
+  const handleClickOpenAchievement = () => {
+    setAchievement(true);
+  };
+
+  const handleCloseAchievemnet = () => {
+    setAchievement(false);
+  };
+  const [openContact, setContact] = React.useState(false);
+
+  const handleClickOpenContact = () => {
+    setContact(true);
+  };
+
+  const handleCloseContact = () => {
+    setContact(false);
+  };
+  const url = (event) => {
+    window.open(event, '_blank');
+  };
+
   return (
     <>
+
+      <Head>
+        <title>Instagram - Abhijeet</title>
+        <meta property="og:title" content="Instagram - Abhijeet" />
+        <meta property="og:description" content="Discover Abhijeet's Instagram UI portfolio—an immersive world of creative design inspired by Netflix. Dive into captivating user experiences and join me on my design journey!" />
+        <meta property="og:image" content="/Image/Instagram_UI.webp" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="628" />
+        <meta property="og:url" content="https://beta-abhijeet-kumar-dev.netlify.app/Nextflix/Home" />
+        <meta property="og:type" content="website" />
+      </Head>
+
+
       <div className={Style.Instragram_Main_Div}>
         <div className={Style.Instragram_Div_Side_NavBar}>
           <div className={Style.Instragram_Div_Side_NavBar_heading}>
-            <div>
-              <h3 className={Style.Instragram_Div_Side_NavBar_instagram_title}>Instagram</h3>
-              <i
-                className={`${"fa fa-instagram"} ${Style.Instragram_Div_Side_NavBar_instagram_icon}`}
-                aria-hidden="true"
-              ></i>
-            </div>
+            <Link href={"/"} className={Style.LinkWithoutUnderline}>
+              <div >
+                <h3 className={Style.Instragram_Div_Side_NavBar_instagram_title}>Instagram</h3>
+                <i
+                  className={`${"fa fa-instagram"} ${Style.Instragram_Div_Side_NavBar_instagram_icon}`}
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </Link>
             <div className={Style.Instragram_Div_Side_NavBar_subHeading}>
               {SideNavBar_array.map((element, i) => (
                 <div
@@ -171,7 +218,7 @@ function Home() {
                   key={i}
                 >
                   <i className={`${element.fafa} ${Style.fafaIcon}`} aria-hidden="true"></i>
-                  <div style={{ display: "flex", alignItems: "center" }}>
+                  <div className={Style.Instragram_Div_Side_NavBar_heading_title_div}>
                     <h5 className={Style.Instragram_Div_Side_NavBar_heading_title}>{element.title}</h5>
                   </div>
                 </div>
@@ -180,7 +227,7 @@ function Home() {
 
             <div className={Style.Instragram_Div_Side_NavBar_Menu_title}>
               <i className={`${"fa fa-bars"} ${Style.Instragram_Div_Side_NavBar_Menu_icon}`} aria-hidden="true"></i>
-              <div style={{ display: 'flex', alignItems: 'center' }}>
+              <div className={Style.Instragram_Div_Side_NavBar_instagram_menu_Section_div}>
                 <h6 className={Style.Instragram_Div_Side_NavBar_instagram_menu_Section}>Menu</h6>
               </div>
             </div>
@@ -189,16 +236,16 @@ function Home() {
 
         <div className={Style.Instragram_Content_Main_div}>
           <div className={Style.Moblie_Navbar_Div}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
-              <i className="fa fa-lock" style={{fontSize:'16px'}} aria-hidden="true"></i>
+            <div className={Style.Moblie_Navbar_Div_lock_fa_fa_icon}>
+              <i className="fa fa-lock" style={{ fontSize: '16px' }} aria-hidden="true"></i>
               <div>
                 <button onClick={() => redirect()} className={Style.daredevil8582_btn}>
                   <h6 className={Style.Moblie_daredevil8582_text}>daredevil8582</h6>
                 </button></div>
-              <i className="fa fa-angle-down" style={{fontSize:'16px'}} aria-hidden="true"></i>
+              <i className="fa fa-angle-down" style={{ fontSize: '16px' }} aria-hidden="true"></i>
             </div>
             <div>
-              <i className="fa fa-bars" style={{fontSize:'16px'}} aria-hidden="true"></i>
+              <i className="fa fa-bars" style={{ fontSize: '16px' }} aria-hidden="true"></i>
             </div>
           </div>
           <div className={Style.Instragram_Content_Intro_section}>
@@ -212,17 +259,73 @@ function Home() {
             </div>
             <div className={Style.Instragram_Content_username_Section_Main_div}>
               <div className={Style.Instragram_Content_username_Section}>
-                <div style={{ display: "flex", alignItems: "center" }}>
+                <div className={Style.daredevil8582_text_div}>
                   <h5 className={Style.daredevil8582_text}>daredevil8582</h5>
                 </div>
                 <div>
-                  <button aria-label="edit_profile_button_Edit Profile" className={Style.edit_profile_button}>Edit Profile</button>
+
+                  <button aria-label="Contact" onClick={handleClickOpenContact} className={Style.edit_profile_button}>Contact</button>
+                  <Dialog
+                    open={openContact}
+                    onClose={handleCloseContact}
+                    aria-labelledby="alert-dialog-title"
+                    aria-describedby="alert-dialog-description"
+                  >
+                    <DialogTitle id="alert-dialog-title">
+                     <p className={Style.mobile_text}>Let's establish a professional connection 👔</p>
+                    </DialogTitle>
+                    <DialogContent>
+                      <DialogContentText id="alert-dialog-description">
+                        <div className='' style={{ display: 'flex', gap: '5px', minHeight: '50px',justifyContent:'center' }} >
+
+                          <GitHubIcon sx={{
+                            width: 30, height: 30, marginTop: 1, marginLeft: 1,color:'#2b2b2b',
+                            '&:hover': { fill: "black", transform: "translateY(-5px)" },
+                          }} onClick={() => url("https://github.com/Abhijeetkumar8582")} />
+
+                          <EmailIcon sx={{
+                            width: 30, height: 30, marginTop: 1, marginLeft: 1,color:'#ff5454',
+                            '&:hover': { fill: "#f72500", transform: "translateY(-5px)" },
+                          }} onClick={() => url("mailto:abhijeet122kumar@gmail.com")} />
+
+                          <LinkedInIcon sx={{
+                            width: 30, height: 30, marginTop: 1, marginLeft: 1,color:'#5e69ff',
+                            '&:hover': { fill: "#0021f7", transform: "translateY(-5px)" },
+                          }} onClick={() => url("https://www.linkedin.com/in/abhijeet-kumar-696a5a16a/")} />
+
+                          <InstagramIcon sx={{
+                            width: 30, height: 30, marginTop: 1, marginLeft: 1,color:'#ff8754',
+                            '&:hover': { fill: "#ff4ab7", transform: "translateY(-5px)" },
+                          }} onClick={() => url("https://www.instagram.com/daredevil8582/")} />
+
+                        </div>
+                      </DialogContentText>
+                    </DialogContent>
+                  </Dialog>
                 </div>
+
                 <div>
-                  <button aria-label="edit_profile_button_view_archieve" className={Style.edit_profile_button}>Achievements</button>
+                  <button aria-label="Achievements" onClick={handleClickOpenAchievement} className={Style.edit_profile_button}>Achievements</button>
+                  <Dialog
+                    open={openAchievement}
+                    onClose={handleCloseAchievemnet}
+                    aria-labelledby="alert-dialog-title"
+                    aria-describedby="alert-dialog-description"
+                  >
+                    <DialogTitle id="alert-dialog-title">
+                      {"Yellow.ai Hackathon"}
+                    </DialogTitle>
+                    <DialogContent>
+                      <DialogContentText id="alert-dialog-description">
+                        <p className={Style.mobile_text}>I secured the third position in the yellow.ai Hackathon by proposing an innovative idea: creating a chatbot to help restaurants donate excess food to nearby non-profit organizations. With the support of my teammates, we successfully implemented this idea, and I am immensely proud of our achievement. <a href="https://www.credential.net/0a51513b-b774-4d73-90d1-75a96b80603e" target="_blank" style={{ color: "tomato !important " }}><strong>View Certificate</strong></a></p>
+
+                      </DialogContentText>
+                    </DialogContent>
+                  </Dialog>
+
                 </div>
                 <div className={Style.Setting_edit_profile_button}>
-                  <i className="fa fa-cog fa-1x" aria-hidden="true"></i>
+                  <i className="fa fa-cog fa-1x" style={{ fontSize: '25px' }} aria-hidden="true"></i>
                 </div>
               </div>
               <div className={Style.Instragram_Content_Post_Section}>
@@ -264,10 +367,10 @@ function Home() {
           </div>
           <div className={Style.mobileRenderBtn}>
             <div className={Style.mobile_profile_button_div}>
-              <button aria-label="mobile_profile_button" className={Style.mobile_profile_button}>Edit Profile</button>
+              <button aria-label="Contact_details" onClick={handleClickOpenContact} className={Style.mobile_profile_button}>Contact</button>
             </div>
             <div className={Style.mobile_profile_button_div}>
-              <button aria-label="mobile_profile_button_view archieve" className={Style.mobile_profile_button}>Achievements</button>
+              <button aria-label="mobile_profile_button_view archieve" onClick={handleClickOpenAchievement} className={Style.mobile_profile_button}>Achievements</button>
             </div>
           </div>
 
@@ -297,7 +400,7 @@ function Home() {
                     <Avatar
                       alt={element.skills}
                       src={element.logo}
-                      style={{ border: '1px solid gray', padding: '3px' }}
+                      style={{ border: '1px solid gray', padding: '3px', maxWidth: '80px' }}
                       sx={{ width: skillAvatar, height: skillAvatar }}
                     />
                     <h6>{element.skills}</h6>
@@ -306,7 +409,7 @@ function Home() {
               )}
               {nextbuttonIndex >= AboutmeSkills.length ? (<div className={Style.Instragram_Content_Skills_avatar} >
                 <Avatar
-                  alt="Remy Sharp"
+                  alt="Add Skills"
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRal66RNJGRaNvsBcwWGY8S9rZO5UPXXpAEwg&usqp=CAU"
                   style={{ border: '1px solid gray', padding: '3px' }}
                   sx={{ width: skillAvatar, height: skillAvatar }}
@@ -351,7 +454,7 @@ function Home() {
                     {AboutmeProject.map((element, i) => (
                       <div className={Style.expirence_card} key={i}>
                         <div className={Style.expirence_card_image}>
-                          <img src={element.image} style={{ width: '100%' }} />
+                          <img src={element.image} alt={element.image} style={{ width: '100%', maxWidth: '300px' }} />
                         </div>
                         <p className={Style.expirence_card_title}>{element.title}</p>
                         <p className={Style.expirence_card_body}>
@@ -442,8 +545,13 @@ function Home() {
                 </TabPanel>
               </TabContext>
             </Box>
+            <div className={Style.Crafted_text_div}>
+              <h6 className={Style.Crafted_text}>Crafted with ❤️ by Abhijeet Kumar © 2023</h6>
+            </div>
           </div>
+
         </div>
+
       </div>
     </>
   );

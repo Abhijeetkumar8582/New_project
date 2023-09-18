@@ -26,14 +26,14 @@ function Home() {
       title: "Modern design",
       link: "/Introduction",
       description:
-        "This marks the debut of my portfolio website, with exciting plans for the future, including the development of an AI chatbot for interactive engagement. Stay tuned!",
+        "This marks the debut of my portfolio website, with exciting plans for the future, including the development of an AI chatbot for interactive engagement.",
     },
     {
       image: "/Image/Instagram_UI.webp",
       title: "Instagram - UI",
       link: "/Instagram/Home",
       description:
-        "I am working on designing a user interface similar to Airbnb's, and I'm also developing algorithms to enhance its interactivity.",
+        "Engaged in the art of UI design, I'm crafting visually appealing and interactive experiences!",
     },
     {
       image:

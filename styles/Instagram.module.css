@@ -17,7 +17,33 @@
   flex-direction: row;
   padding: 4rem 2rem;
 }
-.AboutmeLicenses_Main_div{
+.Instragram_Div_Side_NavBar_heading_title_div {
+  display: flex;
+  align-items: center;
+}
+.Instragram_Div_Side_NavBar_instagram_menu_Section_div {
+  display: flex;
+  align-items: center;
+}
+.LinkWithoutUnderline {
+  text-decoration: none;
+  color: white;
+}
+.Moblie_Navbar_Div_lock_fa_fa_icon {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.daredevil8582_text_div {
+  display: flex;
+  align-items: center;
+}
+.Crafted_text_div {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+.AboutmeLicenses_Main_div {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -63,11 +89,16 @@
 }
 .edit_profile_button {
   border-radius: 5px;
+  text-decoration: none;
   border: none;
   background-color: #232323;
   color: white;
   padding: 4px 15px;
   font-size: 15px;
+}
+.edit_profile_button:focus {
+  text-decoration: none;
+  outline: none;
 }
 .fafaIcon {
   font-size: 25px;
@@ -104,7 +135,6 @@
 
 .Instragram_Content_Skills_div {
   display: flex;
-  /* justify-content: center; */
   gap: 32px;
   width: 90%;
   overflow-x: scroll;
@@ -134,6 +164,7 @@
   justify-content: center;
   border-top: 1px solid gray;
   margin-bottom: 50px;
+  flex-direction: column;
 }
 .Instragram_Content_Major_div_item {
   border: none;
@@ -420,6 +451,10 @@
 .daredevil8582_btn:focus {
   outline: none;
 }
+.Crafted_text {
+  font-size: 16px;
+  color: gray;
+}
 @media only screen and (max-width: 1290px) {
   .Instragram_Div_Side_NavBar {
     width: 6%;
@@ -444,12 +479,12 @@
     overflow-x: scroll;
   }
   .Instragram_Div_Side_NavBar_heading_title {
-    display: none; 
+    display: none;
   }
 
   .Instragram_Div_Side_NavBar_subHeading_list:hover
     .Instragram_Div_Side_NavBar_heading_title {
-    display: block; 
+    display: block;
   }
   .Instragram_Content_Intro_section {
     justify-content: center;
@@ -490,6 +525,9 @@
     .Instragram_Div_Side_NavBar_instagram_menu_Section {
     display: block; /* Show text on hover */
   }
+  .Crafted_text {
+    font-size: 14px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -497,7 +535,6 @@
     display: none;
   }
   .Moblie_Navbar_Div {
-    /* display: block; */
     width: 100%;
     padding: 10px;
     justify-content: space-between;
@@ -506,7 +543,6 @@
     margin-left: -10px;
     background-color: #000000;
     z-index: 1;
-    /* margin-bottom: 40px; */
   }
   .Moblie_daredevil8582_text {
     margin: 0px;
@@ -562,7 +598,7 @@
   }
   .mobile_text {
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 400;
   }
   .edit_profile_button {
     font-size: 14px;
@@ -601,6 +637,9 @@
     color: white;
     padding: 4px 15px;
     font-size: 15px;
+  }
+  .mobile_profile_button:focus {
+    outline: none;
   }
   .Setting_edit_profile_button {
     display: none;
@@ -645,5 +684,8 @@
 @media only screen and (max-width: 568px) {
   .Instragram_Content_Intro_section {
     margin-bottom: 50px;
+  }
+  .Instragram_Intro_section_image {
+    margin-top: 20px;
   }
 }
