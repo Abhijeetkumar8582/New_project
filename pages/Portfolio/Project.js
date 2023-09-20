@@ -1,10 +1,4 @@
 import { useEffect } from 'react'
-import Style from 'styles/project.module.css'
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
 import projects from '../Json/Projects.json'
 import Head from 'next/head';
 import AOS from 'aos';
@@ -38,8 +32,8 @@ function Project() {
                 {projects.map((element, index) => (
                     <div className='' key={index}>
                         <div data-aos="zoom-in-up">
-                            <div class="Project_card">
-                                <div class="Project_card_header">
+                            <div className="Project_card">
+                                <div className="Project_card_header">
                                     <Image
                                         component="img"
                                         style={{ width: '100%', borderRadius: '0px' }}
@@ -49,13 +43,13 @@ function Project() {
                                         height={100}
                                         alt={element.image}
                                     /></div>
-                                <div class="Project_card_info">
-                                    <p class="Project_card_title">{element.title}</p>
+                                <div className="Project_card_info">
+                                    <p className="Project_card_title">{element.title}</p>
                                     <p className='product_description'> {element.description}</p>
                                 </div>
-                                <div class="Project_card_footer">
-                                    <p class="Project_card_tag">#{element.code} </p>
-                                    <button type="button" aria-label={`View Project${index}`} onClick={() => handleClick(element.button)} class="action">View Project </button>
+                                <div className="Project_card_footer">
+                                    <p className="Project_card_tag">#{element.code} </p>
+                                    <button type="button" aria-label={`View Project${index}`} onClick={() => handleClick(element.button)} className="action">View Project </button>
                                 </div>
                             </div>
                         </div>

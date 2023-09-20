@@ -77,7 +77,7 @@ function About() {
                         <div data-aos="fade-right">
                             <div className="my-3 mx-3 skillsDiv" >
                                 <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                                    <Image src={element.logo} width={50} height={50} className="-img-top" alt={element.skills} maxWidth={50} />
+                                    <Image src={element.logo} width={50} height={50} className="-img-top" alt={element.skills}  />
                                 </div>
                                 <div className="-body" style={{ width: "80%", margin: "auto" }}>
                                     <p className="text-center" style={{ fontFamily: 'Verdana', margin: 0 }}><strong>{element.skills}</strong></p>
@@ -100,17 +100,17 @@ function About() {
                 {licenses.map((element, index) => (
                     <div style={{ maxWidth: '320px', gap: "20px" }} key={element.tittle}>
                         <div data-aos="fade-down">
-                            <div class="card">
-                                <div class="header">
-                                    <div class="image">
+                            <div className="card">
+                                <div className="header">
+                                    <div className="image">
                                         <Image src={element.logo} style={{ width: "100%" }} width={100} height={100} alt="Card image cap" />
                                     </div>
                                     <div className='name_div'>
-                                        <p class="name">{element.tittle}</p>
+                                        <p className="name">{element.tittle}</p>
                                     </div>
                                 </div>
                                 <div style={{height:'80%',marginBottom:'10px'}}>
-                                    <p class="message">
+                                    <p className="message">
                                         {element.description}
                                     </p>
                                 </div>

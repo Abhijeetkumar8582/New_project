@@ -14,8 +14,6 @@ import NavBar from './NavBar'
 
 function Home() {
   const router = useRouter();
-  const [renderComponent, setRenderComponent] = useState(false)
-
 
   useEffect(() => {
     AOS.init({ duration: 2000 })
