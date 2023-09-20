@@ -25,56 +25,44 @@ function Project() {
     return (
         <>
             <Head>
-            <title >Abhijeet Portfolio</title>
+                <title >Abhijeet Portfolio</title>
                 <meta name="description"
                     content="Skilled and innovative developer who's passionate about making life easier. Explore my portfolio of projects, including Omnipexel, Newsapp, and Chartext, and discover.... "
                 />
             </Head>
             <NavBar />
             <div data-aos="zoom-in">
-                <h1 className={Style.heading}>Some Things I’ve Built</h1>
+                <h1 className='heading'>Some Things I’ve Built</h1>
             </div>
-            <div className='d-flex justify-content-center flex-wrap'>
+            <div className='' style={{display:'flex',overflowX:'scroll',gap:'20px',margin:'0rem 1rem'}}>
                 {projects.map((element, index) => (
-                    <div className='col-md-4 my-4 mx-5' key={index}>
+                    <div className='' key={index}>
                         <div data-aos="zoom-in-up">
-                            <Card sx={{ maxWidth: 400 }}>
-                                <CardActionArea>
+                            <div class="Project_card">
+                                <div class="Project_card_header">
                                     <Image
                                         component="img"
-                                        style={{ maxWidth: '400px', width: '100%' }}
+                                        style={{ width: '100%', borderRadius: '0px' }}
                                         src={element.image}
                                         width={400}
                                         loading='lazy'
-                                        height={210}
+                                        height={100}
                                         alt={element.image}
-                                        srcSet={`${element.image}?w=600&quality=60 600w,
-                                         ${element.image}?w=400&quality=60 400w,
-                                         ${element.image}?w=200&quality=60 200w`}
-                                    />
-                                    <CardContent>
-                                        <Typography gutterBottom variant="h5" component="div">
-                                            {element.title}
-                                        </Typography>
-                                        <Typography variant="body2" color="text.secondary">
-                                            {element.description}
-                                        </Typography>
-                                        <Typography variant="body2" color="text.secondary">
-                                            <strong>{element.code}</strong>
-                                        </Typography>
-                                    </CardContent>
-                                </CardActionArea>
-                                <CardActions>
-                                    <Button aria-label='open_Project' size="small" onClick={() => handleClick(element.button)} color="primary">
-                                        View Project
-                                    </Button>
-                                </CardActions>
-                            </Card>
+                                    /></div>
+                                <div class="Project_card_info">
+                                    <p class="Project_card_title">{element.title}</p>
+                                    <p className='product_description'> {element.description}</p>
+                                </div>
+                                <div class="Project_card_footer">
+                                    <p class="Project_card_tag">#{element.code} </p>
+                                    <button type="button" aria-label={`View Project${index}`} onClick={() => handleClick(element.button)} class="action">View Project </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 ))}
             </div>
-         
+
         </>
     )
 }

@@ -1,6 +1,6 @@
 {
   "/_app": "pages/_app.js",
-  "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/Instagram/Home": "pages/Instagram/Home.js"
+  "/_document": "pages/_document.js",
+  "/Portfolio/Home": "pages/Portfolio/Home.js"
 }

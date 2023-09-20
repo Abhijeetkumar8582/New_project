@@ -25,7 +25,7 @@ function About() {
     const handleClickOpen = useCallback((tittle) => {
         setOpen({ ...open, [tittle]: true });
 
-    },[setOpen]);
+    }, [setOpen]);
 
     const handleClose = useCallback((tittle) => {
         setOpen({ ...open, [tittle]: false });
@@ -33,7 +33,7 @@ function About() {
         card_css_hover.forEach(function (card) {
             card.classList.remove('hover')
         })
-    },[setOpen]);
+    }, [setOpen]);
 
     return (
         <>
@@ -47,8 +47,8 @@ function About() {
             <div data-aos="fade-right">
                 <div style={{ marginTop: "70px" }}></div>
 
-                <div className="row clearfix" >
-                    <div className="col-sm aboutme_section ">
+                <div className="row clearfix" style={{width:'100vw'}}>
+                    <div className="col-sm aboutme_section " >
                         <h1 className="textfont  text-center my-2">So, who am I?</h1>
                         <h5 className="content mobile_content my-3 mx-2 mx-sm-5">
                             Hello, I'm Abhijeet, a passionate tech enthusiast always eager to explore new technologies. I find joy in creating digital content that thrives on the internet. My interest in web development started with SQL back in 2020, and now building apps using React.
@@ -71,13 +71,13 @@ function About() {
                 <h1 className='textfont  text-center my-3' > Skills & Abilities</h1>
             </div>
 
-            <div className='d-flex justify-content-center flex-wrap'>
+            <div className='scroll-container'>
                 {aboutJson.map((element, index) => (
                     <div key={index}>
                         <div data-aos="fade-right">
                             <div className="my-3 mx-3 skillsDiv" >
                                 <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                                    <Image src={element.logo} width={100} height={100} className="-img-top" alt={element.skills} maxWidth={100} />
+                                    <Image src={element.logo} width={50} height={50} className="-img-top" alt={element.skills} maxWidth={50} />
                                 </div>
                                 <div className="-body" style={{ width: "80%", margin: "auto" }}>
                                     <p className="text-center" style={{ fontFamily: 'Verdana', margin: 0 }}><strong>{element.skills}</strong></p>
@@ -96,28 +96,29 @@ function About() {
             </div>
 
 
-            <div className="row mx-3" style={{ justifyContent: 'center' }}>
+            <div className="" style={{ margin: '0px 1rem', display: 'flex', justifyContent: 'flex-start', overflowX: 'scroll', gap: "20px" }}>
                 {licenses.map((element, index) => (
-                    <div className="card-wrapper" style={{ maxWidth: '320px' }} key={element.tittle}>
+                    <div style={{ maxWidth: '320px', gap: "20px" }} key={element.tittle}>
                         <div data-aos="fade-down">
-                            <div className="card cardEffect my-3" style={{ width: "100%", height: '360px' }}>
-                                <div className="card-img-wrapper justify-content-center" style={{ display: 'flex', justifyContent: 'center' }}>
-                                    <Image className="card-img-top my-2" src={element.logo} style={{ width: "100px" }} width={100} height={100} alt="Card image cap" />
-                                </div>
-                                <div className="card-body" style={{ padding: "15px" }}>
-                                    <h5 className="content card-title" style={{ marginTop: "10px", position: 'fixed', fontFamily: 'Verdana', textAlign: 'start' }}>{element.tittle}</h5>
-                                    <div className="card-content">
-                                        <p className="content card-text mobile_content mx-1" style={{ marginTop: "70px", position: 'fixed', textAlign: 'start' }}>{element.description}</p>
+                            <div class="card">
+                                <div class="header">
+                                    <div class="image">
+                                        <Image src={element.logo} style={{ width: "100%" }} width={100} height={100} alt="Card image cap" />
                                     </div>
-                                    <div className='content card-text'>
-                                        <Button className='btn' style={{ backgroundColor: "#FDA260", border: "none", bottom: "15px", left: "10px", position: "fixed", color: "black" }} onClick={() => handleClickOpen(element.tittle)}>
-                                            Certificate
-                                        </Button>
-
+                                    <div className='name_div'>
+                                        <p class="name">{element.tittle}</p>
                                     </div>
-
                                 </div>
-
+                                <div style={{height:'80%',marginBottom:'10px'}}>
+                                    <p class="message">
+                                        {element.description}
+                                    </p>
+                                </div>
+                                <div style={{height:'10%'}}>
+                                <button className='action' onClick={() => handleClickOpen(element.tittle)}>
+                                    Certificate
+                                </button>
+                                </div>
                             </div>
 
                         </div>
@@ -160,7 +161,7 @@ function About() {
             </div>
 
 
-          
+
         </>
     )
 }

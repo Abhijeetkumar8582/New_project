@@ -2,13 +2,31 @@ import React from 'react'
 
 function Footer() {
   return (
-    <>
-      <div className='container my-3'>
-        <div className='d-flex justify-content-between'>
-          <h6 className='footer-text'>Handcrafted by @ Abhijeet kumar</h6>
-          <h6 className='footer-text'>More coming soon...</h6>
+    <div style={{ backgroundColor: '#FDA260' }}>
+      <div className='FooterBar_container'>
+        <div className='FooterBar_container_sectionOne_div_one'>
+          <p className='footer-font_text'>Check out my other Portfolio</p>
         </div>
-      </div></>
+        <div className='FooterBar_container_sectionOne_div_two'>
+          <div>
+            <p className='footer-font_text'>Flipkart</p>
+          </div>
+          <div>
+            <p className='footer-font_text'>Netflix</p>
+          </div>
+          <div>
+            <p className='footer-font_text'>Instagram</p>
+          </div>
+          <div>
+            <p className='footer-font_text'>Dynamic Portfolio</p>
+          </div>
+        </div>
+      </div>
+      <div className='FooterBar_container_two'>
+      <p className='footer-font_text_other_text'>Handcrafted by Abhijeet kumar @2023</p>
+      </div>
+      
+      </div>
   )
 }
 
