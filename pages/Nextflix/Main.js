@@ -11,8 +11,10 @@ import DialogTitle from "@mui/material/DialogTitle";
 import Image from "next/image";
 import Button from "@mui/material/Button";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 function Main() {
+    const router = useRouter();
     const [islicenseOpen, setislicenseOpen] = useState(false);
     const [displaylicense, setdisplaylicense] = useState(4);
     const [isProjectDiv, setisProjectDiv] = useState(false);
@@ -73,7 +75,11 @@ function Main() {
             setdisProjectDiv(AboutmeLicenses.length);
         }
     }, [isProjectDiv, setisProjectDiv, setdisProjectDiv]);
-
+    
+    const redirect = (e) => {
+        router.push(e)
+        // console.log(e);
+    }
     return (
         <>
             <Head>
@@ -369,11 +375,29 @@ function Main() {
                 </div>
                 <div style={{ background: "gray", height: "5px" }}></div>
                 <div className={Style.MainPageSectionFive}>
-                    <div>
-                        <h6 className={Style.mobileText}>Handcrafted by Abhijeet kumar</h6>
-                    </div>
-                    <div>
-                        <h6 className={Style.mobileText}>Handcrafted by Abhijeet kumar</h6>
+                    <div style={{ backgroundColor: 'black' }}>
+                        <div className={Style.FooterBar_container}>
+                            <div className={Style.FooterBar_container_sectionOne_div_one}>
+                                <p className={Style.footer_font_text}>Check out my other Portfolio</p>
+                            </div>
+                            <div className={Style.FooterBar_container_sectionOne_div_two}>
+                                <div>
+                                    <button className={Style.redirect_btn} onClick={() => redirect("/Flipkart/Home")}><p className={Style.footer_font_text}>Flipkart</p></button>
+                                </div>
+                                <div>
+                                    <button className={Style.redirect_btn} onClick={() => redirect("/Instagram/Home")}><p className={Style.footer_font_text}>Instagram</p></button>
+                                </div>
+                                <div>
+                                    <button className={Style.redirect_btn} onClick={() => redirect("/Introduction")}><p className={Style.footer_font_text}>My Design</p></button>
+                                </div>
+                                <div>
+                                    <button className={Style.redirect_btn} onClick={() => redirect('e')}> <p className={Style.footer_font_text}>Dynamic Portfolio(WIP)</p></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={Style.FooterBar_container_two}>
+                            <p className={Style.footer_font_text_other_text}>Handcrafted by Abhijeet kumar @2023</p>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -679,18 +679,46 @@
 
 .fafaicongithub {
   margin: 0px 50px;
+  display: flex;
+  color: white;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap:5px;
+  margin-top: 5px;
 }
 
-.fafaiconisntagram {
+.fafaiconinstagram {
   margin: 0px 50px;
+  display: flex;
+  color: white;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap:5px;
+  margin-top: 5px;
 }
 
 .fafaiconemail {
   margin: 0px 50px;
+  display: flex;
+  color: white;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap:5px;
+  margin-top: 5px;
 }
 
 .fafaiconLinkedin {
   margin: 0px 50px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap:5px;
+  margin-top: 5px;
 }
 
 .fafaicongithub:hover {
@@ -699,7 +727,7 @@
   cursor: pointer;
 }
 
-.fafaiconisntagram:hover {
+.fafaiconinstagram:hover {
   color: rgb(255, 158, 67);
   transform: translateY(-5px);
   cursor: pointer;
@@ -711,8 +739,57 @@
   cursor: pointer;
 }
 
-.fafaiconLinkedin:hover {
+.fafaiconLinkedin:hover
+{
   color: blue;
   transform: translateY(-5px);
   cursor: pointer;
+}
+
+
+.FooterBar_container {
+  display: flex;
+}
+.FooterBar_container_sectionOne_div_one {
+  width: 40%;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+}
+.FooterBar_container_sectionOne_div_two {
+  width: 60%;
+  display: flex;
+  margin: 10px;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.footer_font_text {
+  color: #ffffff;
+  font-family: monospace;
+  font-size: 18px;
+  margin: 0px 10px;
+  text-decoration: none;
+}
+.FooterBar_container_two {
+  background-color: #000000;
+  color: #000;
+  width: 100vw;
+  padding: 5px 0px;
+  display: flex;
+  justify-content: center;
+}
+.footer_font_text_other_text {
+  color: #aaaaaa;
+  font-family: monospace;
+  font-size: 15px;
+  font-weight: 200;
+  margin: 0px;
+  text-decoration: none;
+}
+.redirect_btn {
+  background-color: transparent;
+  border: none;
+}
+.redirect_btn:focus{
+  outline: none;
 }

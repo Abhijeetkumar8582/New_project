@@ -1,6 +1,6 @@
 {
   "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/Portfolio/Home": "pages/Portfolio/Home.js"
+  "/_error": "pages/_error.js",
+  "/Flipkart/MainPage": "pages/Flipkart/MainPage.js"
 }

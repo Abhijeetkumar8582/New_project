@@ -24,7 +24,7 @@ function Logo() {
     }
     setTime(time - 1)
   }, 1000);
-
+ 
   return (
     <>
       <Head>

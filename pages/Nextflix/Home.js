@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Style from "/styles/Netflix.module.css";
-import TextField from "@mui/material/TextField";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Head from "next/head";
@@ -28,7 +27,9 @@ function Home() {
     const redirect = () => {
         router.push("/Nextflix/Main");
     }
-
+    const redirect_user = (e) => {
+        router.push(e)
+      }
     return (
         <>
 
@@ -69,7 +70,7 @@ function Home() {
                             </div>
 
                             <div className={Style.subHeadingMainPageTwo}>
-                                I would love to connect with you, and if you're interested
+                                Click the "Get started" button to access my portfolio.
                             </div>
                         </div>
                     </div>
@@ -188,14 +189,32 @@ function Home() {
                 </div>
                 {/* ...................................................................................................................................*/}
                 <div style={{ background: "gray", height: "5px" }}></div>
-                <div className={Style.MainPageSectionFive}>
-                    <div>
-                        <h6 className={Style.mobileText}>Handcrafted by Abhijeet kumar</h6>
+                
+                <div style={{ backgroundColor: 'black' }}>
+                    <div className={Style.FooterBar_container}>
+                        <div className={Style.FooterBar_container_sectionOne_div_one}>
+                            <p className={Style.footer_font_text}>Check out my other Portfolio</p>
+                        </div>
+                        <div className={Style.FooterBar_container_sectionOne_div_two}>
+                            <div>
+                                <button className={Style.redirect_btn} onClick={() => redirect_user("/Flipkart/Home")}><p className={Style.footer_font_text}>Flipkart</p></button>
+                            </div>
+                            <div>
+                                <button className={Style.redirect_btn} onClick={() => redirect_user("/Instagram/Home")}><p className={Style.footer_font_text}>Instagram</p></button>
+                            </div>
+                            <div>
+                                <button className={Style.redirect_btn} onClick={() => redirect_user("/Introduction")}><p className={Style.footer_font_text}>My Design</p></button>
+                            </div>
+                            <div>
+                                <button className={Style.redirect_btn} onClick={() => redirect_user('e')}> <p className={Style.footer_font_text}>Dynamic Portfolio(WIP)</p></button>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <h6 className={Style.mobileText}>Handcrafted by Abhijeet kumar</h6>
+                    <div className={Style.FooterBar_container_two}>
+                        <p className={Style.footer_font_text_other_text}>Handcrafted by Abhijeet kumar @2023</p>
                     </div>
                 </div>
+
             </div>
         </>
     );
