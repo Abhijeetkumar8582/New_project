@@ -2,5 +2,7 @@
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/Flipkart/MainPage": "pages/Flipkart/MainPage.js"
+  "/": "pages/index.js",
+  "/Dynamic_Portfolio/Home": "pages/Dynamic_Portfolio/Home.js",
+  "/Nextflix/Home": "pages/Nextflix/Home.js"
 }

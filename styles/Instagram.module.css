@@ -41,7 +41,7 @@
 .Crafted_text_div {
   display: flex;
   justify-content: center;
-  margin-top: 25px;
+  
 }
 .AboutmeLicenses_Main_div {
   display: flex;
@@ -688,4 +688,75 @@
   .Instragram_Intro_section_image {
     margin-top: 20px;
   }
+}
+
+
+.FooterBar_container {
+  display: flex;
+  margin-top: 40px;
+}
+.FooterBar_container_sectionOne_div_one {
+  width: 40%;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+}
+.FooterBar_container_sectionOne_div_two {
+  width: 60%;
+  display: flex;
+  margin: 10px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.footer_font_text {
+  color: #ffffff;
+  font-family: monospace;
+  font-size: 16px;
+  margin: 0px 10px;
+  text-decoration: none;
+}
+.FooterBar_container_two {
+  background-color: #000000;
+  color: #ffffff;
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+}
+.footer_font_text_other_text {
+  color: #aaaaaa;
+  font-family: monospace;
+  font-size: 15px;
+  font-weight: 200;
+  margin: 0px;
+  text-decoration: none;
+}
+@media only screen and (max-width: 750px) {
+  .footer_font_text,
+  .footer_font_text_other_text {
+    font-size: 13px;
+    text-align: center;
+  }
+  .FooterBar_container{
+    flex-direction: column;
+  }
+  .FooterBar_container_sectionOne_div_two {
+    gap: 5px;
+    width: 100%;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+  }
+  .FooterBar_container_sectionOne_div_one{
+    width: 100%;
+    margin:10px 0px;
+    display: flex;
+    justify-content: center;
+  }
+  
+}
+
+.redirect_btn{
+    background: transparent;
+    border: none;
 }

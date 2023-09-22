@@ -597,6 +597,7 @@ body {
   .footer-font_text,
   .footer-font_text_other_text {
     font-size: 13px;
+    text-align: center;
   }
   .FooterBar_container{
     flex-direction: column;

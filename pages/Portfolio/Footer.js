@@ -5,13 +5,12 @@ function Footer() {
   const router = useRouter();
   const redirect = (e) => {
     router.push(e)
-    // console.log(e);
   }
   return (
     <div style={{ backgroundColor: '#FDA260' }}>
       <div className='FooterBar_container'>
         <div className='FooterBar_container_sectionOne_div_one'>
-          <p className='footer-font_text'>Check out my other Portfolio</p>
+          <p className='footer-font_text'>Check out my other Portfolio design</p>
         </div>
         <div className='FooterBar_container_sectionOne_div_two'>
           <div>
@@ -24,7 +23,7 @@ function Footer() {
             <button className='redirect_btn' onClick={()=>redirect("/Instagram/Home")}><p className='footer-font_text'>Instagram</p></button>
           </div>
           <div>
-            <button className='redirect_btn' onClick={()=>redirect('e')}> <p className='footer-font_text'>Dynamic Portfolio</p></button>
+            <button className='redirect_btn' onClick={()=>redirect('/Dynamic_Portfolio/Home')}> <p className='footer-font_text'>Dynamic Portfolio</p></button>
           </div>
         </div>
       </div>

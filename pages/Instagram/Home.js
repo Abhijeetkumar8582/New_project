@@ -183,7 +183,9 @@ function Home() {
   const url = (event) => {
     window.open(event, '_blank');
   };
-
+  const redirect_user = (e) => {
+    router.push(e) 
+}
   return (
     <>
 
@@ -194,7 +196,7 @@ function Home() {
         <meta property="og:image" content="/Image/Instagram_UI.webp" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="628" />
-        <meta property="og:url" content="https://beta-abhijeet-kumar-dev.netlify.app/Nextflix/Home" />
+        <meta property="og:url" content="https://abhijeetkumar-developer.netlify.app/Nextflix/Home" />
         <meta property="og:type" content="website" />
       </Head>
 
@@ -272,29 +274,29 @@ function Home() {
                     aria-describedby="alert-dialog-description"
                   >
                     <DialogTitle id="alert-dialog-title">
-                     <p className={Style.mobile_text}>Let's establish a professional connection 👔</p>
+                      <p className={Style.mobile_text}>Let's establish a professional connection 👔</p>
                     </DialogTitle>
                     <DialogContent>
                       <DialogContentText id="alert-dialog-description">
-                        <div className='' style={{ display: 'flex', gap: '5px', minHeight: '50px',justifyContent:'center' }} >
+                        <div className='' style={{ display: 'flex', gap: '5px', minHeight: '50px', justifyContent: 'center' }} >
 
                           <GitHubIcon sx={{
-                            width: 30, height: 30, marginTop: 1, marginLeft: 1,color:'#2b2b2b',
+                            width: 30, height: 30, marginTop: 1, marginLeft: 1, color: '#2b2b2b',
                             '&:hover': { fill: "black", transform: "translateY(-5px)" },
                           }} onClick={() => url("https://github.com/Abhijeetkumar8582")} />
 
                           <EmailIcon sx={{
-                            width: 30, height: 30, marginTop: 1, marginLeft: 1,color:'#ff5454',
+                            width: 30, height: 30, marginTop: 1, marginLeft: 1, color: '#ff5454',
                             '&:hover': { fill: "#f72500", transform: "translateY(-5px)" },
                           }} onClick={() => url("mailto:abhijeet122kumar@gmail.com")} />
 
                           <LinkedInIcon sx={{
-                            width: 30, height: 30, marginTop: 1, marginLeft: 1,color:'#5e69ff',
+                            width: 30, height: 30, marginTop: 1, marginLeft: 1, color: '#5e69ff',
                             '&:hover': { fill: "#0021f7", transform: "translateY(-5px)" },
                           }} onClick={() => url("https://www.linkedin.com/in/abhijeet-kumar-696a5a16a/")} />
 
                           <InstagramIcon sx={{
-                            width: 30, height: 30, marginTop: 1, marginLeft: 1,color:'#ff8754',
+                            width: 30, height: 30, marginTop: 1, marginLeft: 1, color: '#ff8754',
                             '&:hover': { fill: "#ff4ab7", transform: "translateY(-5px)" },
                           }} onClick={() => url("https://www.instagram.com/daredevil8582/")} />
 
@@ -545,11 +547,35 @@ function Home() {
                 </TabPanel>
               </TabContext>
             </Box>
-            <div className={Style.Crafted_text_div}>
-              <h6 className={Style.Crafted_text}>Crafted with ❤️ by Abhijeet Kumar © 2023</h6>
-            </div>
-          </div>
 
+          </div>
+          <div className={Style.Crafted_text_div}>
+            <div style={{ backgroundColor: 'black', width: '100%' }}>
+              <div className={Style.FooterBar_container}>
+                <div className={Style.FooterBar_container_sectionOne_div_one}>
+                  <p className={Style.footer_font_text}>Check out my other Portfolio design</p>
+                </div>
+                <div className={Style.FooterBar_container_sectionOne_div_two}>
+                  <div>
+                    <button className={Style.redirect_btn} onClick={() => redirect_user("/Flipkart/Home")}><p className={Style.footer_font_text}>Flipkart</p></button>
+                  </div>
+                  <div>
+                    <button className={Style.redirect_btn} onClick={() => redirect_user("/Nextflix/Home")}><p className={Style.footer_font_text}>Netflix</p></button>
+                  </div>
+                  <div>
+                    <button className={Style.redirect_btn} onClick={() => redirect_user("/Introduction")}><p className={Style.footer_font_text}>My Design</p></button>
+                  </div>
+                  <div>
+                    <button className={Style.redirect_btn} onClick={() => redirect_user('/Dynamic_Portfolio/Home')}> <p className={Style.footer_font_text}>Dynamic Portfolio(WIP)</p></button>
+                  </div>
+                  
+                </div>
+              </div>
+              <div className={Style.FooterBar_container_two}>
+                <p className={Style.footer_font_text_other_text}>Handcrafted by Abhijeet kumar @2023</p>
+              </div>
+
+            </div> </div>
         </div>
 
       </div>

@@ -89,7 +89,7 @@ function Main() {
                 <meta property="og:image" content="/Image/netflixUi.webp" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="628" />
-                <meta property="og:url" content="https://beta-abhijeet-kumar-dev.netlify.app/Nextflix/Home" />
+                <meta property="og:url" content="https://abhijeetkumar-developer.netlify.app/Nextflix/Home" />
                 <meta property="og:type" content="website" />
             </Head>
             {" "}
@@ -378,7 +378,7 @@ function Main() {
                     <div style={{ backgroundColor: 'black' }}>
                         <div className={Style.FooterBar_container}>
                             <div className={Style.FooterBar_container_sectionOne_div_one}>
-                                <p className={Style.footer_font_text}>Check out my other Portfolio</p>
+                                <p className={Style.footer_font_text}>Check out my other Portfolio design</p>
                             </div>
                             <div className={Style.FooterBar_container_sectionOne_div_two}>
                                 <div>
@@ -391,7 +391,7 @@ function Main() {
                                     <button className={Style.redirect_btn} onClick={() => redirect("/Introduction")}><p className={Style.footer_font_text}>My Design</p></button>
                                 </div>
                                 <div>
-                                    <button className={Style.redirect_btn} onClick={() => redirect('e')}> <p className={Style.footer_font_text}>Dynamic Portfolio(WIP)</p></button>
+                                    <button className={Style.redirect_btn} onClick={() => redirect('/Dynamic_Portfolio/Home')}> <p className={Style.footer_font_text}>Dynamic Portfolio(WIP)</p></button>
                                 </div>
                             </div>
                         </div>

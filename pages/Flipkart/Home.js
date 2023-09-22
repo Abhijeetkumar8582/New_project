@@ -78,7 +78,7 @@ function Home() {
         <meta property="og:image" content="/Image/flipkartUi.webp" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="628" />
-        <meta property="og:url" content="https://beta-abhijeet-kumar-dev.netlify.app/Flipkart/Home" />
+        <meta property="og:url" content="https://abhijeetkumar-developer.netlify.app/Flipkart/Home" />
         <meta property="og:type" content="website" />
       </Head>
 

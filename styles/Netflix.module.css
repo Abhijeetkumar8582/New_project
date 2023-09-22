@@ -736,6 +736,7 @@
   .footer_font_text,
   .footer_font_text_other_text {
     font-size: 13px;
+    text-align: center;
 
   }
   .FooterBar_container {

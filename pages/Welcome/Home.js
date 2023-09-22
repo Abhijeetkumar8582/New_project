@@ -38,10 +38,10 @@ function Home() {
     {
       image:
         "https://i0.wp.com/dianisa.com/wp-content/uploads/2023/02/Sejarah-Coming-Soon.jpg?resize=950%2C550&ssl=1",
-      title: "Godzilla - UI",
-      link: "",
+      title: "Dynamic portfolio",
+      link: "/Dynamic_Portfolio/Home",
       description:
-        "As a huge Godzilla fan, I'm excited to craft a uniquely creative UI inspired by the mighty monster!",
+        "Creating a dynamic portfolio with a fresh design, showcasing my data uniquely.",
     },
   ];
   const [alertOpen, alertsetOpen] = useState(true);
@@ -60,25 +60,13 @@ function Home() {
       <Head>
         <title>Welcome</title>
         <meta property="og:title" content="Abhijeet Kumar" />
-        <meta
-          name="description"
-          content="🚀 Abhijeet Kumar: Crafting digital experiences with a blend of frontend finesse and backend wizardry. Join me on a journey through the world of Node.js development! 💻✨"
-        />
-        <meta
-          property="og:description"
-          content="🚀 Abhijeet Kumar: Crafting digital experiences with a blend of frontend finesse and backend wizardry. Join me on a journey through the world of Node.js development! 💻✨"
-        />
+        <meta name="description" content="🚀 Abhijeet Kumar: Crafting digital experiences with a blend of frontend finesse and backend wizardry. Join me on a journey through the world of Node.js development! 💻✨"/>
+        <meta property="og:description" content="🚀 Abhijeet Kumar: Crafting digital experiences with a blend of frontend finesse and backend wizardry. Join me on a journey through the world of Node.js development! 💻✨"/>
         <meta property="og:image" content="/Image/Abhijeet_kumar.webp" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="628" />
-        <meta
-          property="og:url"
-          content="https://beta-abhijeet-kumar-dev.netlify.app/"
-        />
-        <meta
-          property="og:type"
-          content="https://beta-abhijeet-kumar-dev.netlify.app/"
-        />
+        <meta property="og:url" content="https://abhijeetkumar-developer.netlify.app/"/>
+        <meta property="og:type" content="https://abhijeetkumar-developer.netlify.app/"/>
         <meta property="og:site_name" content="ABHI" />
       </Head>
 

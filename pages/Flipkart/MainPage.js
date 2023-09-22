@@ -198,7 +198,7 @@ function MainPage() {
                 <meta property="og:image" content="/Image/flipkartUi.webp" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="628" />
-                <meta property="og:url" content="https://beta-abhijeet-kumar-dev.netlify.app/Flipkart/Home" />
+                <meta property="og:url" content="https://abhijeetkumar-developer.netlify.app/Flipkart/Home" />
                 <meta property="og:type" content="website" />
             </Head>
             <FlipkartNavBar />
@@ -222,7 +222,7 @@ function MainPage() {
                             <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/abhijeet_kumar_3.jpg')}><Image alt="MyImage" loading='lazy' width={60} height={60} style={{ maxWidth: '100%', objectFit: 'contain' }} src='/Image/abhijeet_kumar_3.jpg' /></div>
                             <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/Abhijeet_kumar_4.webp')}><Image loading='lazy' width={60} height={60} style={{ maxWidth: '100%', objectFit: 'contain' }} alt="MyImage" src='/Image/Abhijeet_kumar_4.webp' /></div>
                         </div>
-                        <div className={Style.flipkartMainboxImage_Mainimage}><Image loading='lazy' alt="MyImage" style={{ objectFit:"scale-down", width: '100%', height: '100%' }}  width={500} height={500} quality={100} src={mainImageUrl} /></div>
+                        <div className={Style.flipkartMainboxImage_Mainimage}><Image loading='lazy' alt="MyImage" style={{ objectFit:"contain", maxWidth: '100%', maxHeight: '100%' }}  width={500} height={500} quality={100} src={mainImageUrl} /></div>
                     </div>
                     <div className={Style.flipkartMainBox_Content}>
                         <div>

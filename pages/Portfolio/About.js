@@ -38,10 +38,14 @@ function About() {
     return (
         <>
             <Head>
-                <title >Abhijeet Portfolio</title>
-                <meta name="description"
-                    content="Passionate frontend developer with an interest in web development and experience in creating chatbots for an AI startup.... "
-                />
+                <title >Abhijeet Kumar</title>
+                <meta property="og:title" content="Abhijeet Kumar" />
+                <meta property="og:description" content="A dedicated frontend developer with a strong inclination for web development and hands-on experience in crafting chatbots, while also exploring the backend" />
+                <meta property="og:image" content="/Image/simpleUi.webp" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="628" />
+                <meta property="og:url" content="https://abhijeetkumar-developer.netlify.app/Introduction" />
+                <meta property="og:type" content="website" />
             </Head>
             <NavBar />
             <div data-aos="fade-right">
