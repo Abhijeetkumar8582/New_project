@@ -375,7 +375,7 @@ function Main() {
                 </div>
                 <div style={{ background: "gray", height: "5px" }}></div>
                 <div className={Style.MainPageSectionFive}>
-                    <div style={{ backgroundColor: 'black' }}>
+                    <div style={{ backgroundColor: 'black',width:'100%' }}>
                         <div className={Style.FooterBar_container}>
                             <div className={Style.FooterBar_container_sectionOne_div_one}>
                                 <p className={Style.footer_font_text}>Check out my other Portfolio design</p>

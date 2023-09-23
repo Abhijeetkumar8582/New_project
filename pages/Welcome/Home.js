@@ -62,7 +62,7 @@ function Home() {
         <meta property="og:title" content="Abhijeet Kumar" />
         <meta name="description" content="🚀 Abhijeet Kumar: Crafting digital experiences with a blend of frontend finesse and backend wizardry. Join me on a journey through the world of Node.js development! 💻✨"/>
         <meta property="og:description" content="🚀 Abhijeet Kumar: Crafting digital experiences with a blend of frontend finesse and backend wizardry. Join me on a journey through the world of Node.js development! 💻✨"/>
-        <meta property="og:image" content="/Image/Abhijeet_kumar.webp" />
+        <meta property="og:image" content="/Image/mainPageImage.webp" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="628" />
         <meta property="og:url" content="https://abhijeetkumar-developer.netlify.app/"/>
