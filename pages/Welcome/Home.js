@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
 import Alert from "@mui/material/Alert";
-
+import AOS from 'aos';
 function Home() {
   const porfolio = [
     {
@@ -44,6 +44,10 @@ function Home() {
         "Creating a dynamic portfolio with a fresh design, showcasing my data uniquely.",
     },
   ];
+  useEffect(() => {
+    AOS.init({ duration: 2000 })
+})
+
   const [alertOpen, alertsetOpen] = useState(true);
   useEffect(() => {
     if (sessionStorage.getItem("MainPage_alert")) {
@@ -71,6 +75,7 @@ function Home() {
       </Head>
 
       {alertOpen && (
+        <div data-aos="fade-down">
         <Alert
           sx={{
             bgcolor: "black",
@@ -81,7 +86,9 @@ function Home() {
           Welcome to my Portfolio website!👨‍💻 Expect some adorable alerts from my
           furry friends🐶{" "}
         </Alert>
+        </div>
       )}
+      <div data-aos="fade-right">
       <div className={Style.introPageMainDiv}>
         <div className={Style.introPageMainDiv_one}>
           <div>
@@ -149,15 +156,23 @@ function Home() {
             />
           </div>
         </div>
+        
+      </div>
       </div>
       <div style={{ backgroundColor: "#f0f8ff" }}>
         <div className={Style.Portfoliotext}>
+        <div data-aos="fade-up">
           <div>
             <h4 className={Style.Portfoliotext_text}>
               How would you like to view my portfolio website
             </h4>
           </div>
+          </div>
         </div>
+        <div data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
+
         <div className={Style.Portfolio_Div}>
           {porfolio.map((element, i) => (
             <Link
@@ -184,6 +199,7 @@ function Home() {
               </div>
             </Link>
           ))}
+        </div>
         </div>
       </div>
     </>
