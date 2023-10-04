@@ -16,6 +16,11 @@ import Button from '@mui/material/Button';
 import Popover from '@mui/material/Popover';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import EmailIcon from '@mui/icons-material/Email';
+import Box from '@mui/material/Box';
+import CommentIcon from '@mui/icons-material/Comment';
+
 
 
 
@@ -192,6 +197,55 @@ function MainPage() {
     const handleOpenChatButton = () => setChatOpen(true);
     const handleCloseChatButton = () => setChatOpen(false);
 
+    const [UserName, setUserName] = useState('')
+    const [UserNameError, setUserNameError] = useState(false)
+    const [UserNameMessage, setUserNameMessage] = useState('Name')
+    const [UserEmail, setUserEmail] = useState('')
+    const [UserEmailError, setUserEmailError] = useState(false)
+    const [UserEmailMessage, setUserEmailMessage] = useState('Email')
+    const [UserMessage, setUserMessage] = useState('')
+    const [isFormSubmitted, setFormsubmitted] = useState(false)
+
+    const UserNameFeild = (e) => {
+        setUserNameError(false)
+        setUserNameMessage('Name')
+        setUserName(e.target.value)
+    }
+    const UserEmailFeild = (e) => {
+        setUserEmailError(false)
+        setUserEmailMessage("Email")
+        setUserEmail(e.target.value)
+
+    }
+    const UsermessageFeild = (e) => {
+        setUserMessage(e.target.value)
+    }
+    const OnsubmitChatButton = () => {
+        const nameRegex = /^[A-Za-z\s]+$/;
+        const isNameValid = nameRegex.test(UserName);
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+        const isEmailValid = emailRegex.test(UserEmail)
+        if (isEmailValid && isNameValid) {
+            setFormsubmitted(true)
+            setTimeout(() => {
+                setChatOpen(false)
+            }, 5000);
+            console.log(true, UserEmail, UserName, UserMessage);
+        } else if (isEmailValid === false && isNameValid === false) {
+            setUserEmailError(true)
+            setUserNameError(true)
+            setUserEmailMessage("Incorrect Email")
+            setUserNameMessage("Incorrect Name")
+        }
+        else if (isEmailValid === false) {
+            setUserEmailError(true)
+            setUserEmailMessage("Incorrect Email")
+
+        } else {
+            setUserNameError(true)
+            setUserNameMessage("Incorrect Name")
+        }
+    }
 
 
     return (
@@ -277,7 +331,7 @@ function MainPage() {
                             <button aria-label="letsTalkBtn" className={Style.letsTalkBtn} onClick={handleOpenChatButton}>let's have a chat</button>
                         </div>
 
-                      
+
                         <Dialog
                             open={ChatOpen}
                             onClose={handleCloseChatButton}
@@ -289,31 +343,47 @@ function MainPage() {
                             <DialogContent sx={{ p: '0' }}>
                                 <div className={Style.LetsChatMain_Div}>
                                     <div className={Style.LetsChatMain_Div_image}>
-                                        <img src='https://img.freepik.com/free-vector/hands-connecting-blue-yellow-puzzle-flat-vector-illustration-jigsaw-connection-solution-praying-support-independence-concept-banner-website-design-landing-web-page_74855-24749.jpg?w=1800&t=st=1696401846~exp=1696402446~hmac=14fb880c3977cd68df9cc129cd4debe6cb56703b108b8eaaada8a6b511e3bbdb' style={{ width: "100%" }} />
+                                        <img src='https://img.freepik.com/free-vector/messages-concept-illustration_114360-583.jpg?w=1060&t=st=1696412369~exp=1696412969~hmac=39b91b4f4edf40748465fb1c4772310c5769c44c1b98559989ffe14b1e20235d' style={{ width: "100%" }} />
                                     </div>
                                     <div className={Style.LetsChatMain_Div_content}>
-                                        <div>
-                                            <h5 className={Style.aboutmeText}> Let's have some discusson</h5>
-                                        </div>
-                                        <div>
-                                            <div style={{ marginTop: '10px' }}>
-                                                <TextField id="outlined-basic" style={{ width: '270px' }} sx={{ color: 'text.primary' }} label="Name*" variant="outlined" />
+                                        {isFormSubmitted ? (<div style={{ margin: '0px 10px' }}>
+                                            <h5>Thanks for sharing your info!<br /> I'll reach out soon to chat. - {UserName}</h5>
+                                        </div>) : (<div>
+                                            <div>
+                                                <h5 className={Style.aboutmeText}> Let's have some discussion!!</h5>
                                             </div>
-                                            <div style={{ marginTop: '10px', color: 'white' }}>
-                                                <TextField id="outlined-basic" style={{ width: '270px' }} sx={{ color: 'text.primary' }} label="Email*" variant="outlined" />
+                                            <div>
+
+                                                <div>
+                                                    <div style={{ marginTop: '10px' }}>
+                                                        <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+                                                            <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+                                                            <TextField error={UserNameError} id="input-with-sx" onChange={(e) => UserNameFeild(e)} value={UserName} style={{ width: '270px' }} required label={UserNameMessage} variant="standard" />
+                                                        </Box>
+                                                    </div>
+                                                    <div style={{ marginTop: '10px', color: 'white' }}>
+                                                        <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+                                                            <EmailIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+                                                            <TextField error={UserEmailError} id="input-with-sx" onChange={(e) => UserEmailFeild(e)} value={UserEmail} style={{ width: '270px' }} required label={UserEmailMessage} variant="standard" />
+                                                        </Box>
+                                                    </div>
+                                                    <div style={{ marginTop: '10px' }}>
+                                                        <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+                                                            <CommentIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+                                                            <TextField id="input-with-sx" onChange={(e) => UsermessageFeild(e)} value={UserMessage} style={{ width: '270px' }} label="Message" variant="standard" />
+                                                        </Box>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div style={{ marginTop: '10px' }}>
-                                                <TextField id="outlined-basic" style={{ width: '270px' }} sx={{ color: 'text.primary' }} label="Message(Optional)" variant="outlined" />
-                                            </div>
-                                        </div>
-                                        <button className={Style.button_flipkart_chat}>Submit</button>
+                                            <button className={Style.button_flipkart_chat} onClick={OnsubmitChatButton}>Submit</button>
+                                        </div>)}
 
                                     </div>
                                 </div>
                             </DialogContent>
 
                         </Dialog>
-                 
+
 
 
                         <div ref={aboutRef}>

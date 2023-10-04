@@ -893,7 +893,7 @@
   display: flex;
   /* width: 100%; */
   padding: 0 0;
-  min-height: 400px;
+  min-height: 450px;
   max-width: 900px;
 }
 .LetsChatMain_Div_image {
@@ -901,7 +901,8 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; 
+   background-color: #2874f0;
  
 }
 .LetsChatMain_Div_content {
@@ -910,14 +911,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #2874f0;
 }
 .button_flipkart_chat {
   background: #fb641b;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
   border: none;
   color: #fff;
-  min-width: 300px;
+  min-width: 350px;
   padding: 8px;
-  margin-top: 10px;
+  margin-top: 30px;
+}
+.button_flipkart_chat:focus,
+.letsTalkBtn:focus{
+  outline: none;
 }
