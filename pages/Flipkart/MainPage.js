@@ -15,6 +15,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Button from '@mui/material/Button';
 import Popover from '@mui/material/Popover';
 import Typography from '@mui/material/Typography';
+import TextField from '@mui/material/TextField';
 
 
 
@@ -187,7 +188,12 @@ function MainPage() {
             setnextLicenseIndex(nextLicenseIndex + 1)
         }
     };
-    // console.log(nextbutton)
+    const [ChatOpen, setChatOpen] = React.useState(false);
+    const handleOpenChatButton = () => setChatOpen(true);
+    const handleCloseChatButton = () => setChatOpen(false);
+
+
+
     return (
 
         <div>
@@ -222,7 +228,7 @@ function MainPage() {
                             <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/abhijeet_kumar_3.jpg')}><Image alt="MyImage" loading='lazy' width={60} height={60} style={{ maxWidth: '100%', objectFit: 'contain' }} src='/Image/abhijeet_kumar_3.jpg' /></div>
                             <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/Abhijeet_kumar_4.webp')}><Image loading='lazy' width={60} height={60} style={{ maxWidth: '100%', objectFit: 'contain' }} alt="MyImage" src='/Image/Abhijeet_kumar_4.webp' /></div>
                         </div>
-                        <div className={Style.flipkartMainboxImage_Mainimage}><Image loading='lazy' alt="MyImage" style={{ objectFit:"contain", maxWidth: '100%', maxHeight: '100%' }}  width={500} height={500} quality={100} src={mainImageUrl} /></div>
+                        <div className={Style.flipkartMainboxImage_Mainimage}><Image loading='lazy' alt="MyImage" style={{ objectFit: "contain", maxWidth: '100%', maxHeight: '100%' }} width={500} height={500} quality={100} src={mainImageUrl} /></div>
                     </div>
                     <div className={Style.flipkartMainBox_Content}>
                         <div>
@@ -256,7 +262,7 @@ function MainPage() {
                                 id={id}
                                 open={openquestion}
                                 anchorEl={anchorEl}
-                                onClose={handleCloseQuestion}
+                                onClose={handleCloseChatButton}
                                 anchorOrigin={{
                                     vertical: 'bottom',
                                     horizontal: 'left',
@@ -268,8 +274,48 @@ function MainPage() {
                             </Popover>
                         </div>
                         <div style={{ maxWidth: '250px', marginBottom: '30px' }}>
-                            <button aria-label="letsTalkBtn" className={Style.letsTalkBtn}>let's have a chat</button>
+                            <button aria-label="letsTalkBtn" className={Style.letsTalkBtn} onClick={handleOpenChatButton}>let's have a chat</button>
                         </div>
+
+                      
+                        <Dialog
+                            open={ChatOpen}
+                            onClose={handleCloseChatButton}
+                            aria-labelledby="alert-dialog-title"
+                            aria-describedby="alert-dialog-description"
+                            maxWidth="xl"
+                        >
+
+                            <DialogContent sx={{ p: '0' }}>
+                                <div className={Style.LetsChatMain_Div}>
+                                    <div className={Style.LetsChatMain_Div_image}>
+                                        <img src='https://img.freepik.com/free-vector/hands-connecting-blue-yellow-puzzle-flat-vector-illustration-jigsaw-connection-solution-praying-support-independence-concept-banner-website-design-landing-web-page_74855-24749.jpg?w=1800&t=st=1696401846~exp=1696402446~hmac=14fb880c3977cd68df9cc129cd4debe6cb56703b108b8eaaada8a6b511e3bbdb' style={{ width: "100%" }} />
+                                    </div>
+                                    <div className={Style.LetsChatMain_Div_content}>
+                                        <div>
+                                            <h5 className={Style.aboutmeText}> Let's have some discusson</h5>
+                                        </div>
+                                        <div>
+                                            <div style={{ marginTop: '10px' }}>
+                                                <TextField id="outlined-basic" style={{ width: '270px' }} sx={{ color: 'text.primary' }} label="Name*" variant="outlined" />
+                                            </div>
+                                            <div style={{ marginTop: '10px', color: 'white' }}>
+                                                <TextField id="outlined-basic" style={{ width: '270px' }} sx={{ color: 'text.primary' }} label="Email*" variant="outlined" />
+                                            </div>
+                                            <div style={{ marginTop: '10px' }}>
+                                                <TextField id="outlined-basic" style={{ width: '270px' }} sx={{ color: 'text.primary' }} label="Message(Optional)" variant="outlined" />
+                                            </div>
+                                        </div>
+                                        <button className={Style.button_flipkart_chat}>Submit</button>
+
+                                    </div>
+                                </div>
+                            </DialogContent>
+
+                        </Dialog>
+                 
+
+
                         <div ref={aboutRef}>
                             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                                 <h4 className={Style.aboutmeText}>About Me</h4>

@@ -495,7 +495,6 @@
   display: flex;
   width: 90%;
   overflow-x: scroll;
-  
 }
 .LicensesmainDivitem {
   width: 350px;
@@ -566,7 +565,6 @@
     width: 90%;
     justify-content: center;
     overflow-x: scroll;
-    
   }
 }
 @media only screen and (max-width: 750px) {
@@ -684,7 +682,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap:5px;
+  gap: 5px;
   margin-top: 5px;
 }
 
@@ -695,7 +693,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap:5px;
+  gap: 5px;
   margin-top: 5px;
 }
 
@@ -706,7 +704,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap:5px;
+  gap: 5px;
   margin-top: 5px;
 }
 
@@ -717,7 +715,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap:5px;
+  gap: 5px;
   margin-top: 5px;
 }
 
@@ -739,13 +737,11 @@
   cursor: pointer;
 }
 
-.fafaiconLinkedin:hover
-{
+.fafaiconLinkedin:hover {
   color: blue;
   transform: translateY(-5px);
   cursor: pointer;
 }
-
 
 .FooterBar_container {
   display: flex;
@@ -790,7 +786,7 @@
   background-color: transparent;
   border: none;
 }
-.redirect_btn:focus{
+.redirect_btn:focus {
   outline: none;
 }
 
@@ -874,7 +870,6 @@
   .footer_font_text_other_text {
     font-size: 13px;
     text-align: center;
-
   }
   .FooterBar_container {
     flex-direction: column;
@@ -894,3 +889,35 @@
   }
 }
 
+.LetsChatMain_Div {
+  display: flex;
+  /* width: 100%; */
+  padding: 0 0;
+  min-height: 400px;
+  max-width: 900px;
+}
+.LetsChatMain_Div_image {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+ 
+}
+.LetsChatMain_Div_content {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #2874f0;
+}
+.button_flipkart_chat {
+  background: #fb641b;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  border: none;
+  color: #fff;
+  min-width: 300px;
+  padding: 8px;
+  margin-top: 10px;
+}
