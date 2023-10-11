@@ -343,18 +343,18 @@ function MainPage() {
                             <DialogContent sx={{ p: '0' }}>
                                 <div className={Style.LetsChatMain_Div}>
                                     <div className={Style.LetsChatMain_Div_image}>
-                                        <img src='https://img.freepik.com/free-vector/messages-concept-illustration_114360-583.jpg?w=1060&t=st=1696412369~exp=1696412969~hmac=39b91b4f4edf40748465fb1c4772310c5769c44c1b98559989ffe14b1e20235d' style={{ width: "100%" }} />
+                                        <img src='https://img.freepik.com/free-vector/messages-concept-illustration_114360-583.jpg?w=1060&t=st=1696412369~exp=1696412969~hmac=39b91b4f4edf40748465fb1c4772310c5769c44c1b98559989ffe14b1e20235d' className={Style.LetsChatMain_image} />
                                     </div>
                                     <div className={Style.LetsChatMain_Div_content}>
                                         {isFormSubmitted ? (<div style={{ margin: '0px 10px' }}>
                                             <h5>Thanks for sharing your info!<br /> I'll reach out soon to chat. - {UserName}</h5>
-                                        </div>) : (<div>
+                                        </div>) : (<div className={Style.inputBox}>
                                             <div>
                                                 <h5 className={Style.aboutmeText}> Let's have some discussion!!</h5>
                                             </div>
-                                            <div>
+                                            <div >
 
-                                                <div>
+                                                <div >
                                                     <div style={{ marginTop: '10px' }}>
                                                         <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
                                                             <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
