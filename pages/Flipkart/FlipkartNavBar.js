@@ -27,18 +27,15 @@ function FlipkartNavBar() {
         link.download = "/Image/AbhijeetKumar_SE.pdf";
         link.click();
     });
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
     const [getQuestion, setQuestion] = useState('')
+    const [Loading, setLoading] = useState(false)
     const [getAnswerfromPDF, setGetAnswerfromPDF] = useState('')
 
     const handleClose = () => {
         setOpen(false);
     };
-    const [anotherQuestion, setAnotherQuestion] = React.useState(false);
-
-    const handleClickOpen = () => {
-        setAnotherQuestion(true);
-    };
+    const [anotherQuestion, setAnotherQuestion] = useState(false);
 
     const AnotherQuestionForm = () => {
         setAnotherQuestion(false);
@@ -47,13 +44,24 @@ function FlipkartNavBar() {
     const onQuestionInput = (e) => {
         setQuestion(e.target.value);
         if (e.key === 'Enter') {
-            e.preventDefault(); // Prevent the default behavior (page reload)
-            console.log('Enter key pressed');
+            e.preventDefault();
+            findAnswerFromPDF();
+        }
+    }
+
+    const onAnotherQuestion = (e) => {
+        setQuestion(e.target.value);
+
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            AnotherQuestionForm()
             findAnswerFromPDF();
         }
     }
 
     const findAnswerFromPDF = () => {
+        setOpen(true);
+        setLoading(true)
         var myHeaders = new Headers();
 
         myHeaders.append("Content-Type", "application/json");
@@ -79,14 +87,14 @@ function FlipkartNavBar() {
                 }
             })
             .then(result => {
+                setLoading(false)
                 setGetAnswerfromPDF(result.answer)
                 setQuestion('')
-                setOpen(true);
             })
             .catch(error => console.log('error', error));
 
     }
-    const OnAnotherQuestionAsk = ()=>{
+    const OnAnotherQuestionAsk = () => {
         findAnswerFromPDF()
         AnotherQuestionForm()
     }
@@ -137,7 +145,7 @@ function FlipkartNavBar() {
                                             value={getQuestion}
                                             onChange={(e) => onQuestionInput(e)}
                                             onKeyPress={(e) => onQuestionInput(e)}
-                                            placeholder="Soon will add search Algorithum"
+                                            placeholder="Feel free to ask about me through my friendly bot!"
                                             inputProps={{ "aria-label": "search google maps" }}
                                         />
                                         <IconButton
@@ -167,6 +175,9 @@ function FlipkartNavBar() {
                 </div>
 
             </nav>
+            
+
+
             <Dialog
                 open={open}
                 TransitionComponent={Transition}
@@ -178,14 +189,23 @@ function FlipkartNavBar() {
 
                 </DialogTitle>
                 <DialogContent>
-                    <DialogContentText id="alert-dialog-slide-description">
-                        {getAnswerfromPDF}
-                    </DialogContentText>
-                    
+                    {Loading ? (
+                        <div>
+                            <div><h6>  Warning: I'm an AI model, and sensitive information might be inadvertently shared. Please refrain from sharing personal or confidential details.
+                            </h6></div>
+                            <div className="load-row">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>) : (
+
+                        <DialogContentText id="alert-dialog-slide-description">{getAnswerfromPDF}</DialogContentText>)}
                 </DialogContent>
                 <DialogActions>
-                    
-                    <Button onClick={() => {setAnotherQuestion(true),handleClose()}}>Another Question</Button>
+
+                    <Button onClick={() => { setAnotherQuestion(true), handleClose() }}>Another Question</Button>
                     <Button onClick={handleClose}>Close</Button>
                 </DialogActions>
             </Dialog>
@@ -201,7 +221,7 @@ function FlipkartNavBar() {
                         margin="dense"
                         id="name"
                         onChange={(e) => onQuestionInput(e)}
-                        onKeyPress={(e) => onQuestionInput(e)}
+                        onKeyPress={(e) => onAnotherQuestion(e)}
                         label="Please ask your question here...."
                         type="text"
                         fullWidth
