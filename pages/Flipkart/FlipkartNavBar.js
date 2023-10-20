@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Style from "/styles/Flipkart.module.css";
 import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
@@ -13,6 +13,8 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
+import TextField from '@mui/material/TextField';
+import Avatar from '@mui/material/Avatar';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -28,56 +30,73 @@ function FlipkartNavBar() {
     const [open, setOpen] = React.useState(false);
     const [getQuestion, setQuestion] = useState('')
     const [getAnswerfromPDF, setGetAnswerfromPDF] = useState('')
-    const handleClickOpen = () => {
-
-    };
 
     const handleClose = () => {
         setOpen(false);
     };
+    const [anotherQuestion, setAnotherQuestion] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setAnotherQuestion(true);
+    };
+
+    const AnotherQuestionForm = () => {
+        setAnotherQuestion(false);
+    };
 
     const onQuestionInput = (e) => {
-        setQuestion(e.target.value)
+        setQuestion(e.target.value);
+        if (e.key === 'Enter') {
+            e.preventDefault(); // Prevent the default behavior (page reload)
+            console.log('Enter key pressed');
+            findAnswerFromPDF();
+        }
     }
-   
+
     const findAnswerFromPDF = () => {
-        setOpen(true);
-        console.log(true);
         var myHeaders = new Headers();
+
         myHeaders.append("Content-Type", "application/json");
 
         var raw = JSON.stringify({
-            "user_input": "and what programming languages you used"
+            "user_input": getQuestion
         });
 
         var requestOptions = {
             method: 'POST',
             headers: myHeaders,
-            body: raw
-            
+            body: raw,
+            mode: 'cors'
+
         };
 
-        fetch("http://65.0.45.74:5000/get_answer", requestOptions)
-        .then(response => {
-            console.log('Response:', response);
-            if (response.ok) {
-                return response.json();
-            } else {
-                throw new Error('Network response was not ok.');
-            }
-        })
-        .then(result => setGetAnswerfromPDF(result.answer))
-        .catch(error => console.log('error', error));
+        fetch("http://65.0.127.109:5000/get_answer", requestOptions)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Network response was not ok.');
+                }
+            })
+            .then(result => {
+                setGetAnswerfromPDF(result.answer)
+                setQuestion('')
+                setOpen(true);
+            })
+            .catch(error => console.log('error', error));
 
     }
-
+    const OnAnotherQuestionAsk = ()=>{
+        findAnswerFromPDF()
+        AnotherQuestionForm()
+    }
     return (
         <>
             <Head>
                 <title>Flipkart - Abhijeet</title>
             </Head>
             <nav
-                className="navbar navbar-expand-lg bg-body-tertiary"
+                className="navbar navbar-expand-md bg-body-tertiary"
                 style={{ backgroundColor: "#2874f0", color: "white" }}
             >
                 <div className="container-fluid">
@@ -113,8 +132,11 @@ function FlipkartNavBar() {
                                         }}
                                     >
                                         <InputBase
+                                            onSubmit={(e) => e.preventDefault()}
                                             sx={{ ml: 1, flex: 1 }}
+                                            value={getQuestion}
                                             onChange={(e) => onQuestionInput(e)}
+                                            onKeyPress={(e) => onQuestionInput(e)}
                                             placeholder="Soon will add search Algorithum"
                                             inputProps={{ "aria-label": "search google maps" }}
                                         />
@@ -152,15 +174,43 @@ function FlipkartNavBar() {
                 onClose={handleClose}
                 aria-describedby="alert-dialog-slide-description"
             >
-                <DialogTitle>{"Use Google's location service?"}</DialogTitle>
+                <DialogTitle><div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Avatar alt="Remy Sharp" src="https://i.pinimg.com/originals/7d/9b/1d/7d9b1d662b28cd365b33a01a3d0288e1.gif" /> Virtual Abhijeet Bot </div>
+
+                </DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-slide-description">
                         {getAnswerfromPDF}
                     </DialogContentText>
+                    
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClose}>Disagree</Button>
-                    <Button onClick={handleClose}>Agree</Button>
+                    
+                    <Button onClick={() => {setAnotherQuestion(true),handleClose()}}>Another Question</Button>
+                    <Button onClick={handleClose}>Close</Button>
+                </DialogActions>
+            </Dialog>
+            <Dialog open={anotherQuestion} onClose={AnotherQuestionForm}>
+                <DialogTitle>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Avatar alt="Remy Sharp" src="https://i.pinimg.com/originals/7d/9b/1d/7d9b1d662b28cd365b33a01a3d0288e1.gif" /> Virtual Abhijeet Bot</div></DialogTitle>
+                <DialogContent>
+                    <DialogContentText>
+                        Warning: I'm an AI model, and sensitive information might be inadvertently shared. Please refrain from sharing personal or confidential details.
+                    </DialogContentText>
+                    <TextField
+                        autoFocus
+                        margin="dense"
+                        id="name"
+                        onChange={(e) => onQuestionInput(e)}
+                        onKeyPress={(e) => onQuestionInput(e)}
+                        label="Please ask your question here...."
+                        type="text"
+                        fullWidth
+                        variant="standard"
+                    />
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={AnotherQuestionForm}>Cancel</Button>
+                    <Button onClick={OnAnotherQuestionAsk}>Ask</Button>
                 </DialogActions>
             </Dialog>
 

@@ -230,7 +230,30 @@ function MainPage() {
             setTimeout(() => {
                 setChatOpen(false)
             }, 5000);
-            console.log(true, UserEmail, UserName, UserMessage);
+            var myHeaders = new Headers();
+            myHeaders.append("Authorization", "Bearer patEfFlSQr7VgttWu.23f17b46416f121a81a72f4a8c4e455dfa31404686c55d0d7db5efc734c0480f");
+            myHeaders.append("Content-Type", "application/json");
+            myHeaders.append("Cookie", "brw=brwnty5S6w9WvoLzZ; AWSALB=DzpPzjhEDzHNWgOlzeS++bKEZJQyTYh4cSj9KUDKc/5xNxAIaFE8dyPHVT/UYKWTdAMY1DOHvRjQVRt7kcRobROxPfTnxpBagyZQdeuHoVxbIQRruSa8NztuRpXs; AWSALBCORS=DzpPzjhEDzHNWgOlzeS++bKEZJQyTYh4cSj9KUDKc/5xNxAIaFE8dyPHVT/UYKWTdAMY1DOHvRjQVRt7kcRobROxPfTnxpBagyZQdeuHoVxbIQRruSa8NztuRpXs");
+
+            var raw = JSON.stringify({
+                "fields": {
+                    "Name": UserName,
+                    "Email": UserEmail,
+                    "Message": UserMessage
+                }
+            });
+
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+
+            fetch("https://api.airtable.com/v0/appHNw9auZyOopEsJ/Table%201", requestOptions)
+                .then(response => response.text())
+                .then(result => console.log(result))
+                .catch(error => console.log('error', error))
         } else if (isEmailValid === false && isNameValid === false) {
             setUserEmailError(true)
             setUserNameError(true)
@@ -247,6 +270,23 @@ function MainPage() {
         }
     }
 
+    const letsConnectBTN = () => {
+        fetch('https://api.airtable.com/v0/appHNw9auZyOopEsJ/Table%201', {
+            headers: {
+                'Authorization': 'Bearer patEfFlSQr7VgttWu.23f17b46416f121a81a72f4a8c4e455dfa31404686c55d0d7db5efc734c0480f'
+            },
+            body: JSON.stringify({
+
+                "fields": {
+                    "Name": "Abhijeet",
+                    "Email": "kumar ",
+                    "Message": "yellow"
+                }
+            })
+        })
+            .then((response) => response.json())
+            .then((data) => console.log(data))
+    }
 
     return (
 
@@ -347,7 +387,7 @@ function MainPage() {
                                     </div>
                                     <div className={Style.LetsChatMain_Div_content}>
                                         {isFormSubmitted ? (<div style={{ margin: '0px 10px' }}>
-                                            <h5>Thanks for sharing your info!<br /> I'll reach out soon to chat. - {UserName}</h5>
+                                            <h5>Thanks for sharing your info!<br /> I'll reach out soon to chat - {UserName.charAt(0).toUpperCase()+UserName.slice(1).toLowerCase()}</h5>
                                         </div>) : (<div className={Style.inputBox}>
                                             <div>
                                                 <h5 className={Style.aboutmeText}> Let's have some discussion!!</h5>
