@@ -78,7 +78,7 @@ function FlipkartNavBar() {
 
         };
 
-        fetch("http://65.0.127.109:5000/get_answer", requestOptions)
+        fetch("https://abhijeetkumarsearchalgo.cloud/get_answer", requestOptions)
             .then(response => {
                 if (response.ok) {
                     return response.json();
