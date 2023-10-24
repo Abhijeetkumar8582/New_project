@@ -214,7 +214,7 @@ function MainPage() {
     const [isFormSubmitted, setFormsubmitted] = useState(false)
     const [getAnswerfromPDF, setGetAnswerfromPDF] = useState('')
 
-   
+
     const UserNameFeild = (e) => {
         setUserNameError(false)
         setUserNameMessage('Name')
@@ -307,7 +307,7 @@ function MainPage() {
     const findAnswerFromPDF = () => {
         setOpen(true);
         setLoading(true)
-       
+
         var myHeaders = new Headers();
 
         myHeaders.append("Content-Type", "application/json");
@@ -355,7 +355,6 @@ function MainPage() {
     const handleCloseQueries = () => {
         setOpenQueries(false)
         setAnotherQuestion(false)
-        // setAnotherQuestion(true)
     }
     return (
 
@@ -439,8 +438,8 @@ function MainPage() {
 
                         </div>
                         <div style={{ marginBottom: '30px', gap: "10px", display: 'flex' }}>
-                            <button aria-label="letsTalkBtn" className={Style.letsTalkBtn} onClick={() => handleOpenChatButton()}>let's have a chat 💬</button>
-                            <button aria-label="letsTalkBtn" className={Style.OnAnotherQuestionAsk} onClick={() => OnAnotherQuestionAsk()}>Any queries about Me 🤖</button>
+                            <button aria-label="letsTalkBtn" className={Style.letsTalkBtn} onClick={() => handleOpenChatButton()}><h6 className={Style.mobileText_content}>let's have a chat 💬</h6></button>
+                            <button aria-label="letsTalkBtn" className={Style.OnAnotherQuestionAsk} onClick={() => OnAnotherQuestionAsk()}><h6 className={Style.mobileText_content}>Know about Me 🤖</h6></button>
 
                         </div>
                         <Dialog
@@ -456,7 +455,7 @@ function MainPage() {
                             <DialogContent>
                                 {Loading ? (
                                     <div>
-                                        <div><h6>  Warning: I'm an AI model, and sensitive information might be inadvertently shared. Please refrain from sharing personal or confidential details.
+                                        <div><h6 className={Style.mobileText_content}>  Warning: I'm an AI model, and sensitive information might be inadvertently shared. Please refrain from sharing personal or confidential details.
                                         </h6></div>
                                         <div className="load-row">
                                             <span></span>
@@ -466,7 +465,7 @@ function MainPage() {
                                         </div>
                                     </div>) : (
 
-                                    <DialogContentText id="alert-dialog-slide-description">{getAnswerfromPDF}</DialogContentText>)}
+                                    <DialogContentText id="alert-dialog-slide-description"><h6 className={Style.mobileText_content}>{getAnswerfromPDF}</h6></DialogContentText>)}
                             </DialogContent>
                             <DialogActions>
 
@@ -479,7 +478,7 @@ function MainPage() {
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Avatar alt="Remy Sharp" src="https://i.pinimg.com/originals/7d/9b/1d/7d9b1d662b28cd365b33a01a3d0288e1.gif" /> Virtual Abhijeet Bot</div></DialogTitle>
                             <DialogContent>
                                 <DialogContentText>
-                                    Warning: I'm an AI model, and sensitive information might be inadvertently shared. Please refrain from sharing personal or confidential details.
+                                <h6 className={Style.mobileText_content}>  Warning: I'm an AI model, and sensitive information might be inadvertently shared. Please refrain from sharing personal or confidential details.</h6>
                                 </DialogContentText>
                                 <TextField
                                     autoFocus
@@ -495,7 +494,7 @@ function MainPage() {
                             </DialogContent>
                             <DialogActions>
                                 <Button onClick={() => AnotherQuestionForm()}>Cancel</Button>
-                                <Button onClick={() =>OnAnotherQuestionAskBtn()}>Ask</Button>
+                                <Button onClick={() => OnAnotherQuestionAskBtn()}>Ask</Button>
                             </DialogActions>
                         </Dialog>
 
@@ -607,22 +606,8 @@ function MainPage() {
                         <h4>You might be interested in my Projects</h4>
                     </div>
                     <div className={Style.Flipkart_Content_Skills_div_container}>
-                        {prevbuttonIndex === 0 ? (
-                            <div className={Style.Flipkart_Content_Skills_div_arrow_left}>
-                                <button className={Style.prevbutton} style={{ background: "transparent" }} disabled onClick={prevbutton}>
-                                    <i className="fa fa-arrow-circle-left" style={{ color: 'white', backgroundColor: 'transparent' }} aria-hidden="true"></i>
-                                </button>
-                            </div>
-                        ) : (
-                            <div className={Style.Flipkart_Content_Skills_div_arrow_left}>
-                                <button className={Style.prevbutton} style={{ background: "transparent" }} onClick={prevbutton}>
-                                    <i className="fa fa-arrow-circle-left" aria-hidden="true"></i>
-                                </button>
-                            </div>
-                        )}
-
                         <div className={Style.Flipkart_Content_Skills_div_Main}>
-                            {ProjectJson.slice(prevbuttonIndex, nextbuttonIndex).map((element, i) => (
+                            {ProjectJson.map((element, i) => (
                                 <div className={Style.projectDivItem} key={i}>
                                     <div><Image alt="MyImage" loading='lazy' width={400} height={200} src={element.image} /></div>
                                     <div className={Style.projectDivItemcontent}>
@@ -634,16 +619,6 @@ function MainPage() {
                                 </div>
                             ))}
                         </div>
-                        {nextbuttonIndex == ProjectJson.length && nextbuttonIndex < ProjectJson.length + OddProject + 1 ? (<div className={Style.Flipkart_Content_Skills_div_arrow_left}>
-                            <button className={Style.prevbutton} style={{ background: "transparent" }} disabled onClick={nextbutton}>
-                                <i className="fa fa-arrow-circle-right" style={{ color: 'white' }} aria-hidden="true"></i>
-                            </button>
-                        </div>) : (<div className={Style.Flipkart_Content_Skills_div_arrow_left}>
-                            <button className={Style.prevbutton} style={{ background: "transparent" }} onClick={nextbutton}>
-                                <i className="fa fa-arrow-circle-right" aria-hidden="true"></i>
-                            </button>
-                        </div>)}
-
                     </div>
                 </div>
 
@@ -664,21 +639,8 @@ function MainPage() {
                             <h4>Frequently got Licenses/Certifications</h4>
                         </div>
                         <div className={Style.Licensesmaindiv_map} >
-                            {prevLicenseIndex === 0 ? (
-                                <div className={Style.Flipkart_Content_Skills_div_arrow_left}>
-                                    <button className={Style.prevbutton} style={{ background: "transparent" }} disabled onClick={preLicensesButton}>
-                                        <i className="fa fa-arrow-circle-left" style={{ color: 'white', backgroundColor: 'transparent' }} aria-hidden="true"></i>
-                                    </button>
-                                </div>
-                            ) : (
-                                <div className={Style.Flipkart_Content_Skills_div_arrow_left}>
-                                    <button className={Style.prevbutton} style={{ background: "transparent" }} onClick={preLicensesButton}>
-                                        <i className="fa fa-arrow-circle-left" aria-hidden="true"></i>
-                                    </button>
-                                </div>
-                            )}
                             <div className={Style.Licensesmaindiv_map_Main_div}>
-                                {AboutmeLicenses.slice(prevLicenseIndex, nextLicenseIndex).map((element, i) => (
+                                {AboutmeLicenses.map((element, i) => (
                                     <div className={Style.LicensesmainDivitem} key={i}>
 
                                         <div style={{ width: '10%', alignItems: 'flex-start', display: 'flex' }}> <Image alt="MyImage" loading='lazy' width={500} height={500} src={element.logo} style={{ width: '100%', margin: '0px 0px' }} /></div>
@@ -705,15 +667,6 @@ function MainPage() {
                                     </div>
                                 ))}
                             </div>
-                            {nextLicenseIndex == getAboutmeLicenses && nextLicenseIndex < AboutmeLicenses.length + OddLicense + 1 ? (<div className={Style.Flipkart_Content_Skills_div_arrow_left}>
-                                <button className={Style.prevbutton} style={{ background: "transparent" }} disabled onClick={nextLicensesButton}>
-                                    <i className="fa fa-arrow-circle-right" style={{ color: 'white' }} aria-hidden="true"></i>
-                                </button>
-                            </div>) : (<div className={Style.Flipkart_Content_Skills_div_arrow_left}>
-                                <button className={Style.prevbutton} style={{ background: "transparent" }} onClick={nextLicensesButton}>
-                                    <i className="fa fa-arrow-circle-right" aria-hidden="true"></i>
-                                </button>
-                            </div>)}
                         </div>
                     </div>
                 </div>

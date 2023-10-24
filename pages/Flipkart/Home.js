@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import Style from "/styles/Flipkart.module.css";
 import Image from "next/image";
 import TextField from "@mui/material/TextField";
@@ -28,9 +28,8 @@ function Home() {
     fetch(`https://randomuser.me/api/`)
       .then((res) => res.json())
       .then((data) => {
-        setUserName(
-          `${data.results[0].name.first} ${data.results[0].name.last}`
-        );
+        setUserName(`${data.results[0].name.first} ${data.results[0].name.last}`);
+        sessionStorage.setItem('UserName', `${data.results[0].name.first} ${data.results[0].name.last}`)
         setAvatar(data.results[0].picture.medium);
       });
     setOpen(true);
@@ -45,24 +44,23 @@ function Home() {
     fetch(`https://randomuser.me/api/`)
       .then((res) => res.json())
       .then((data) => {
-        setUserName(
-          `${data.results[0].name.first} ${data.results[0].name.last}`
-        );
+        setUserName(`${data.results[0].name.first} ${data.results[0].name.last}`);
+        sessionStorage.setItem('UserName', `${data.results[0].name.first} ${data.results[0].name.last}`)
         setAvatar(data.results[0].picture.medium);
       });
   }, [setUserName, setAvatar]);
 
   const UserNameInput = useCallback(
     (e) => {
-      console.log(e.target.value)
       setUserName(e.target.value);
+      sessionStorage.setItem('UserName', e.target.value)
+
     },
     [setUserName]
   );
 
   const handleLogin = useCallback(() => {
     if (getUserName.length === 0) {
-      console.log(getUserName)
       throwError(true);
     } else {
       router.push("/Flipkart/MainPage");

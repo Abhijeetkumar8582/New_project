@@ -557,7 +557,7 @@ function Home() {
                 </div>
                 <div className={Style.FooterBar_container_sectionOne_div_two}>
                   <div>
-                    <button className={Style.redirect_btn} onClick={() => redirect_user("/Flipkart/Home")}><p className={Style.footer_font_text}>Flipkart</p></button>
+                    <button className={Style.redirect_btn} onClick={() => sessionStorage.getItem("UserName")?redirect_user("/Flipkart/MainPage"):redirect_user("/Flipkart/Home")}><p className={Style.footer_font_text}>Flipkart</p></button>
                   </div>
                   <div>
                     <button className={Style.redirect_btn} onClick={() => redirect_user("/Nextflix/Home")}><p className={Style.footer_font_text}>Netflix</p></button>

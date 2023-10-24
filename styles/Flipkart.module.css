@@ -506,7 +506,7 @@
 }
 .Licensesmaindiv_map_Main_div {
   display: flex;
-  width: 90%;
+  width: 100%;
   overflow-x: scroll;
 }
 .LicensesmainDivitem {
@@ -560,8 +560,8 @@
   display: flex;
   justify-content: flex-start;
   gap: 12px;
-  width: 90%;
-  overflow-x: auto;
+  width: 100%;
+  overflow-x: scroll;
   transition: transform 0.3s ease-in-out;
 }
 @media only screen and (max-width: 1150px) {
@@ -576,7 +576,7 @@
   .Licensesmaindiv_map_Main_div {
     display: flex;
     width: 90%;
-    justify-content: center;
+    justify-content: flex-start;
     overflow-x: scroll;
   }
 }
@@ -674,9 +674,9 @@
   }
   .Flipkart_Content_Skills_div_Main {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 12px;
-    width: 90%;
+    width: 100%;
     overflow-x: auto;
     transition: transform 0.3s ease-in-out;
   }
@@ -880,6 +880,9 @@
     font-size: 14px;
     font-weight: 200;
   }
+  .mobileText_content {
+    font-size: 12px;
+  }
 
   .heading_netflix_tag {
     font-size: 20px;
@@ -947,6 +950,9 @@
 .inputBox {
   width: 100%;
 }
+.mobileText_content {
+  font-weight: 500;
+}
 @media only screen and (max-width: 750px) {
   .LetsChatMain_Div {
     flex-direction: column;
@@ -962,5 +968,9 @@
   }
   .button_flipkart_chat {
     min-width: 100%;
+  }
+  .letsTalkBtn,
+  .OnAnotherQuestionAsk {
+    padding: 10px 8px;
   }
 }

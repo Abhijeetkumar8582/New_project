@@ -6,6 +6,14 @@ import Head from "next/head";
 import Alert from "@mui/material/Alert";
 import AOS from 'aos';
 function Home() {
+  const [flipkartRouter,serFlipkartRouter]=useState('/Flipkart/Home')
+  useEffect(()=>{
+    if(sessionStorage.getItem("UserName")){
+      serFlipkartRouter("/Flipkart/MainPage");
+    }else{
+      serFlipkartRouter("/Flipkart/Home")
+    }
+  },[])
   const porfolio = [
     {
       image: "/Image/netflixUi.webp",
@@ -17,7 +25,7 @@ function Home() {
     {
       image: "/Image/flipkartUi.webp",
       title: "Flipkart - UI",
-      link: "/Flipkart/Home",
+      link: flipkartRouter,
       description:
         "I'm designing my portfolio as a Flipkart-inspired UI, also developing a search algorithm for easy inquiries about me. Exciting things coming soon!",
     },

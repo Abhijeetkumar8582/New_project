@@ -14,7 +14,7 @@ function Footer() {
         </div>
         <div className='FooterBar_container_sectionOne_div_two'>
           <div>
-            <button className='redirect_btn' onClick={()=>redirect("/Flipkart/Home")}><p className='footer-font_text'>Flipkart</p></button>
+            <button className='redirect_btn' onClick={()=>sessionStorage.getItem("UserName")?redirect("/Flipkart/MainPage"):redirect("/Flipkart/Home")}><p className='footer-font_text'>Flipkart</p></button>
           </div>
           <div>
             <button className='redirect_btn' onClick={()=>redirect("/Nextflix/Home")}><p className='footer-font_text'>Netflix</p></button>
