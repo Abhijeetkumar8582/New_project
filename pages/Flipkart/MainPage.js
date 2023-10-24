@@ -20,15 +20,21 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import EmailIcon from '@mui/icons-material/Email';
 import Box from '@mui/material/Box';
 import CommentIcon from '@mui/icons-material/Comment';
+import Avatar from '@mui/material/Avatar';
+import Slide from '@mui/material/Slide';
 
+import DialogContentText from '@mui/material/DialogContentText';
 
-
+const Transition = React.forwardRef(function Transition(props, ref) {
+    return <Slide direction="up" ref={ref} {...props} />;
+});
 
 function MainPage() {
     const [showExpirenceDiv, setshowExpirenceDiv] = useState(false)
     const [validPincode, setvalidPincode] = useState(false)
     const [pincodeentered, setpincodeentered] = useState(false)
     const [valuefield, setvaluefield] = useState('')
+    const [openQueries, setOpenQueries] = useState(false);
     const [mainImageUrl, setMainImageUrl] = useState('/Image/Abhijeetkumar2.webp');
     const pincodeserver = [700122, 560078, 560076];
     const handleClick = useCallback((event) => {
@@ -196,8 +202,9 @@ function MainPage() {
     const [ChatOpen, setChatOpen] = React.useState(false);
     const handleOpenChatButton = () => setChatOpen(true);
     const handleCloseChatButton = () => setChatOpen(false);
-
+    const [Loading, setLoading] = useState(false)
     const [UserName, setUserName] = useState('')
+    const [getQuestion, setQuestion] = useState('')
     const [UserNameError, setUserNameError] = useState(false)
     const [UserNameMessage, setUserNameMessage] = useState('Name')
     const [UserEmail, setUserEmail] = useState('')
@@ -205,7 +212,9 @@ function MainPage() {
     const [UserEmailMessage, setUserEmailMessage] = useState('Email')
     const [UserMessage, setUserMessage] = useState('')
     const [isFormSubmitted, setFormsubmitted] = useState(false)
+    const [getAnswerfromPDF, setGetAnswerfromPDF] = useState('')
 
+   
     const UserNameFeild = (e) => {
         setUserNameError(false)
         setUserNameMessage('Name')
@@ -270,24 +279,81 @@ function MainPage() {
         }
     }
 
-    const letsConnectBTN = () => {
-        fetch('https://api.airtable.com/v0/appHNw9auZyOopEsJ/Table%201', {
-            headers: {
-                'Authorization': 'Bearer patEfFlSQr7VgttWu.23f17b46416f121a81a72f4a8c4e455dfa31404686c55d0d7db5efc734c0480f'
-            },
-            body: JSON.stringify({
+    const [anotherQuestion, setAnotherQuestion] = useState(false);
 
-                "fields": {
-                    "Name": "Abhijeet",
-                    "Email": "kumar ",
-                    "Message": "yellow"
-                }
-            })
-        })
-            .then((response) => response.json())
-            .then((data) => console.log(data))
+    const AnotherQuestionForm = () => {
+        setAnotherQuestion(false);
+    };
+
+    const onQuestionInput = (e) => {
+        setQuestion(e.target.value);
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            findAnswerFromPDF();
+        }
     }
 
+    const onAnotherQuestion = (e) => {
+        setQuestion(e.target.value);
+
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            AnotherQuestionForm()
+            findAnswerFromPDF();
+        }
+    }
+
+    const findAnswerFromPDF = () => {
+        setOpen(true);
+        setLoading(true)
+       
+        var myHeaders = new Headers();
+
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+            "user_input": getQuestion
+        });
+
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            mode: 'cors'
+
+        };
+
+        fetch("https://abhijeetkumarsearchalgo.cloud/get_answer", requestOptions)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Network response was not ok.');
+                }
+            })
+            .then(result => {
+                setLoading(false)
+                setAnotherQuestion(false)
+                setOpenQueries(true)
+                setGetAnswerfromPDF(result.answer)
+                setQuestion('')
+            })
+            .catch(error => console.log('error', error));
+
+    }
+    const OnAnotherQuestionAsk = () => {
+        setAnotherQuestion(true)
+    }
+    const OnAnotherQuestionAskBtn = () => {
+        setAnotherQuestion(false)
+        setOpenQueries(true)
+        findAnswerFromPDF()
+    }
+
+    const handleCloseQueries = () => {
+        setOpenQueries(false)
+        setAnotherQuestion(true)
+    }
     return (
 
         <div>
@@ -356,7 +422,7 @@ function MainPage() {
                                 id={id}
                                 open={openquestion}
                                 anchorEl={anchorEl}
-                                onClose={handleCloseChatButton}
+                                onClose={handleCloseQuestion}
                                 anchorOrigin={{
                                     vertical: 'bottom',
                                     horizontal: 'left',
@@ -366,11 +432,69 @@ function MainPage() {
                                     <Typography sx={{ p: 2 }}>Please send me an email with the location where you want me to work. I am currently residing in Bangalore.</Typography>
                                 </div>
                             </Popover>
-                        </div>
-                        <div style={{ maxWidth: '250px', marginBottom: '30px' }}>
-                            <button aria-label="letsTalkBtn" className={Style.letsTalkBtn} onClick={handleOpenChatButton}>let's have a chat</button>
-                        </div>
 
+
+                        </div>
+                        <div style={{ marginBottom: '30px', gap: "10px", display: 'flex' }}>
+                            <button aria-label="letsTalkBtn" className={Style.letsTalkBtn} onClick={() => handleOpenChatButton()}>let's have a chat</button>
+                            <button aria-label="letsTalkBtn" className={Style.letsTalkBtn} onClick={() => OnAnotherQuestionAsk()}>Any queries about Me</button>
+
+                        </div>
+                        <Dialog
+                            open={openQueries}
+                            TransitionComponent={Transition}
+                            keepMounted
+                            onClose={handleCloseQueries}
+                            aria-describedby="alert-dialog-slide-description"
+                        >
+                            <DialogTitle><div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Avatar alt="Remy Sharp" src="https://i.pinimg.com/originals/7d/9b/1d/7d9b1d662b28cd365b33a01a3d0288e1.gif" /> Virtual Abhijeet Bot </div>
+
+                            </DialogTitle>
+                            <DialogContent>
+                                {Loading ? (
+                                    <div>
+                                        <div><h6>  Warning: I'm an AI model, and sensitive information might be inadvertently shared. Please refrain from sharing personal or confidential details.
+                                        </h6></div>
+                                        <div className="load-row">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                    </div>) : (
+
+                                    <DialogContentText id="alert-dialog-slide-description">{getAnswerfromPDF}</DialogContentText>)}
+                            </DialogContent>
+                            <DialogActions>
+
+                                <Button onClick={() => handleCloseQueries()}>Another Question</Button>
+                                <Button onClick={() => handleClose()}>Close</Button>
+                            </DialogActions>
+                        </Dialog>
+                        <Dialog open={anotherQuestion} onClose={AnotherQuestionForm}>
+                            <DialogTitle>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Avatar alt="Remy Sharp" src="https://i.pinimg.com/originals/7d/9b/1d/7d9b1d662b28cd365b33a01a3d0288e1.gif" /> Virtual Abhijeet Bot</div></DialogTitle>
+                            <DialogContent>
+                                <DialogContentText>
+                                    Warning: I'm an AI model, and sensitive information might be inadvertently shared. Please refrain from sharing personal or confidential details.
+                                </DialogContentText>
+                                <TextField
+                                    autoFocus
+                                    margin="dense"
+                                    id="name"
+                                    onChange={(e) => onQuestionInput(e)}
+                                    onKeyPress={(e) => onAnotherQuestion(e)}
+                                    label="Please ask your question here...."
+                                    type="text"
+                                    fullWidth
+                                    variant="standard"
+                                />
+                            </DialogContent>
+                            <DialogActions>
+                                <Button onClick={() => AnotherQuestionForm()}>Cancel</Button>
+                                <Button onClick={() =>OnAnotherQuestionAskBtn()}>Ask</Button>
+                            </DialogActions>
+                        </Dialog>
 
                         <Dialog
                             open={ChatOpen}
@@ -387,7 +511,7 @@ function MainPage() {
                                     </div>
                                     <div className={Style.LetsChatMain_Div_content}>
                                         {isFormSubmitted ? (<div style={{ margin: '0px 10px' }}>
-                                            <h5>Thanks for sharing your info!<br /> I'll reach out soon to chat - {UserName.charAt(0).toUpperCase()+UserName.slice(1).toLowerCase()}</h5>
+                                            <h5>Thanks for sharing your info!<br /> I'll reach out soon to chat - {UserName.charAt(0).toUpperCase() + UserName.slice(1).toLowerCase()}</h5>
                                         </div>) : (<div className={Style.inputBox}>
                                             <div>
                                                 <h5 className={Style.aboutmeText}> Let's have some discussion!!</h5>

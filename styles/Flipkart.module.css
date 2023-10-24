@@ -202,7 +202,7 @@
 .btn12 {
   position: relative;
   margin: 0px 10px;
-  right: 20px;
+  right: 40px;
   bottom: 20px;
   border: none;
   box-shadow: none;
@@ -891,7 +891,6 @@
 
 .LetsChatMain_Div {
   display: flex;
-  /* width: 100%; */
   padding: 0 0;
   min-height: 450px;
   max-width: 900px;
@@ -901,14 +900,14 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center; 
-   background-color: #2874f0;
- 
+  justify-content: center;
+  background-color: #2874f0;
 }
 .LetsChatMain_Div_content {
   width: 60%;
   display: flex;
   flex-direction: column;
+  padding: 2rem;
   align-items: center;
   justify-content: center;
 }
@@ -922,6 +921,27 @@
   margin-top: 30px;
 }
 .button_flipkart_chat:focus,
-.letsTalkBtn:focus{
+.letsTalkBtn:focus {
   outline: none;
+}
+.LetsChatMain_image,
+.inputBox{
+  width: 100%;
+}
+@media only screen and (max-width: 750px) {
+  .LetsChatMain_Div {
+    flex-direction: column;
+  }
+  .LetsChatMain_Div_image {
+    width: 100%;
+  }
+  .LetsChatMain_Div_content {
+    width: 100%;
+  }
+  .LetsChatMain_image{
+    width: 50%;
+  }
+  .button_flipkart_chat{
+    min-width: 100%;
+  }
 }

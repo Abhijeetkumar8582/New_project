@@ -127,9 +127,9 @@ function FlipkartNavBar() {
                         <span className="navbar-toggler-icon"></span>
                     </Button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+                        <ul className="navbar-nav me-auto mb-lg-0 mx-auto">
                             <li className="nav-item">
-                                <div style={{ width: "550px" }}>
+                                <div style={{ minWidth: "550px",width:'100%' }}>
                                     <Paper
                                         component="form"
                                         sx={{
