@@ -298,8 +298,9 @@ function MainPage() {
 
         if (e.key === 'Enter') {
             e.preventDefault();
-            AnotherQuestionForm()
-            findAnswerFromPDF();
+            setAnotherQuestion(false)
+            setOpenQueries(true)
+            findAnswerFromPDF()
         }
     }
 
@@ -342,6 +343,7 @@ function MainPage() {
 
     }
     const OnAnotherQuestionAsk = () => {
+        setOpenQueries(false)
         setAnotherQuestion(true)
     }
     const OnAnotherQuestionAskBtn = () => {
@@ -352,7 +354,8 @@ function MainPage() {
 
     const handleCloseQueries = () => {
         setOpenQueries(false)
-        setAnotherQuestion(true)
+        setAnotherQuestion(false)
+        // setAnotherQuestion(true)
     }
     return (
 
@@ -436,8 +439,8 @@ function MainPage() {
 
                         </div>
                         <div style={{ marginBottom: '30px', gap: "10px", display: 'flex' }}>
-                            <button aria-label="letsTalkBtn" className={Style.letsTalkBtn} onClick={() => handleOpenChatButton()}>let's have a chat</button>
-                            <button aria-label="letsTalkBtn" className={Style.letsTalkBtn} onClick={() => OnAnotherQuestionAsk()}>Any queries about Me</button>
+                            <button aria-label="letsTalkBtn" className={Style.letsTalkBtn} onClick={() => handleOpenChatButton()}>let's have a chat 💬</button>
+                            <button aria-label="letsTalkBtn" className={Style.OnAnotherQuestionAsk} onClick={() => OnAnotherQuestionAsk()}>Any queries about Me 🤖</button>
 
                         </div>
                         <Dialog
@@ -467,8 +470,8 @@ function MainPage() {
                             </DialogContent>
                             <DialogActions>
 
-                                <Button onClick={() => handleCloseQueries()}>Another Question</Button>
-                                <Button onClick={() => handleClose()}>Close</Button>
+                                <Button onClick={() => OnAnotherQuestionAsk()}>Another Question</Button>
+                                <Button onClick={() => handleCloseQueries()}>Close</Button>
                             </DialogActions>
                         </Dialog>
                         <Dialog open={anotherQuestion} onClose={AnotherQuestionForm}>

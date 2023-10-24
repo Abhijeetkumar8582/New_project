@@ -372,6 +372,19 @@
   border: none;
   float: left;
   background: #ffbe46;
+  max-width: 250px;
+  color: black;
+}
+.OnAnotherQuestionAsk {
+  display: none;
+  padding: 18px 8px;
+  font-weight: 400;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  width: 98%;
+  border: none;
+  float: left;
+  background: #ffbe46;
   color: black;
 }
 
@@ -567,6 +580,12 @@
     overflow-x: scroll;
   }
 }
+@media only screen and (max-width: 900px) {
+  .OnAnotherQuestionAsk {
+    display: block;
+  }
+}
+
 @media only screen and (max-width: 750px) {
   .subNavbarText {
     font-size: 12px;
@@ -925,7 +944,7 @@
   outline: none;
 }
 .LetsChatMain_image,
-.inputBox{
+.inputBox {
   width: 100%;
 }
 @media only screen and (max-width: 750px) {
@@ -938,10 +957,10 @@
   .LetsChatMain_Div_content {
     width: 100%;
   }
-  .LetsChatMain_image{
+  .LetsChatMain_image {
     width: 50%;
   }
-  .button_flipkart_chat{
+  .button_flipkart_chat {
     min-width: 100%;
   }
 }

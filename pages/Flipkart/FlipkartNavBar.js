@@ -54,8 +54,9 @@ function FlipkartNavBar() {
 
         if (e.key === 'Enter') {
             e.preventDefault();
-            AnotherQuestionForm()
-            findAnswerFromPDF();
+            setAnotherQuestion(false)
+            setOpenQueries(true)
+            findAnswerFromPDF()
         }
     }
 
