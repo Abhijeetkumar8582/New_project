@@ -392,13 +392,14 @@ function Home() {
           <div>
             <button className={Style.footer_button}  onClick={() => handleOpenChatButton()}>Feedback 👨‍💻</button>
           </div>
-          <div>
-            <h6 style={{color:'gainsboro'}}>© | All rights reserved | Abhijeet Kumar</h6>
-          </div>
+         
           <div>
             <button className={Style.footer_button} onClick={() => OnAnotherQuestionAsk()} >Any Queries 👨‍💻</button>
           </div>
         </div>
+        <div className={Style.signature}>
+            <h6 style={{color:'gainsboro'}}>© | All rights reserved | Abhijeet Kumar</h6>
+          </div>
         <Dialog
           open={openQueries}
           TransitionComponent={Transition}
@@ -471,28 +472,28 @@ function Home() {
                 {isFormSubmitted ? (<div style={{ margin: '0px 10px' }}>
                   <p>Thank you for sharing your feedback, {UserName.charAt(0).toUpperCase() + UserName.slice(1).toLowerCase()}!<br />  Your input is valued, and I will be in touch shortly to initiate a conversation.</p>
                 </div>) : (<div className={Style.inputBox}>
-                  <div>
+                  <div className={Style.aboutmeText_div}>
                     <h5 className={Style.aboutmeText}> Seeking Your Valuable Input and Feedback 😊</h5>
                   </div>
                   <div >
 
-                    <div >
-                      <div style={{ marginTop: '10px' }}>
+                    <div className={Style.fieldBox}>
+                      <div className={Style.feedbackField}>
                         <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
                           <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-                          <TextField error={UserNameError} id="input-with-sx" onChange={(e) => UserNameFeild(e)} value={UserName} style={{ width: '270px' }} required label={UserNameMessage} variant="standard" />
+                          <TextField error={UserNameError} id="input-with-sx" onChange={(e) => UserNameFeild(e)} value={UserName} className={Style.field_text} required label={UserNameMessage} variant="standard" />
                         </Box>
                       </div>
-                      <div style={{ marginTop: '10px', color: 'white' }}>
+                      <div className={Style.feedbackField}>
                         <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
                           <EmailIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-                          <TextField error={UserEmailError} id="input-with-sx" onChange={(e) => UserEmailFeild(e)} value={UserEmail} style={{ width: '270px' }} required label={UserEmailMessage} variant="standard" />
+                          <TextField error={UserEmailError} id="input-with-sx" onChange={(e) => UserEmailFeild(e)} value={UserEmail} className={Style.field_text} required label={UserEmailMessage} variant="standard" />
                         </Box>
                       </div>
-                      <div style={{ marginTop: '10px' }}>
+                      <div className={Style.feedbackField}>
                         <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
                           <CommentIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-                          <TextField id="input-with-sx" onChange={(e) => UsermessageFeild(e)} value={UserMessage} style={{ width: '270px' }} label="Message" variant="standard" />
+                          <TextField id="input-with-sx" onChange={(e) => UsermessageFeild(e)} value={UserMessage} className={Style.field_text} label="Message" variant="standard" />
                         </Box>
                       </div>
                     </div>
