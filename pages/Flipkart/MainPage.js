@@ -132,73 +132,8 @@ function MainPage() {
             ref.current.scrollIntoView({ behavior: 'smooth' });
         }
     };
-    const [OddProject, SetOddProject] = useState(1)
-    const [OddLicense, SetOddLicense] = useState(1)
-    const [prevbuttonIndex, setprevbuttonIndex] = useState(0);
-    const [nextbuttonIndex, setnextbuttonIndex] = useState(ProjectJson.length >= 3 ? 3 : ProjectJson.length);
-    const [prevLicenseIndex, setprevLicenseIndex] = useState(0);
-    const [nextLicenseIndex, setnextLicenseIndex] = useState(AboutmeLicenses.length >= 4 ? 4 : AboutmeLicenses.length);
-    const [getAboutmeLicenses, setAboutmeLicenses] = useState(AboutmeLicenses.length)
-
-    useEffect(() => {
-
-        if (screenDimensions.screenWidth < 769) {
-            setnextbuttonIndex(1);
-            setnextLicenseIndex(1);
-            setAboutmeLicenses(AboutmeLicenses.length)
-        } else if (screenDimensions.screenWidth > 769 && screenDimensions.screenWidth < 1080) {
-            setnextbuttonIndex(2);
-            setnextLicenseIndex(2);
-            setAboutmeLicenses(AboutmeLicenses.length + 1)
-            SetOddProject(ProjectJson.length % 2 == 0 ? 2 : 1)
-            SetOddLicense(AboutmeLicenses.length % 2 == 0 ? 2 : 1)
-        }
-        else if (screenDimensions.screenWidth > 1080 && screenDimensions.screenWidth < 1250) {
-            setnextbuttonIndex(3);
-            setnextLicenseIndex(2);
-            setAboutmeLicenses(AboutmeLicenses.length + 1)
-            SetOddProject(ProjectJson.length % 2 == 0 ? 3 : 2)
-            SetOddLicense(AboutmeLicenses.length % 2 == 0 ? 3 : 2)
-        }
-        else {
-            setnextbuttonIndex(ProjectJson.length >= 4 ? 4 : ProjectJson.length);
-            setnextLicenseIndex(AboutmeLicenses.length >= 4 ? 4 : AboutmeLicenses.length)
-            setAboutmeLicenses(AboutmeLicenses.length + 1);
-            SetOddProject(ProjectJson.length % 2 == 0 ? 2 : 1)
-            SetOddLicense(AboutmeLicenses.length % 2 == 0 ? 2 : 1)
-        }
-    }, [screenDimensions.screenWidth, setnextbuttonIndex, setAboutmeLicenses, SetOddProject, SetOddLicense]);
-
-    const prevbutton = () => {
-        if (prevbuttonIndex !== 0) {
-            setnextbuttonIndex(nextbuttonIndex - OddProject);
-            setprevbuttonIndex(prevbuttonIndex - OddProject);
 
 
-        }
-    };
-    const nextbutton = () => {
-        console.log(nextbuttonIndex)
-        if (nextbuttonIndex !== ProjectJson.length && nextbuttonIndex < ProjectJson.length + OddProject + 1) {
-            setprevbuttonIndex(prevbuttonIndex + OddProject);
-            setnextbuttonIndex(nextbuttonIndex + OddProject);
-        }
-    };
-
-    const preLicensesButton = () => {
-        if (prevLicenseIndex !== 0) {
-            setprevLicenseIndex(prevLicenseIndex - 1);
-            setnextLicenseIndex(nextLicenseIndex - 1)
-
-        }
-    }
-    const nextLicensesButton = () => {
-        if (nextbuttonIndex !== AboutmeLicenses.length) {
-
-            setprevLicenseIndex(prevLicenseIndex + 1);
-            setnextLicenseIndex(nextLicenseIndex + 1)
-        }
-    };
     const [ChatOpen, setChatOpen] = React.useState(false);
     const handleOpenChatButton = () => setChatOpen(true);
     const handleCloseChatButton = () => setChatOpen(false);
@@ -478,7 +413,7 @@ function MainPage() {
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Avatar alt="Remy Sharp" src="https://i.pinimg.com/originals/7d/9b/1d/7d9b1d662b28cd365b33a01a3d0288e1.gif" /> Virtual Abhijeet Bot</div></DialogTitle>
                             <DialogContent>
                                 <DialogContentText>
-                                <h6 className={Style.mobileText_content}>  Warning: I'm an AI model, and sensitive information might be inadvertently shared. Please refrain from sharing personal or confidential details.</h6>
+                                    <h6 className={Style.mobileText_content}>  Warning: I'm an AI model, and sensitive information might be inadvertently shared. Please refrain from sharing personal or confidential details.</h6>
                                 </DialogContentText>
                                 <TextField
                                     autoFocus
@@ -513,7 +448,7 @@ function MainPage() {
                                     </div>
                                     <div className={Style.LetsChatMain_Div_content}>
                                         {isFormSubmitted ? (<div style={{ margin: '0px 10px' }}>
-                                            <h5>Thanks for sharing your info!<br /> I'll reach out soon to chat - {UserName.charAt(0).toUpperCase() + UserName.slice(1).toLowerCase()}</h5>
+                                            <p>Thank you for providing your information, {UserName.charAt(0).toUpperCase() + UserName.slice(1).toLowerCase()}!<br /> I appreciate your input. I will be in touch shortly to initiate a conversation.</p>
                                         </div>) : (<div className={Style.inputBox}>
                                             <div>
                                                 <h5 className={Style.aboutmeText}> Let's have some discussion!!</h5>

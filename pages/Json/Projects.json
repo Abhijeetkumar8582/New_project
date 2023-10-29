@@ -7,8 +7,8 @@
     "button": "https://brownmen.netlify.app/"
   },
   {
-    "title": "Shopify",
-    "description": "I have developed an application using Node.js and MongoDB as the backend. I have built an admin panel from scratch to manage the application's data.",
+    "title": "Future Project",
+    "description": "This project aimed to assess and familiarize ourselves with various UI tools and skills for potential future applications.",
     "image": "/Image/shopifyImage.webp",
     "code": "React, Javascript",
     "button": "https://shopify45.netlify.app/"

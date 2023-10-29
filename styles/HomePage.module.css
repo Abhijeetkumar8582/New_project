@@ -71,6 +71,7 @@
 .Container_two_subdiv_imageDiv_image {
   width: 100%;
   max-width: 250px;
+  object-fit: cover;
   left: 50%;
   top: 35%;
   border-radius: 20px;
@@ -100,7 +101,51 @@
   justify-content: center;
   text-align: center;
 }
+.footer{
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  padding: 10px;
+}
+.footer_button{
+color: white;
+background-color: transparent;
+border: none;
+}
+.footer_button:active,
+.footer_button:focus{
+  outline: none;
+}
+.LetsChatMain_Div{
+  padding: 2rem;
+  display: flex;
+  max-height: 400px;
+  max-width: 950px;
+  
+}
+.LetsChatMain_Div_image{
+  width: 50%;
+}
+.LetsChatMain_Div_content{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.LetsChatMain_image{
+  width: 100%;
+}
+.feedbackButton{
+  background: royalblue;
+  border: none;
+  border-radius: 5px;
+  margin-top: 24px;
+  color: aliceblue;
+  width: 130px;
+  font-family: initial;
+  padding: 5px;
+}
 @media only screen and (max-width: 750px) {
   .introPageMainDiv {
     flex-direction: column;
