@@ -51,7 +51,7 @@ function About() {
             <div data-aos="fade-right">
                 <div style={{ marginTop: "70px" }}></div>
 
-                <div className="row clearfix" style={{width:'100vw'}}>
+                <div className="row clearfix" style={{ width: '100vw' }}>
                     <div className="col-sm aboutme_section " >
                         <h1 className="textfont  text-center my-2">So, who am I?</h1>
                         <h5 className="content mobile_content my-3 mx-2 mx-sm-5">
@@ -61,7 +61,7 @@ function About() {
                             Currently, I work for an AI startup where I am responsible for designing chatbots, integrating them, and resolving customer inquiries. My goal is to acquire knowledge about as many programming languages as possible, as I believe it will help me become a more versatile developer.
                         </h5>
                         <h5 className="content mobile_content my-3 mx-2 mx-sm-5">
-                            I sometimes wonder whether I am fixing a bug or if the bug is controlling me. Additionally, I often dream about bugs and the experience is like battling King Kong while I am in the role of Godzilla, who is known as the king of monsters.
+                            At this moment, I'm actively engaged in expanding my knowledge of generative AI while diligently honing my skills in data structures and algorithms. I'm deeply committed to self-improvement, striving to become proficient in these domains for future opportunities and challenges.
                         </h5>
                     </div>
                     <div className="col-sm aboutme_section_image">
@@ -81,7 +81,7 @@ function About() {
                         <div data-aos="fade-right">
                             <div className="my-3 mx-3 skillsDiv" >
                                 <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                                    <Image src={element.logo} width={50} height={50} className="-img-top" alt={element.skills}  />
+                                    <Image src={element.logo} width={50} height={50} className="-img-top" alt={element.skills} />
                                 </div>
                                 <div className="-body" style={{ width: "80%", margin: "auto" }}>
                                     <p className="text-center" style={{ fontFamily: 'Verdana', margin: 0 }}><strong>{element.skills}</strong></p>
@@ -107,21 +107,21 @@ function About() {
                             <div className="card">
                                 <div className="header">
                                     <div className="image">
-                                        <Image src={element.logo} style={{ width: "100%" }} width={100} height={100} alt="Card image cap" />
+                                        <Image src={element.logo} style={{ width: "100%" }} width={100} height={100} priority alt="Card image cap" />
                                     </div>
                                     <div className='name_div'>
                                         <p className="name">{element.tittle}</p>
                                     </div>
                                 </div>
-                                <div style={{height:'80%',marginBottom:'10px'}}>
+                                <div style={{ height: '80%', marginBottom: '10px' }}>
                                     <p className="message">
                                         {element.description}
                                     </p>
                                 </div>
-                                <div style={{height:'10%'}}>
-                                <button className='action' onClick={() => handleClickOpen(element.tittle)}>
-                                    Certificate
-                                </button>
+                                <div style={{ height: '10%' }}>
+                                    <button className='action' aria-label="Certificate" onClick={() => handleClickOpen(element.tittle)}>
+                                        Certificate
+                                    </button>
                                 </div>
                             </div>
 

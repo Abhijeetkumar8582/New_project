@@ -209,6 +209,7 @@ function Home() {
               className={Style.flipkartBox_two_image}
               width={382}
               height={400}
+              priority
               src="/flipkart/Flipkart_div_image.webp"
               style={{ width: "100%" }}
               alt="Flipkart_div_image"

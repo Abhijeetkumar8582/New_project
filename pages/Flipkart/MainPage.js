@@ -320,10 +320,10 @@ function MainPage() {
                 <div className={Style.flipkartMainBox}>
                     <div className={Style.flipkartMainBox_Image}>
                         <div className={Style.flipkartMainboxImage_subimage}>
-                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/Abhijeetkumar2.webp')}><Image loading='lazy' width={60} height={60} style={{ maxWidth: '100%', objectFit: 'contain' }} alt="MyImage" src='/Image/Abhijeetkumar2.webp' /></div>
-                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/AbhijeetKumar_1.webp')}><Image loading='lazy' width={60} height={60} alt="MyImage" style={{ maxWidth: '100%', objectFit: 'contain' }} src='/Image/AbhijeetKumar_1.webp' /></div>
-                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/abhijeet_kumar_3.jpg')}><Image alt="MyImage" loading='lazy' width={60} height={60} style={{ maxWidth: '100%', objectFit: 'contain' }} src='/Image/abhijeet_kumar_3.jpg' /></div>
-                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/Abhijeet_kumar_4.webp')}><Image loading='lazy' width={60} height={60} style={{ maxWidth: '100%', objectFit: 'contain' }} alt="MyImage" src='/Image/Abhijeet_kumar_4.webp' /></div>
+                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/Abhijeetkumar2.webp')}><Image priority width={60} height={60} style={{ maxWidth: '100%', objectFit: 'contain' }} alt="MyImage" src='/Image/Abhijeetkumar2.webp' /></div>
+                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/AbhijeetKumar_1.webp')}><Image priority width={60} height={60} alt="MyImage" style={{ maxWidth: '100%', objectFit: 'contain' }} src='/Image/AbhijeetKumar_1.webp' /></div>
+                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/abhijeet_kumar_3.jpg')}><Image alt="MyImage" priority width={60} height={60} style={{ maxWidth: '100%', objectFit: 'contain' }} src='/Image/abhijeet_kumar_3.jpg' /></div>
+                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/Abhijeet_kumar_4.webp')}><Image priority width={60} height={60} style={{ maxWidth: '100%', objectFit: 'contain' }} alt="MyImage" src='/Image/Abhijeet_kumar_4.webp' /></div>
                         </div>
                         <div className={Style.flipkartMainboxImage_Mainimage}><Image loading='lazy' alt="MyImage" style={{ objectFit: "contain", maxWidth: '100%', maxHeight: '100%' }} width={500} height={500} quality={100} src={mainImageUrl} /></div>
                     </div>
@@ -369,8 +369,6 @@ function MainPage() {
                                     <Typography sx={{ p: 2 }}>Please send me an email with the location where you want me to work. I am currently residing in Bangalore.</Typography>
                                 </div>
                             </Popover>
-
-
                         </div>
                         <div style={{ marginBottom: '30px', gap: "10px", display: 'flex' }}>
                             <button aria-label="letsTalkBtn" className={Style.letsTalkBtn} onClick={() => handleOpenChatButton()}><h6 className={Style.mobileText_content}>let's have a chat 💬</h6></button>
@@ -385,7 +383,6 @@ function MainPage() {
                             aria-describedby="alert-dialog-slide-description"
                         >
                             <DialogTitle><div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Avatar alt="Remy Sharp" src="https://i.pinimg.com/originals/7d/9b/1d/7d9b1d662b28cd365b33a01a3d0288e1.gif" /> Virtual Abhijeet Bot </div>
-
                             </DialogTitle>
                             <DialogContent>
                                 {Loading ? (
@@ -400,7 +397,7 @@ function MainPage() {
                                         </div>
                                     </div>) : (
 
-                                    <DialogContentText id="alert-dialog-slide-description"><h6 className={Style.mobileText_content}>{getAnswerfromPDF}</h6></DialogContentText>)}
+                                    <DialogContentText id="alert-dialog-slide-description" className={Style.mobileText_content}>{getAnswerfromPDF}</DialogContentText>)}
                             </DialogContent>
                             <DialogActions>
 
@@ -410,10 +407,10 @@ function MainPage() {
                         </Dialog>
                         <Dialog open={anotherQuestion} onClose={AnotherQuestionForm}>
                             <DialogTitle>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Avatar alt="Remy Sharp" src="https://i.pinimg.com/originals/7d/9b/1d/7d9b1d662b28cd365b33a01a3d0288e1.gif" /> Virtual Abhijeet Bot</div></DialogTitle>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Avatar alt="Virtual Abhijeet Bot" Loading='lazy' width={50} height={50}  src="https://i.pinimg.com/originals/7d/9b/1d/7d9b1d662b28cd365b33a01a3d0288e1.gif" /> Virtual Abhijeet Bot</div></DialogTitle>
                             <DialogContent>
-                                <DialogContentText>
-                                    <h6 className={Style.mobileText_content}>  Warning: I'm an AI model, and sensitive information might be inadvertently shared. Please refrain from sharing personal or confidential details.</h6>
+                                <DialogContentText className={Style.mobileText_content}>
+                                    Warning: I'm an AI model, and sensitive information might be inadvertently shared. Please refrain from sharing personal or confidential details.
                                 </DialogContentText>
                                 <TextField
                                     autoFocus

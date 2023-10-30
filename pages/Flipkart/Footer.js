@@ -22,16 +22,16 @@ function Footer() {
                     </div>
                     <div className={Style.FooterBar_container_sectionOne_div_two}>
                         <div>
-                            <button className={Style.redirect_btn} onClick={() => redirect_user("/Nextflix/Home")}><p className={Style.footer_font_text}>Netflix</p></button>
+                            <button aria-label="Nextflix" className={Style.redirect_btn} onClick={() => redirect_user("/Nextflix/Home")}><p className={Style.footer_font_text}>Netflix</p></button>
                         </div>
                         <div>
-                            <button className={Style.redirect_btn} onClick={() => redirect_user("/Instagram/Home")}><p className={Style.footer_font_text}>Instagram</p></button>
+                            <button aria-label="Instagram" className={Style.redirect_btn} onClick={() => redirect_user("/Instagram/Home")}><p className={Style.footer_font_text}>Instagram</p></button>
                         </div>
                         <div>
-                            <button className={Style.redirect_btn} onClick={() => redirect_user("/Introduction")}><p className={Style.footer_font_text}>My Design</p></button>
+                            <button aria-label="Introduction" className={Style.redirect_btn} onClick={() => redirect_user("/Introduction")}><p className={Style.footer_font_text}>My Design</p></button>
                         </div>
                         <div>
-                            <button className={Style.redirect_btn} onClick={() => redirect_user('/Dynamic_Portfolio/Home')}> <p className={Style.footer_font_text}>Dynamic Portfolio(WIP)</p></button>
+                            <button aria-label="Dynamic_Portfolio" className={Style.redirect_btn} onClick={() => redirect_user('/Dynamic_Portfolio/Home')}> <p className={Style.footer_font_text}>Dynamic Portfolio(WIP)</p></button>
                         </div>
                     </div>
                 </div>

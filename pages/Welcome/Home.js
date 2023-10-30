@@ -390,11 +390,11 @@ function Home() {
         </div>
         <div className={Style.footer}>
           <div>
-            <button className={Style.footer_button}  onClick={() => handleOpenChatButton()}>Feedback 👨‍💻</button>
+            <button className={Style.footer_button} aria-label="Feedback" onClick={() => handleOpenChatButton()}>Feedback 👨‍💻</button>
           </div>
          
           <div>
-            <button className={Style.footer_button} onClick={() => OnAnotherQuestionAsk()} >Any Queries 👨‍💻</button>
+            <button className={Style.footer_button} aria-label="Any Queries" onClick={() => OnAnotherQuestionAsk()} >Any Queries 👨‍💻</button>
           </div>
         </div>
         <div className={Style.signature}>
@@ -407,7 +407,7 @@ function Home() {
           onClose={handleCloseQueries}
           aria-describedby="alert-dialog-slide-description"
         >
-          <DialogTitle><div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Avatar alt="Remy Sharp" src="https://i.pinimg.com/originals/7d/9b/1d/7d9b1d662b28cd365b33a01a3d0288e1.gif" /> Virtual Abhijeet Bot </div>
+          <DialogTitle><div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Avatar alt="Remy Sharp" Loading='lazy' width={50} height={50} src="https://i.pinimg.com/originals/7d/9b/1d/7d9b1d662b28cd365b33a01a3d0288e1.gif" /> Virtual Abhijeet Bot </div>
 
           </DialogTitle>
           <DialogContent>
@@ -423,7 +423,7 @@ function Home() {
                 </div>
               </div>) : (
 
-              <DialogContentText id="alert-dialog-slide-description"><h6 className={Style.mobileText_content}>{getAnswerfromPDF}</h6></DialogContentText>)}
+              <DialogContentText id="alert-dialog-slide-description" className={Style.mobileText_content}>{getAnswerfromPDF}</DialogContentText>)}
           </DialogContent>
           <DialogActions>
 
@@ -433,10 +433,10 @@ function Home() {
         </Dialog>
         <Dialog open={anotherQuestion} onClose={AnotherQuestionForm}>
           <DialogTitle>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Avatar alt="Remy Sharp" src="https://i.pinimg.com/originals/7d/9b/1d/7d9b1d662b28cd365b33a01a3d0288e1.gif" /> Virtual Abhijeet Bot</div></DialogTitle>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Avatar alt="Virtual Abhijeet Bot" src="https://i.pinimg.com/originals/7d/9b/1d/7d9b1d662b28cd365b33a01a3d0288e1.gif" /> Virtual Abhijeet Bot</div></DialogTitle>
           <DialogContent>
-            <DialogContentText>
-              <h6 className={Style.mobileText_content}>  Warning: I'm an AI model, and sensitive information might be inadvertently shared. Please refrain from sharing personal or confidential details.</h6>
+            <DialogContentText className={Style.mobileText_content}>
+               Warning: I'm an AI model, and sensitive information might be inadvertently shared. Please refrain from sharing personal or confidential details.
             </DialogContentText>
             <TextField
               autoFocus
@@ -498,7 +498,7 @@ function Home() {
                       </div>
                     </div>
                   </div>
-                  <button className={Style.feedbackButton} onClick={OnsubmitChatButton}>Submit</button>
+                  <button className={Style.feedbackButton} aria-label="Form-submittion-button" onClick={OnsubmitChatButton}>Submit</button>
                 </div>)}
 
               </div>

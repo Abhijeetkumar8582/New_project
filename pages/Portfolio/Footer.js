@@ -14,16 +14,16 @@ function Footer() {
         </div>
         <div className='FooterBar_container_sectionOne_div_two'>
           <div>
-            <button className='redirect_btn' onClick={()=>sessionStorage.getItem("UserName")?redirect("/Flipkart/MainPage"):redirect("/Flipkart/Home")}><p className='footer-font_text'>Flipkart</p></button>
+            <button className='redirect_btn'  aria-label="Flipkart" onClick={()=>sessionStorage.getItem("UserName")?redirect("/Flipkart/MainPage"):redirect("/Flipkart/Home")}><p className='footer-font_text'>Flipkart</p></button>
           </div>
           <div>
-            <button className='redirect_btn' onClick={()=>redirect("/Nextflix/Home")}><p className='footer-font_text'>Netflix</p></button>
+            <button className='redirect_btn'  aria-label="Nextflix" onClick={()=>redirect("/Nextflix/Home")}><p className='footer-font_text'>Netflix</p></button>
           </div>
           <div>
-            <button className='redirect_btn' onClick={()=>redirect("/Instagram/Home")}><p className='footer-font_text'>Instagram</p></button>
+            <button className='redirect_btn' aria-label="Instagram" onClick={()=>redirect("/Instagram/Home")}><p className='footer-font_text'>Instagram</p></button>
           </div>
           <div>
-            <button className='redirect_btn' onClick={()=>redirect('/Dynamic_Portfolio/Home')}> <p className='footer-font_text'>Dynamic Portfolio</p></button>
+            <button className='redirect_btn' aria-label="Dynamic_Portfolio" onClick={()=>redirect('/Dynamic_Portfolio/Home')}> <p className='footer-font_text'>Dynamic Portfolio (WIP)</p></button>
           </div>
         </div>
       </div>

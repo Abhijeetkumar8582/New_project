@@ -241,7 +241,7 @@ function Home() {
             <div className={Style.Moblie_Navbar_Div_lock_fa_fa_icon}>
               <i className="fa fa-lock" style={{ fontSize: '16px' }} aria-hidden="true"></i>
               <div>
-                <button onClick={() => redirect()} className={Style.daredevil8582_btn}>
+                <button aria-label="Daredevil8582" onClick={() => redirect()} className={Style.daredevil8582_btn}>
                   <h6 className={Style.Moblie_daredevil8582_text}>daredevil8582</h6>
                 </button></div>
               <i className="fa fa-angle-down" style={{ fontSize: '16px' }} aria-hidden="true"></i>
@@ -557,16 +557,16 @@ function Home() {
                 </div>
                 <div className={Style.FooterBar_container_sectionOne_div_two}>
                   <div>
-                    <button className={Style.redirect_btn} onClick={() => sessionStorage.getItem("UserName")?redirect_user("/Flipkart/MainPage"):redirect_user("/Flipkart/Home")}><p className={Style.footer_font_text}>Flipkart</p></button>
+                    <button aria-label="Flipkart" className={Style.redirect_btn} onClick={() => sessionStorage.getItem("UserName")?redirect_user("/Flipkart/MainPage"):redirect_user("/Flipkart/Home")}><p className={Style.footer_font_text}>Flipkart</p></button>
                   </div>
                   <div>
-                    <button className={Style.redirect_btn} onClick={() => redirect_user("/Nextflix/Home")}><p className={Style.footer_font_text}>Netflix</p></button>
+                    <button aria-label="Nextflix" className={Style.redirect_btn} onClick={() => redirect_user("/Nextflix/Home")}><p className={Style.footer_font_text}>Netflix</p></button>
                   </div>
                   <div>
-                    <button className={Style.redirect_btn} onClick={() => redirect_user("/Introduction")}><p className={Style.footer_font_text}>My Design</p></button>
+                    <button aria-label="Introduction" className={Style.redirect_btn} onClick={() => redirect_user("/Introduction")}><p className={Style.footer_font_text}>My Design</p></button>
                   </div>
                   <div>
-                    <button className={Style.redirect_btn} onClick={() => redirect_user('/Dynamic_Portfolio/Home')}> <p className={Style.footer_font_text}>Dynamic Portfolio(WIP)</p></button>
+                    <button aria-label="Dynamic_Portfolio" className={Style.redirect_btn} onClick={() => redirect_user('/Dynamic_Portfolio/Home')}> <p className={Style.footer_font_text}>Dynamic Portfolio(WIP)</p></button>
                   </div>
                   
                 </div>
