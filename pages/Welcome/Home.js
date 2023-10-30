@@ -63,8 +63,7 @@ function Home() {
         "Engaged in the art of UI design, I'm crafting visually appealing and interactive experiences!",
     },
     {
-      image:
-        "https://i0.wp.com/dianisa.com/wp-content/uploads/2023/02/Sejarah-Coming-Soon.jpg?resize=950%2C550&ssl=1",
+      image:"/Image/comingSoon.webp",
       title: "Dynamic portfolio",
       link: "/Dynamic_Portfolio/Home",
       description:
@@ -407,7 +406,7 @@ function Home() {
           onClose={handleCloseQueries}
           aria-describedby="alert-dialog-slide-description"
         >
-          <DialogTitle><div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Avatar alt="Remy Sharp" loading='lazy' width={50} height={50} src="https://i.pinimg.com/originals/7d/9b/1d/7d9b1d662b28cd365b33a01a3d0288e1.gif" /> Virtual Abhijeet Bot </div>
+          <DialogTitle><div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Avatar alt="Remy Sharp" loading='lazy' width={50} height={50} src="/Image/abhijeetVirtualBot.gif" /> Virtual Abhijeet Bot </div>
 
           </DialogTitle>
           <DialogContent>
@@ -433,7 +432,7 @@ function Home() {
         </Dialog>
         <Dialog open={anotherQuestion} onClose={AnotherQuestionForm}>
           <DialogTitle>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Avatar alt="Virtual Abhijeet Bot" src="https://i.pinimg.com/originals/7d/9b/1d/7d9b1d662b28cd365b33a01a3d0288e1.gif" /> Virtual Abhijeet Bot</div></DialogTitle>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Avatar alt="Virtual Abhijeet Bot" width={50} height={50} src="/Image/abhijeetVirtualBot.gif" /> Virtual Abhijeet Bot</div></DialogTitle>
           <DialogContent>
             <DialogContentText className={Style.mobileText_content}>
                Warning: I'm an AI model, and sensitive information might be inadvertently shared. Please refrain from sharing personal or confidential details.
@@ -466,7 +465,7 @@ function Home() {
           <DialogContent sx={{ p: '0' }}>
             <div className={Style.LetsChatMain_Div}>
               <div className={Style.LetsChatMain_Div_image}>
-                <img src='https://img.freepik.com/free-vector/customer-survey-concept-illustration_114360-558.jpg?w=1800&t=st=1698519808~exp=1698520408~hmac=f2ff7708074274a0e4424548917820bae6e75e3c445f714eb5fbd308ca4f7c21' className={Style.LetsChatMain_image} />
+                <img src='/Image/feedbackImage.webp' className={Style.LetsChatMain_image} />
               </div>
               <div className={Style.LetsChatMain_Div_content}>
                 {isFormSubmitted ? (<div style={{ margin: '0px 10px' }}>

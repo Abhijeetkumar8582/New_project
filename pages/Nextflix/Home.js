@@ -114,7 +114,7 @@ function Home() {
                         <div style={{ maxWidth: "300px" }}>
                             <img
                                 style={{ width: "100%" }}
-                                src="https://i.gifer.com/origin/f5/f5baef4b6b6677020ab8d091ef78a3bc_w200.gif"
+                                src="/Image/walkingDuck.gif"
                             />
                         </div>
                     </div>
@@ -126,7 +126,7 @@ function Home() {
                         <div style={{ maxWidth: "300px" }}>
                             <img
                                 style={{ width: "100%" }}
-                                src="https://cdn.pixabay.com/animation/2022/12/05/15/23/15-23-06-837_512.gif"
+                                src="/Image/headace.gif"
                             />
                         </div>
                     </div>

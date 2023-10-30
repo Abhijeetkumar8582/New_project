@@ -413,7 +413,7 @@ function Home() {
               {nextbuttonIndex >= AboutmeSkills.length ? (<div className={Style.Instragram_Content_Skills_avatar} >
                 <Avatar
                   alt="Add Skills"
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRal66RNJGRaNvsBcwWGY8S9rZO5UPXXpAEwg&usqp=CAU"
+                  src="/Image/AddNewSkills.webp"
                   style={{ border: '1px solid gray', padding: '3px' }}
                   sx={{ width: skillAvatar, height: skillAvatar }}
                 />

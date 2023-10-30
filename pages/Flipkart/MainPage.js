@@ -321,12 +321,12 @@ function MainPage() {
                 <div className={Style.flipkartMainBox}>
                     <div className={Style.flipkartMainBox_Image}>
                         <div className={Style.flipkartMainboxImage_subimage}>
-                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/Abhijeetkumar2.webp')}><Image priority={true} width={60} height={60} style={{ maxWidth: '100%', objectFit: 'contain' }} alt="MyImage" src='/Image/Abhijeetkumar2.webp' /></div>
-                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/AbhijeetKumar_1.webp')}><Image priority={true} width={60} height={60} alt="MyImage" style={{ maxWidth: '100%', objectFit: 'contain' }} src='/Image/AbhijeetKumar_1.webp' /></div>
-                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/abhijeet_kumar_3.jpg')}><Image alt="MyImage" priority={true} width={60} height={60} style={{ maxWidth: '100%', objectFit: 'contain' }} src='/Image/abhijeet_kumar_3.jpg' /></div>
-                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/Abhijeet_kumar_4.webp')}><Image priority={true} width={60} height={60} style={{ maxWidth: '100%', objectFit: 'contain' }} alt="MyImage" src='/Image/Abhijeet_kumar_4.webp' /></div>
+                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/Abhijeetkumar2.webp')}><Image priority={true} width={60} height={60} className={Style.ImageSection} alt="MyImage" src='/Image/Abhijeetkumar2.webp' /></div>
+                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/AbhijeetKumar_1.webp')}><Image priority={true} width={60} height={60} alt="MyImage" className={Style.ImageSection} src='/Image/AbhijeetKumar_1.webp' /></div>
+                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/abhijeet_kumar_3.jpg')}><Image alt="MyImage" priority={true} width={60} height={60} className={Style.ImageSection} src='/Image/abhijeet_kumar_3.jpg' /></div>
+                            <div className={Style.flipkartMainboxImage_subimage_Box} onMouseOver={() => handleImageHover('/Image/Abhijeet_kumar_4.webp')}><Image priority={true} width={60} height={60} className={Style.ImageSection} alt="MyImage" src='/Image/Abhijeet_kumar_4.webp' /></div>
                         </div>
-                        <div className={Style.flipkartMainboxImage_Mainimage}><Image loading='lazy' alt="MyImage" style={{ objectFit: "contain", maxWidth: '100%', maxHeight: '100%' }} width={500} height={500} quality={100} src={mainImageUrl} /></div>
+                        <div className={Style.flipkartMainboxImage_Mainimage}><Image priority={true} alt="MyImage" className={Style.Main_ImageSection} width={500} height={500} quality={100} src={mainImageUrl} /></div>
                     </div>
                     <div className={Style.flipkartMainBox_Content}>
                         <div>
@@ -343,9 +343,9 @@ function MainPage() {
                         </div>
                         <div>
                             <h6>Available offers</h6>
-                            <div className={Style.Available_offers_div}> <Image alt="MyImage" loading='lazy' width={20} height={20} src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' className={Style.Available_offers_div_img} /><span className={Style.Contentjustify}> &nbsp;Experience my passion for creativity and innovation through an engaging portfolio.</span></div>
-                            <div className={Style.Available_offers_div}> <Image alt="MyImage" loading='lazy' width={20} height={20} src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' className={Style.Available_offers_div_img} /><span className={Style.Contentjustify}> &nbsp;Discover my specialization through a curated selection of my best work.</span></div>
-                            <div className={Style.Available_offers_div}> <Image alt="MyImage" loading='lazy' width={20} height={20} src='https://cdn-icons-png.flaticon.com/512/1831/1831655.png' className={Style.Available_offers_div_img} /><span className={Style.Contentjustify}> &nbsp;See how I've helped clients achieve their goals through my portfolio solutions.</span></div>
+                            <div className={Style.Available_offers_div}> <Image alt="MyImage" loading='lazy' width={20} height={20} src='/Image/salesLogo.webp' className={Style.Available_offers_div_img} /><span className={Style.Contentjustify}> &nbsp;Experience my passion for creativity and innovation through an engaging portfolio.</span></div>
+                            <div className={Style.Available_offers_div}> <Image alt="MyImage" loading='lazy' width={20} height={20} src='/Image/salesLogo.webp' className={Style.Available_offers_div_img} /><span className={Style.Contentjustify}> &nbsp;Discover my specialization through a curated selection of my best work.</span></div>
+                            <div className={Style.Available_offers_div}> <Image alt="MyImage" loading='lazy' width={20} height={20} src='/Image/salesLogo.webp' className={Style.Available_offers_div_img} /><span className={Style.Contentjustify}> &nbsp;See how I've helped clients achieve their goals through my portfolio solutions.</span></div>
                         </div>
                         <div style={{ marginBottom: '50px' }}>
                             <div style={{ margin: '20px 0px 5px' }}><i className="fa fa-map-marker" style={{ color: 'red' }} aria-hidden="true"></i><span> Please enter pincode</span></div>
@@ -367,7 +367,7 @@ function MainPage() {
                                 }}
                             >
                                 <div style={{ maxWidth: '500px' }}>
-                                    <Typography sx={{ p: 2 }}>Please send me an email with the location where you want me to work. I am currently residing in Bangalore.</Typography>
+                                    <Typography sx={{ p: 2 }}>Kindly specify the designated work location. I am presently based in Bangalore and eager to know the intended work site.</Typography>
                                 </div>
                             </Popover>
                         </div>
@@ -383,7 +383,7 @@ function MainPage() {
                             onClose={handleCloseQueries}
                             aria-describedby="alert-dialog-slide-description"
                         >
-                            <DialogTitle><div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Avatar alt="Remy Sharp" src="https://i.pinimg.com/originals/7d/9b/1d/7d9b1d662b28cd365b33a01a3d0288e1.gif" /> Virtual Abhijeet Bot </div>
+                            <DialogTitle><div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Avatar alt="Remy Sharp" src="/Image/abhijeetVirtualBot.gif" /> Virtual Abhijeet Bot </div>
                             </DialogTitle>
                             <DialogContent>
                                 {Loading ? (
@@ -408,7 +408,7 @@ function MainPage() {
                         </Dialog>
                         <Dialog open={anotherQuestion} onClose={AnotherQuestionForm}>
                             <DialogTitle>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Avatar alt="Virtual Abhijeet Bot" Loading='lazy' width={50} height={50}  src="https://i.pinimg.com/originals/7d/9b/1d/7d9b1d662b28cd365b33a01a3d0288e1.gif" /> Virtual Abhijeet Bot</div></DialogTitle>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Avatar alt="Virtual Abhijeet Bot" Loading='lazy' width={50} height={50}  src="/Image/abhijeetVirtualBot.gif" /> Virtual Abhijeet Bot</div></DialogTitle>
                             <DialogContent>
                                 <DialogContentText className={Style.mobileText_content}>
                                     Warning: I'm an AI model, and sensitive information might be inadvertently shared. Please refrain from sharing personal or confidential details.
@@ -442,7 +442,7 @@ function MainPage() {
                             <DialogContent sx={{ p: '0' }}>
                                 <div className={Style.LetsChatMain_Div}>
                                     <div className={Style.LetsChatMain_Div_image}>
-                                        <img src='https://img.freepik.com/free-vector/messages-concept-illustration_114360-583.jpg?w=1060&t=st=1696412369~exp=1696412969~hmac=39b91b4f4edf40748465fb1c4772310c5769c44c1b98559989ffe14b1e20235d' className={Style.LetsChatMain_image} />
+                                        <img src="/Image/Flipkart_connect_image.webp" className={Style.LetsChatMain_image} />
                                     </div>
                                     <div className={Style.LetsChatMain_Div_content}>
                                         {isFormSubmitted ? (<div style={{ margin: '0px 10px' }}>
