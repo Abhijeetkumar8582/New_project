@@ -86,7 +86,7 @@ function Home() {
             <h3 className={Style.flipkarText}>Abhijeet Kumar</h3>
             <div className={Style.ImageLogo_div}>
               <Image
-                loading="lazy"
+                priority={true}
                 className={Style.intro_images}
                 src="/Image/AbhiFlipkart.webp"
                 width={500}
@@ -209,7 +209,7 @@ function Home() {
               className={Style.flipkartBox_two_image}
               width={382}
               height={400}
-              priority
+              priority={true}
               src="/flipkart/Flipkart_div_image.webp"
               style={{ width: "100%" }}
               alt="Flipkart_div_image"

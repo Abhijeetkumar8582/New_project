@@ -65,7 +65,7 @@ function About() {
                         </h5>
                     </div>
                     <div className="col-sm aboutme_section_image">
-                        <Image src="/Image/aboutPageImage.webp" className="col-md-6 float-md-end mb-3 my-3 ms-md-3 Imagedisplay" width={700} height={400} alt="AboutMe" />
+                        <Image src="/Image/aboutPageImage.webp" priority={true} className="col-md-6 float-md-end mb-3 my-3 ms-md-3 Imagedisplay" width={700} height={400} alt="AboutMe" />
                     </div>
                 </div>
             </div>
@@ -107,7 +107,7 @@ function About() {
                             <div className="card">
                                 <div className="header">
                                     <div className="image">
-                                        <Image src={element.logo} style={{ width: "100%" }} width={100} height={100} priority alt="Card image cap" />
+                                        <Image src={element.logo} style={{ width: "100%" }} width={100} height={100} loading='lazy' alt="Card image cap" />
                                     </div>
                                     <div className='name_div'>
                                         <p className="name">{element.tittle}</p>
@@ -135,7 +135,7 @@ function About() {
                         >
                             <DialogTitle>{element.tittle}</DialogTitle>
                             <DialogContent>
-                                <Image src={element.certificate} onError={() => { element.certificate = "/Image/aboutPageImage.jpg" }} priority alt={element.tittle} width={950} height={550}></Image>
+                                <Image src={element.certificate} onError={() => { element.certificate = "/Image/aboutPageImage.jpg" }} loading='lazy' alt={element.tittle} width={950} height={550}></Image>
                             </DialogContent>
                             <DialogActions>
                                 <Button onClick={() => handleClose(element.tittle)}>Perfect!!!</Button>

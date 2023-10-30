@@ -78,7 +78,7 @@ function Main() {
     
     const redirect = (e) => {
         router.push(e)
-        // console.log(e);
+
     }
     return (
         <>
@@ -310,7 +310,7 @@ function Main() {
                                             onError={() => {
                                                 element.certificate = "/Image/aboutPageImage.jpg";
                                             }}
-                                            priority
+                                            loading='lazy'
                                             style={{ width: '100%', height: '100%', overflow: 'auto' }}
                                             alt={element.tittle}
                                             width={950}

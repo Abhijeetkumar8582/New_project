@@ -92,7 +92,8 @@ function FlipkartNavBar() {
                 setGetAnswerfromPDF(result.answer)
                 setQuestion('')
             })
-            .catch(error => console.log('error', error));
+            .catch(error => setGetAnswerfromPDF('I apologize, but my automated system is currently inactive and unavailable. Kindly consider revisiting at a later time for further assistance. Thank you for your understanding.'));
+
 
     }
     const OnAnotherQuestionAsk = () => {

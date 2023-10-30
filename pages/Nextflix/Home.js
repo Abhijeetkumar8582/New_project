@@ -166,15 +166,12 @@ function Home() {
                                         {openAccordionIndex === i ? (
                                             <i
                                                 className="fa fa-times"
-                                                // onClick={console.log(true)}
                                                 aria-hidden="true"
                                             ></i>
                                         ) : (
                                             <i
                                                 className="fa fa-plus"
-                                                // onClick={() => setOpenAccordionIndex(prevIndex => prevIndex === i ? -1 : i)}
-                                                // onClick={console.log(true)}
-                                                aria-hidden="true"
+                                                  aria-hidden="true"
                                             ></i>
                                         )}
                                     </div>

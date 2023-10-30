@@ -254,6 +254,7 @@ function Home() {
             <div className={Style.Instragram_Intro_section_image}>
               <Avatar
                 alt="Abhijeet kumar"
+                priority={true}
                 src="/Image/Abhijeet_kumar_insta_img.webp"
                 sx={{ width: profileavatarSize, height: profileavatarSize }}
 

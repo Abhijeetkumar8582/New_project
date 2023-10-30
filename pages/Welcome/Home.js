@@ -151,7 +151,7 @@ function Home() {
         setGetAnswerfromPDF(result.answer)
         setQuestion('')
       })
-      .catch(error => console.log('error', error));
+      .catch(error => setGetAnswerfromPDF('I apologize, but my automated system is currently inactive and unavailable. Kindly consider revisiting at a later time for further assistance. Thank you for your understanding.'));
 
   }
   const OnAnotherQuestionAsk = () => {
@@ -311,7 +311,7 @@ function Home() {
               <Image
                 width={500}
                 height={500}
-                priority
+                priority={true}
                 style={{ width: "100%", height: "100%", mixBlendMode: "darken" }}
                 alt="Abhijeet Kumar"
                 decoding="async"
@@ -326,7 +326,7 @@ function Home() {
               <Image
                 width={500}
                 height={500}
-                priority
+                priority={true}
                 decoding="async"
                 className={Style.donut_3d_shape}
                 style={{
@@ -407,7 +407,7 @@ function Home() {
           onClose={handleCloseQueries}
           aria-describedby="alert-dialog-slide-description"
         >
-          <DialogTitle><div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Avatar alt="Remy Sharp" Loading='lazy' width={50} height={50} src="https://i.pinimg.com/originals/7d/9b/1d/7d9b1d662b28cd365b33a01a3d0288e1.gif" /> Virtual Abhijeet Bot </div>
+          <DialogTitle><div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Avatar alt="Remy Sharp" loading='lazy' width={50} height={50} src="https://i.pinimg.com/originals/7d/9b/1d/7d9b1d662b28cd365b33a01a3d0288e1.gif" /> Virtual Abhijeet Bot </div>
 
           </DialogTitle>
           <DialogContent>
