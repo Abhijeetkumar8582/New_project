@@ -2,5 +2,10 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js"
+  "/VisionStream/Main": "pages/VisionStream/Main.js",
+  "/VisionStream/Home": "pages/VisionStream/Home.js",
+  "/FlipfolioHub/MainPage": "pages/FlipfolioHub/MainPage.js",
+  "/Introduction": "pages/Introduction.js",
+  "/Portfolio/Home": "pages/Portfolio/Home.js",
+  "/InstaSpark/Home": "pages/InstaSpark/Home.js"
 }

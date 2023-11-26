@@ -25,25 +25,25 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 function Home() {
-  const [flipkartRouter, serFlipkartRouter] = useState('/Flipkart/Home')
+  const [flipkartRouter, serFlipkartRouter] = useState('/FlipfolioHub/Home')
   useEffect(() => {
     if (sessionStorage.getItem("UserName")) {
-      serFlipkartRouter("/Flipkart/MainPage");
+      serFlipkartRouter("/FlipfolioHub/MainPage");
     } else {
-      serFlipkartRouter("/Flipkart/Home")
+      serFlipkartRouter("/FlipfolioHub/Home")
     }
   }, [])
   const porfolio = [
     {
       image: "/Image/netflixUi.webp",
-      title: "Netflix - UI",
-      link: "/Nextflix/Home",
+      title: "VisionStream",
+      link: "/VisionStream/Home",
       description:
         "I attempted to replicate the Netflix UI for my portfolio, and I've included a video detailing my journey within this field.",
     },
     {
-      image: "/Image/flipkartUi.webp",
-      title: "Flipkart - UI",
+      image: "/Image/FlipfolioHubUi.webp",
+      title: "FlipfolioHub ",
       link: flipkartRouter,
       description:
         "I'm designing my portfolio as a Flipkart-inspired UI, also developing a search algorithm for easy inquiries about me. Exciting things coming soon!",
@@ -57,8 +57,8 @@ function Home() {
     },
     {
       image: "/Image/Instagram_UI.webp",
-      title: "Instagram - UI",
-      link: "/Instagram/Home",
+      title: "InstaSpark",
+      link: "/InstaSpark/Home",
       description:
         "Engaged in the art of UI design, I'm crafting visually appealing and interactive experiences!",
     },
@@ -406,7 +406,7 @@ function Home() {
           onClose={handleCloseQueries}
           aria-describedby="alert-dialog-slide-description"
         >
-          <DialogTitle><div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Avatar alt="Remy Sharp" loading='lazy' width={50} height={50} src="/Image/abhijeetVirtualBot.gif" /> Virtual Abhijeet Bot </div>
+          <DialogTitle><div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Avatar alt="Virtual Abhijeet Bot" loading='lazy' width={50} height={50} src="/Image/abhijeetVirtualBot.webp" /> Virtual Abhijeet Bot </div>
 
           </DialogTitle>
           <DialogContent>
@@ -432,7 +432,7 @@ function Home() {
         </Dialog>
         <Dialog open={anotherQuestion} onClose={AnotherQuestionForm}>
           <DialogTitle>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Avatar alt="Virtual Abhijeet Bot" width={50} height={50} src="/Image/abhijeetVirtualBot.gif" /> Virtual Abhijeet Bot</div></DialogTitle>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}><Avatar alt="Virtual Abhijeet Bot" width={50} height={50} src="/Image/abhijeetVirtualBot.webp" /> Virtual Abhijeet Bot</div></DialogTitle>
           <DialogContent>
             <DialogContentText className={Style.mobileText_content}>
                Warning: I'm an AI model, and sensitive information might be inadvertently shared. Please refrain from sharing personal or confidential details.
