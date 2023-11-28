@@ -1,6 +1,6 @@
 
 import Head from 'next/head'
-import Home from './Welcome/Home'
+import Home from './FlipfolioHub/Home'
 
 
 function IndexFile() {
