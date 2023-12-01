@@ -16,7 +16,7 @@ function Footer() {
         </Head>
 
             <div style={{ backgroundColor: '#2874f0' }}>
-                {/* <div className={Style.FooterBar_container}>
+                <div className={Style.FooterBar_container}>
                     <div className={Style.FooterBar_container_sectionOne_div_one}>
                         <p className={Style.footer_font_text}>Check out my other Portfolio design</p>
                     </div>
@@ -34,7 +34,7 @@ function Footer() {
                             <button aria-label="Dynamic_Portfolio" className={Style.redirect_btn} onClick={() => redirect_user('/Dynamic_Portfolio/Home')}> <p className={Style.footer_font_text}>Dynamic Portfolio(WIP)</p></button>
                         </div>
                     </div>
-                </div> */}
+                </div>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'black',marginTop:'5px' ,flexWrap:'wrap'}}>
                     <div
                         className={Style.fafaicongithub}

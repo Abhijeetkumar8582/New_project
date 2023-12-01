@@ -350,7 +350,7 @@ function MainPage() {
                         <div style={{ marginBottom: '50px' }}>
                             <div style={{ margin: '20px 0px 5px' }}><i className="fa fa-map-marker" style={{ color: 'red' }} aria-hidden="true"></i><span> Please enter pincode</span></div>
                             <div style={{ display: 'inline-flex' }}>
-                                <input className={Style.pincodeInput} placeholder="Enter here..." value={valuefield} onChange={(e) => onPincodeEntered(e)} />
+                                <input className={Style.pincodeInput} placeholder="Enter 6 digit pincode..." value={valuefield} onChange={(e) => onPincodeEntered(e)} />
                                 <button aria-label="pincode" className={Style.pincodebtn} onClick={onPincodeEnteredFunction}><span className={Style.pincodeCheckText}>Check</span></button>
 
                             </div>
@@ -507,7 +507,7 @@ function MainPage() {
                                         <div className={Style.experienceJsonImageDiv}>
                                             <Image alt="MyImage" loading='lazy' width={50} height={50} style={{ maxWidth: "100%" }} src={element.logo} />
                                         </div>
-                                        <div className={Style.experienceJsondiv}>
+                                        <div className={Style.experienceJsondiv} >
                                             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                                                 <p >{element.desginstion}</p>
                                                 <p>{element.timeline}</p>

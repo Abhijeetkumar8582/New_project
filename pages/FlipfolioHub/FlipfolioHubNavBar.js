@@ -112,7 +112,7 @@ function FlipfolioHubNavBar() {
                 <div className="container-fluid">
                     <Link
                         className="navbar-brand"
-                        href="/FlipfolioHub/Home"
+                        href="/"
                         style={{ color: "white", fontWeight: '500',margin:'0' }}
                     >
                         Abhijeet Kumar
