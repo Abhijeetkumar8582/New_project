@@ -20,7 +20,10 @@ const nextConfig = {
     domains: [
       "img.icons8.com",
       "gartner.com",
+<<<<<<< HEAD
       "upload.wikimedia.org",
+=======
+>>>>>>> 093c775e0ab5c5095bd2632642805aac377d7d0c
       "langoly.com",
       "www.coursera.org",
       "thesparksfoundationsingapore.org",

@@ -1,4 +1,5 @@
 [
+<<<<<<< HEAD
    {
       "tittle":"Microsoft Certified: Azure AI Fundamentals",
       "description":"I learned about the Azure platform, fine-tuning, and the Microsoft Bot Framework with Azure NLP to build an AI application.",
@@ -6,6 +7,21 @@
       "certificate":"/Image/Microsoft.webp"
       
    },
+=======
+    {
+       "tittle":"Yellow.ai Certified Platform Associate",
+       "description":"Learned platform features, query handling, and integration knowledge for effective chatbot creation and management.",
+       "logo":"https://media.licdn.com/dms/image/D560BAQG2ZQfhH46cmw/company-logo_200_200/0/1682433539412?e=2147483647&v=beta&t=rBX7nkflzpo7MGifTSlQmJebh7t95Cs2FBNRAqJsDF0",
+       "certificate":"/Image/certified.webp"
+       
+    },
+    {
+       "tittle":"Platform Associate",
+       "description":"Course is all about the fundamentals of the yellow.ai conversational AI platform, including its features, capabilities, and benefits.",
+       "logo":"https://media.licdn.com/dms/image/D560BAQG2ZQfhH46cmw/company-logo_200_200/0/1682433539412?e=2147483647&v=beta&t=rBX7nkflzpo7MGifTSlQmJebh7t95Cs2FBNRAqJsDF0",
+       "certificate":"/Image/platformAssociate.webp"
+    },
+>>>>>>> 093c775e0ab5c5095bd2632642805aac377d7d0c
     {
        "tittle":"Google Data Analytics Specialization",
        "description":"Practice-based assessments and are designed to prepare them for introductory level roles in Data Analytics.",

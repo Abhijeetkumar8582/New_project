@@ -1,4 +1,5 @@
 [
+<<<<<<< HEAD
    {
    "desginstion": "Conversational AI Developer",
    "jobtype": "Druidai",
@@ -6,12 +7,18 @@
    "timeline": "March 2024 - Present",
    "logo":"https://media.licdn.com/dms/image/D4D0BAQH6eszQwGdsJw/company-logo_200_200/0/1704295715881/druidai_logo?e=2147483647&v=beta&t=z4xTvpChIvYvNejifBCV2glYCiFnjHdGr3SdmZ_S3e8"
 },
+=======
+>>>>>>> 093c775e0ab5c5095bd2632642805aac377d7d0c
     
     {
         "desginstion": "Presales Engineer",
         "jobtype": "Yellow.ai",
         "jobRole":"I developed a JavaScript-based React application tailored to the client's needs and seamlessly incorporated an AI chatbot. I extended its functionality by integrating it with various communication channels, employing APIs to connect with other bots, and enhancing its capabilities through Generative AI and GPT-3.5, demonstrating prompt engineering..",
+<<<<<<< HEAD
         "timeline": "Dec 2021 - March 2024",
+=======
+        "timeline": "Dec 2021 - Present",
+>>>>>>> 093c775e0ab5c5095bd2632642805aac377d7d0c
         "logo":"https://media.licdn.com/dms/image/D560BAQG2ZQfhH46cmw/company-logo_200_200/0/1682433539412?e=2147483647&v=beta&t=rBX7nkflzpo7MGifTSlQmJebh7t95Cs2FBNRAqJsDF0"
     }
     ,
